@@ -1,0 +1,13 @@
+  <section (mouseenter)="showContent = true" (mouseleave)="showContent = false" class="category-item {{'category-item row'+i+4}}">
+      <div class="categoryCssWrap row{{i+1}}">
+        <div class="category-icon" >
+          <span class="desktopIcon icon">
+            <img id="{{category.icon.slice(-8)}}" [src]="category.icon"/>
+          </span>
+        </div>
+        <div class="title">{{ category.title }}</div>
+        <div *ngIf="!showContent&&i!=2" class="subTitle">{{ category.subTitle }}</div>
+        <app-btn (click)="navigateToStage2()" *ngIf="showContent&&i!=2" [text]="'מתחילים'" [containerClass]="'getting-started-container'"></app-btn>
+
+      </div>
+    </section>

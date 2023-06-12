@@ -1,0 +1,15 @@
+<div class="container" [ngClass]="{'gray-border':!isHighlyRecommended}">
+    <div *ngIf="isHighlyRecommended" class="highly-recommended"></div>
+
+  <div  class="{{classTopImage}}"></div>
+  <div class="space-div"></div>
+ <div class="bold-title">{{title}}</div>
+
+<app-btn *ngFor="let item of arrayOfData" [textClass]="item.textClass" [iconClass]="item.iconClass" [text]="item.text" [containerClass]="item.containerClass"></app-btn>
+<div class="price-and-days">
+  <div *ngFor="let item of ['price','days']" class="{{item}}">{{objPriceAndDays[item]}}</div>
+</div>
+
+<app-btn (click)="publishAdd()"  [text]="textBtn" [containerClass]="classBtn"></app-btn>
+
+</div>

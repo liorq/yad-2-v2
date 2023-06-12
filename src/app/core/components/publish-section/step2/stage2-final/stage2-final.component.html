@@ -1,0 +1,31 @@
+  <div class="whiteBox">
+    <div class="whiteBoxWrapper">
+        <span class="icon"><div class="background"></div></span>
+      <h1>תודה שבחרתם בלוח יד2</h1>
+      <div class="messageCont">
+        <div class="message" >
+          <ng-container *ngFor="let line of finalMessageLines">
+            <div [class]="line.class" [style]="line.style">
+              <span *ngFor="let span of line.spans" [ngStyle]="span.style">{{ span.text }}</span>
+            </div>
+          </ng-container>
+          יום מצוין, צוות יד2
+        </div>
+        <div class="likeToLook">
+          <div class="manIcon">
+            <img [ngClass]="{ manStars: true }" [src]="manStarsImageUrl" />
+          </div>
+          <div class="likeToLookWrapper"></div>
+        </div>
+        <div class="tableAttention">
+          <div class="tableBack">
+            <span class="orangeText">חשוב לדעת</span>
+            <span>ששימוש במידע הפרטי שלך ללא רשות הוא לא חוקי. אנחנו ממליצים לך לסרב לגורמים שונים שמבקשים להפיץ את פרטיך האישיים, ואין להם קשר ליד2.</span>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <a *ngFor="let link of finalLinks" [href]="link.href" [class]="link.class">{{"  |  "+ link.text  }}</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+@media screen and (min-width: 880px) {
+  app-side-bar-nav {
+    display: none;
+  }
+}
+

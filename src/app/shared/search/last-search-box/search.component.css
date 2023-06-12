@@ -1,0 +1,177 @@
+.latest_search.latestsearchesPage
+{
+  min-height:139px;
+  border: 1px solid #99999987;
+  padding: 13.5px 15.5px 14px;
+  width: 97%;
+  position: relative;
+  border-radius: 3px;
+  /* position: absolute; */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 21px;
+}
+.container{
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.search_data{
+  width: fit-content;
+}
+.details{
+  display: flex;
+  justify-content: right;
+  gap: 5px;
+  height: fit-content;
+  flex-wrap:wrap;
+}
+.field_label{
+  height: fit-content;
+  line-height: 24px;
+  color:#999999;
+  font-size: 14px;
+}
+.search_data{
+  height: fit-content;
+}
+.field_text{
+  display: block;
+  height: fit-content;
+  width: max-content;
+  font-size: 14px;
+}
+.line{
+  color: #999;
+  padding: 0 4px;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+}
+.search_data{
+  display: flex;
+  gap: 2px;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.details_content{
+  text-align: end;
+
+}
+.svg-x {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>');
+  width: 13px;
+  height: 19px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.title{
+  font-size: 1.125rem;
+  color: #363636;
+  text-align: right;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.hour{
+  color: #999;
+  font-size: 14px;
+}
+.search_again{
+  height: fit-content;
+}
+.big-container{
+  height: auto;
+  margin-top: 32px;
+}
+.title3{
+  color: #363636;
+  font-size: 18px;
+  width: fit-content;
+
+}
+.delete-btn{
+  color: #999999;
+  font-size: 14px;
+  width: fit-content;
+  cursor: pointer;
+}
+.container-title{
+display: flex;
+justify-content: space-between;
+margin: 23px 10px 25px;
+flex-direction: row-reverse;
+}
+
+.latest_search.latestsearchesPage:hover{
+  background:#edebeb9c ;
+  cursor: pointer;
+}
+.last-search-container{
+  height: 29px;
+  color: #363636;
+  width: 40%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 16px;
+margin-top: 15px;
+cursor: pointer;
+}
+.last-search-container-2{
+  height: 29px;
+  color: #363636;
+  width: 40%;
+  background: #d0cece9e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 16px;
+margin-top: 15px;
+cursor: pointer;
+}
+
+
+.container-btns{
+display: flex;
+justify-content: center;
+gap:7px;
+}
+@media only screen and (min-width: 880px) {
+
+  .last-search-container{
+    height: 27px;
+    color: #363636;
+    width: 79px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+  border: 0.5px solid #ff7100;
+  }
+  .last-search-container-2{
+    height: 27px;
+    color: #363636;
+    width: 79px;
+    background: #d0cece9e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+  }
+}

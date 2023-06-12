@@ -1,0 +1,15 @@
+<app-container-stage2 [title]="'בחירת מסלול'" [currentStepNum]="7" [arrayAfterCloseSteps]="[]" [arrayFirstCloseSteps]="[0,1,2,3,4,5]">
+<div class="subtitle">{{"זהו, אנחנו בסוף. לנו נשאר לשמור את המודעה שלך, לך נשאר לבחור את מסלול הפרסום"}}</div>
+<div class="subtitle"> {{"?באיזה מסלול לפרסם את המודעה"}}</div>
+
+<div class="subtitle"> {{"זה הרגע לבלוט מעל כולם"}}</div>
+
+<app-btn [textClass]="'bitText'" [iconClass]="'bit'" [text]="'חדש! משדרגים בקליק עם'" [containerClass]="'containerClassBit'"></app-btn>
+
+<div class="route-container">
+<app-route-to-choose *ngFor="let item of routeToChooseArray" [classBtn]="item.classBtn" [textBtn]="item.textBtn" [objPriceAndDays]="item.objPriceAndDays" [arrayOfData]="item.arrayOfData" [isHighlyRecommended]="item.isHighlyRecommended" [classTopImage]="item.classTopImage" [title]="item.title"></app-route-to-choose>
+</div>
+
+<app-text-checkbox-button [containerClass]="'containerClassMax'"  [textClass]="'max-2 max '" [text]="'אני מאשר קבלת דיוור פרסומי הקשור למודעה שפרסמתי באתר יד 2 (להסרה - יש להוריד את הסימון בתיבה)'"></app-text-checkbox-button>
+
+</app-container-stage2>

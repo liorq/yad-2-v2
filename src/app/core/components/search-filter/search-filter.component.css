@@ -1,0 +1,14 @@
+.container{
+background: #fff;
+padding: 10px;
+}
+.btn-container{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(128, 128, 128, 0.435);
+
+}
+app-btn{
+  cursor: pointer;
+}

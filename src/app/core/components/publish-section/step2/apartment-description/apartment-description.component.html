@@ -1,0 +1,19 @@
+<div class="column-title">?מה חשוב לך שידעו על הנכס</div>
+  <label>פרוט הנכס</label>
+      <div class="container2">
+        <div  class="counterNum">{{textBoxValue.length+"/400"}}</div>
+        <div class="loading-bar">
+
+<div class="text-loader" *ngFor="let item of textLoaderArray">
+  <div class="{{item.class}}" *ngIf="item.ngIf">{{item.text}}</div>
+</div>
+
+<div class="loader" [ngStyle]="{'width': this.calcLoaderValue+'%'}" [ngClass]="{'none':this.calcLoaderValue<5,'orangeLoader':textBoxValue.length>30&&textBoxValue.length<60,'yellowLoader':textBoxValue.length>=60&&textBoxValue.length<100,'greenLoader':textBoxValue.length>=100&&textBoxValue.length<130,'strongGreenLoader':textBoxValue.length>=130,'left-border':textBoxValue.length>=140}"></div>
+
+        </div>
+      </div>
+<div  class="textarea">
+  <textarea  (input)="getTextLength();updateLoaderData();updateAdSubject()"  [(ngModel)]="textBoxValue" maxlength="400" fieldid="58" placeholder="זה המקום לתאר את הפרטים הבולטים, למשל, האם נערך שיפוץ במבנה, מה שופץ, כיווני אוויר, האווירה ברחוב וכו'" aria-label="שים לב, יש לך 400 תווים להקלדה"></textarea>
+  <div class="text-under-textarea">אין צורך להוסיף מספר טלפון כחלק מהתיאור, בהמשך התהליך יש אזור מסודר לזה</div>
+</div>
+

@@ -1,0 +1,13 @@
+.bottom-search{
+  width: 100%;
+  }
+  .btn-bottom-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+  }
+  .cursor{
+    cursor: pointer;
+  }

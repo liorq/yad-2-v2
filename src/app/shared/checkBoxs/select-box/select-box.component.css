@@ -1,0 +1,29 @@
+
+*{
+  direction:rtl
+}
+
+select{
+  width: 262px;
+  height: 42px;
+
+
+
+    cursor: pointer;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    text-indent: 8px;
+    font-family: Rubik,sans-serif;
+      overflow: hidden;
+
+}
+select::-webkit-scrollbar {
+  display: none;
+}
+div{
+  height: fit-content;
+  width: fit-content;
+}

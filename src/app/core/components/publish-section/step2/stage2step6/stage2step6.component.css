@@ -1,0 +1,28 @@
+.container-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  cursor: pointer;
+}
+.topBtnText{
+  display: block;
+  margin-top: 15px;
+}
+.inputs-container{
+  text-align: right;
+}
+.checkboxs{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+app-text-input{
+  display: block;
+  margin-bottom: 10px;
+}
+.red{
+  font-size: 13px;
+  color: red;
+}

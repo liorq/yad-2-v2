@@ -1,0 +1,10 @@
+<div class="container">
+<app-generic-container [arrayOfContent]="[    { class: 'title-large', label: 'ויש לנו אחלה כלים לזה' },    { class: 'title-large', label: 'לקנות מהר, למכור מהר' }]" [containerClass]="'title-large'"></app-generic-container>
+
+<div class="icons-container">
+  <div class="login-item" *ngFor="let item of loginArray">
+<div class="{{item.class}}"></div>
+<div  class="text">{{item.label}}</div>
+</div>
+</div>
+</div>

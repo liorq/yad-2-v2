@@ -1,0 +1,82 @@
+.container{
+  width: 250px;
+  height: 155px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 12px 15px 15px;
+  position: relative;
+  line-height: 1.0625rem;
+  cursor: pointer;
+ margin-bottom: 97px;
+}
+.big-container{
+  display: flex;
+  justify-content: space-around;
+}
+.main-text{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+}
+.text{
+  font-size: 14px;
+  font-weight: 500;
+}
+.bell{
+
+  background-image: url('data:image/svg+xml;utf8,<svg fill="gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  transform: rotate(30deg);
+
+}
+.header{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+#btn4{
+  position: absolute;
+  right: 50%;
+  left: 13%;
+  bottom: 10px;
+  width: 182px;
+}
+
+
+
+
+.title-2{
+  width: fit-content;
+  color: #363636;
+  font-size: 1.25rem;
+  line-height:1.5rem;
+  font-weight: 400;
+}
+.feed_header {
+/* width: 98vw; */
+gap: 29vw;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: row-reverse;
+}
+.ads_count{
+  width: fit-content;
+}
+@media (min-width: 1100px) {
+  .feed_header {
+    /* width: 98vw; */
+    gap: 23vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-right: 10vw;
+    }
+}

@@ -1,0 +1,28 @@
+
+<form action="">
+  <div class="form-field" id="city-selection">
+    <label class="text">ישוב</label>
+    <input [class]="inputClass" [(ngModel)]="address['city']" [placeholder]="'איפה נמצא הנכס'" (change)="updateAddress()" list="cities-data" (keydown)="this.dbSvc.filterStreetHandler($event)" id="city-choice" name="city-choice" />
+    <datalist  id="cities-data">
+      <option value="">טוען רשימת ערים...</option>
+    </datalist>
+  </div>
+  <div class="form-field" id="street-selection">
+    <label class="text">רחוב</label>
+    <input [class]="inputClass" [(ngModel)]="address['street']" [placeholder]="'הכנסת שם הרחוב'" list="streets-data" (keydown)="this.dbSvc.filterStreetHandler($event)" (change)="updateAddress()" id="street-choice" name="street-choice" />
+    <datalist  id="streets-data">
+      <option value="">
+    </datalist>
+    <div class="mini-text">{{"המידע הזה מגיע מגוף ממשלתי, אם הרחוב שלך לא מופיע, מומלץ לבחור רחוב קרוב אליך"}}</div>
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.banner{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 86px;
+ max-width: 1200px;
+  background: linear-gradient(88.2deg,#f76b1c -35.2%,#fad961 125.79%);
+}
+.banner-conatiner{
+  position: relative;
+  height: 106px;
+  overflow: hidden;
+ display: flex;
+ justify-content: center;
+}
+.mobile{
+  background:url('../../../../assets/mockup-mobile.png');
+  width: 102px;
+  height: 172px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 4px;
+  top:-14px;
+  rotate: -5deg;
+}
+
+.app-store{
+  background: url('../../../../assets/app-download-apple.svg');
+
+width: 72px;
+height: 20px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.google-play{
+  width: 72px;
+  height: 20px;
+  background: url('../../../../assets/app-download-google.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.stores{
+  height: 46px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  position:absolute;
+  left: 20px;
+  top: 20px;
+}
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  width: 165px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 880px) {
+
+  .banner{
+    border-radius: 15px;
+  }
+}

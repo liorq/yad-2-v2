@@ -1,0 +1,29 @@
+<div id="container" class="big-container-commercial" [ngClass]="{'big-container-commercial-white':isScrollButtonClicked2,'big-container-commercial-smoke':isScrollButtonClicked1}">
+  <div class="scroll-div">
+    <ng-container >
+      <div *ngFor="let item of slidingCommercialArray" id="{{item.idCommercial}}" class={{item.classCommercial}}>
+      <div class="{{item.desktopImg}}"></div>
+
+      <div class="text-box">
+        <div class="title-container">
+      <div class="{{item.classTopTitle}}">{{item.topText}}</div>
+      <div class="{{item.classMiddleTitle}}">{{item.middleText}}</div>
+      </div>
+      <div class="{{item.classBottomTitle}}">{{item.bottomText}}</div>
+
+        <div class="orange-btn" routerLink="{{item.link}}">{{item.orangeBtnText}}</div>
+
+      </div>
+        <div class="scrollBtns">
+<div class="btn circle" [ngClass]="{orange:isScrollButtonClicked1}" (click)="slideToNextCommercial('Part1')"></div>
+<div class="btn circle" [ngClass]="{orange:isScrollButtonClicked2}" (click)="slideToNextCommercial('Part2')"></div>
+</div>
+    </div>
+    </ng-container>
+
+  </div>
+
+</div>
+
+
+

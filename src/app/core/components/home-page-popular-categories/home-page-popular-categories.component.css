@@ -1,0 +1,102 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.businessPic{
+background: url(../../../../assets/leading-category-business.webp);
+}
+
+.drushimPic{
+  background: url(../../../../assets/leading-category-drushim.webp);
+
+}
+.petsPic{
+  background: url(../../../../assets/leading-category-pets.webp);
+
+}
+.professionalPic{
+  background: url(../../../../assets/leading-category-professional.webp);
+
+}
+.realEstatePic{
+  background: url(../../../../assets/leading-category-real-estate.webp);
+
+}
+.secondHandPic{
+  background: url(../../../../assets/leading-category-second-hand.webp);
+
+}
+
+.vehiclesPic{
+  background: url(../../../../assets/leading-category-vehicles.webp);
+
+}
+
+.square{
+  width: 73px;
+  height: 73px;
+  background: #eeeeee;
+border-radius: 50%;
+border: 0.5 solid #eeeeee;
+}
+.square:hover{
+
+  background: #fff;
+
+border: 1px solid #eeeeee;
+}
+.pic{
+  width: 73px;
+  height: 73px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1.5px solid #eeeeee;
+
+}
+
+.continer-category{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+.all-Categories{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ overflow: hidden;
+ gap: 40px;
+ margin-top: 13px;
+ max-width: 1200px;
+}
+:host{
+  display: flex;
+  justify-content: center;
+}
+.text{
+  text-align: center;
+  width: 97px;
+}
+@media screen and (min-width: 880px)  {
+  .square{
+    width: 138px;
+    height: 138px;
+    background: #eeeeee;
+  border-radius: 50%;
+  border: 0.5 solid #eeeeee;
+  }
+
+  .pic{
+    width: 138px;
+    height: 138px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1.5px solid #eeeeee;
+
+  }
+}

@@ -1,0 +1,54 @@
+.dont-have-account-sign-up{
+
+  margin-top: 180px;
+}
+.title-large{
+  font-size: 36px;
+  font-weight: 400;
+  text-align: right;
+}
+@media screen and (min-width: 880px) {
+
+  .halfRec{
+    display: none;
+  }
+  .dont-have-account-sign-up{
+    margin-top: 35px;
+  }
+  .container-log-as{
+    position: absolute;
+    top: -700px;
+  }
+ }
+ .title-container{
+  text-align: center;
+ }
+.title-max{
+  width: max-content;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-container2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.little-text{
+  width: 267px;
+  text-align: center;
+}
+.blue-shield{
+  background: url('../../../../assets/icons8-shield-24.png');
+  height: 24px;
+  width: 24px;
+}
+.neighborhood-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 8px;
+}

@@ -1,0 +1,123 @@
+.container{
+      background-color: #fff;
+    border: 2px solid #22c1a1;
+    box-shadow: 0 4px 12px rgba(0,0,0,.12);
+    height: 407px;
+    box-sizing: border-box;
+    width:90vw;
+   padding: 15px;
+   border-radius: 15px;
+   padding-bottom: 25px;
+  position: relative;
+}
+.bold-title{
+  font-size: 24px;
+  font-weight: 500;
+  text-align: right;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.price{
+  font-size: 36px;
+  font-weight: 400;
+  color: #363636;
+}
+.days{
+  font-size: 18px;
+  color: #868686;
+}
+.rocket{
+background: url('../../../../../../assets/rocket.svg');
+  height: 86px;
+  width:133px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.kite{
+background: url('../../../../../../assets/kite.svg');
+  height: 86px;
+  width:133px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+app-btn{
+  display: block;
+  margin-top: 14px;
+}
+div{
+  width: fit-content;
+  height: fit-content;
+}
+.price-and-days{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 15px;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+.highly-recommended{
+  background: url('../../../../../../assets/highly_recommended.svg');
+  height: 89px;
+  width:99px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.gray-border{
+  border: 1px solid rgba(128, 128, 128, 0.354);
+   position: relative;
+}
+@media screen and (min-width: 880px) {
+  .price{
+  font-size: 20px;
+  }
+  .days{
+  font-size: 14px;
+  }
+  .price-and-days{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+       bottom:17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+.container{
+  width: 249px;
+  height: 470px;
+}
+.kite{
+    position: absolute;
+
+   top:15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rocket{
+    position: absolute;
+
+   top:15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bold-title{
+  width: max-content;
+    top:30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.space-div{
+  height: 140px;
+}
+}
+
+

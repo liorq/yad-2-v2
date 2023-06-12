@@ -1,0 +1,81 @@
+.pic{
+  height: 53px;
+  width: 53px;
+}
+.doronPic{
+background: url('../../../../assets/dooron.svg');
+
+}
+
+.card{
+  height: 80px;
+  width: 95%;
+  border: 1px solid rgba(128, 128, 128, 0.10) ;
+  border-radius: 10px;
+  position: relative;
+
+}
+.card:hover{
+
+  border: 1px solid rgba(128, 128, 128, 0.30) ;
+ cursor: pointer;
+
+}
+.square{
+  height: 80px;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+}
+.title{
+  text-align: right;
+  font-size: 1.125rem;
+  position: relative;
+  right: 15px;
+  width: 100%;
+
+}
+.text-container{
+  width: fit-content;
+  height: auto;
+  position: absolute;
+  right: 80px;
+  top: 18px;
+  text-align: end;
+}
+.subTitle{
+  font-weight: 500;
+}
+
+.priceList{
+  background: url('../../../../assets/priceList.svg');
+
+  }
+  .yzer{
+    background: url('../../../../assets/yzer.svg');
+
+    }
+    .calc{
+      background: url('../../../../assets/calculator.svg');
+
+      }
+
+:host{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+/* .container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+} */

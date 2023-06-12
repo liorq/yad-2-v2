@@ -1,0 +1,46 @@
+<app-no-active-ads *ngIf="myAds?.length == 0"></app-no-active-ads>
+
+<div *ngIf="myAds.length>0" class="filter-container">
+  <app-btn
+    *ngFor="let num of [0, 1]"
+    (click)="toggleBtn(num)"
+    [textClass]="''"
+    [iconClass]="'rectangleDown'"
+    [containerClass]="filterItems[num].containerClass"
+    [text]="filterItems[num].buttonText"
+  >
+    <div class="checkboxes" *ngIf="isDropDownOpen[num]">
+      <app-tree
+        *ngIf="filterItems[num].hasTree"
+        [newTreeData]="filterItems[num].newTreeData"
+      ></app-tree>
+      <div class="btns-container">
+        <app-btn
+          *ngFor="
+            let item of [
+              { text: 'בחר', colorText: 'orange' },
+              { text: 'נקה', colorText: 'gray' }
+            ]
+          "
+          [textClass]="item.colorText"
+          [text]="item.text"
+        ></app-btn>
+      </div>
+    </div>
+  </app-btn>
+  <div class="filter"></div>
+</div>
+<!---->
+<div class="ads-container">
+  <app-new-ad
+    *ngFor="let ad of myAds"
+    [ad]="ad"
+    [classContainer]="'custom-container'"
+    [isMyAd]="true"
+  ></app-new-ad>
+</div>
+
+
+
+
+

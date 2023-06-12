@@ -1,0 +1,7 @@
+<div (click)="handleButtonClick()" [ngClass]="this.ngClass" class="{{containerClass+ ' containerClass'}}">
+  <div class="{{iconClass}}"></div>
+  <div class="{{textClass}}">{{text}}</div>
+</div>
+<div  class="ng-container">
+<ng-content (click)="event.stopPropagation()"></ng-content>
+</div>

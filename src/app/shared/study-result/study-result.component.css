@@ -1,0 +1,49 @@
+.megaphone{
+    background: url(../../../assets/megaphone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 53px;
+  width: 53px;
+}
+.light-on{
+      background: url(../../../assets/light-bulb-on.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+}
+.sub-title{
+  margin-right: 10px;
+  text-align: end;
+
+}
+.info-container2{
+  display: flex;
+  flex-direction: row-reverse;
+
+      box-sizing: border-box;
+    max-height: 74px;
+    width: 521px;
+       border: 1px solid #ff7100;
+
+    border-radius: 3px;
+    background-color: #fffaf5;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.08);
+ padding: 10px 15px 10px 19px;
+max-width: 100%;
+}
+.orangeMega{
+     background: url(../../../assets/miniSpot.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 33px;
+  width: 33px;
+}
+.info-contianer{
+
+}
+@media (max-width: 567px) {
+  .info-contianer{
+ visibility: hidden;
+  }
+}

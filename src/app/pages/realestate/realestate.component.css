@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+}
+app-search-bar,app-feed-options,app-my-alert-widget{
+  display: block;
+  height: fit-content;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: #fff1e5;
+  color: #ff7100;
+
+}
+.pagination-container{
+display: flex;
+justify-content: center;
+}
+.ads-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+@media (max-width:600px) {
+  app-my-alert-widget{
+    opacity: 0;
+  }
+}
+.height-div{
+  height: 320px;
+}

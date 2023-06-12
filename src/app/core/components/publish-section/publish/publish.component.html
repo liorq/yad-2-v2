@@ -1,0 +1,16 @@
+<app-header ></app-header>
+<section  class="publish">
+  <div class="chooseCategoryWrap">
+    <div class="title2">אני רוצה לפרסם מודעה בלוח...</div>
+    <div class="rowCategory">
+      <div *ngFor="let subcategory of allCategories; let i = index">
+        <div class="line_{{ i + 1 }}">
+          <app-publish-category
+            [i]="i"
+            [subcategory]="subcategory"
+          ></app-publish-category>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

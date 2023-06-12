@@ -1,0 +1,9 @@
+  <div class="contianer">
+    <div class="sub-container">
+     <app-circled-num [circleClass]="'circle-gray'" [isCircleChecked]="isCircleChecked"  [num]="num+1"></app-circled-num>
+   <div class="text">{{closeStepStages[num].text}}</div>
+  </div>
+<div (click)="navigate(closeStepStages[num].path)" class="pen-container">
+   <div  [ngClass]="{'pen':isCircleChecked}"></div>
+  </div>
+</div>

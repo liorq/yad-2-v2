@@ -1,0 +1,120 @@
+
+*{
+  box-sizing: border-box;
+  direction: rtl;
+
+}
+div{
+  width: fit-content;
+}
+.container{
+  height: 476px;
+  width: 100vw;
+  max-width: 960px;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+span{
+  display: block;
+  height: fit-content;
+  width: fit-content;
+}
+.advanced-search-row{
+  height: fit-content;
+  width: 100%;
+  padding: 10px 33px;
+  margin: 12px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-bottom:1px solid #80808085 ;
+}
+.title{
+position: absolute;
+right: 50px;
+top: 5px;
+}
+.second-part{
+  height: auto;
+  width:100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom:1px solid #80808085 ;
+}
+.from-a-z{
+  display: flex;
+  gap:10px
+}
+.container-from-a-z{
+  text-align: right;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  width: fit-content;
+  right: 0;
+  margin: 12px 40px;
+  align-items: flex-start;
+}
+.input-wrapper{
+  display: flex;
+  gap:10px;
+  align-items: flex-start;
+}
+
+.range_input_wrapper{
+  text-align: end;
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+app-btn{
+  height: fit-content;
+}
+input[type="date"] {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 8px;
+  height: 40px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(60%) sepia(100%) saturate(5000%) hue-rotate(340deg) brightness(90%) contrast(90%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator::shadow .calendar__date--selected {
+  background-color: orange;
+
+}
+.date-input-container{
+  width: 100%;
+  max-width: 187px;
+
+  margin-right: 17px;
+}
+app-free-search{
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+padding: 18px;
+border-bottom: 1px solid #80808085;
+}
+
+app-advance-search-options{
+width: 100%;
+}
+.btn-bottom-container{
+width: 100%;
+display: flex;
+justify-content: space-between;
+padding: 22px;
+align-items: center;
+}
+.cursor{
+  cursor: pointer;
+}

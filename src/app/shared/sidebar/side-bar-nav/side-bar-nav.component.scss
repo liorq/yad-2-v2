@@ -1,0 +1,295 @@
+
+@import "compass-mixins/lib/compass";
+$color-dark: #1E2027;
+$width: 280px;
+$width-compressed: 52px;
+
+*{
+  color: black;
+box-sizing: border-box;
+font-family: 'Rubik', sans-serif;
+text-decoration: none;
+font-weight: 300;
+}
+.setting-icons{
+  display: flex;
+  height: 171px;
+  position: relative;
+  top: 149px;
+  flex-wrap: wrap;
+  justify-content: center;
+   padding:19px;
+   flex-direction: row-reverse;
+  //  align-items: center;
+}
+.fast-search-icons{
+  display: flex;
+  height: auto;
+  position: relative;
+  top: 149px;
+  flex-wrap: wrap;
+  justify-content: center;
+   padding:19px;
+   flex-direction: column;
+}
+span.title{
+  text-align: end;
+  color: #999;
+  display: block;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  padding: 34px 34px 8px 0
+}
+.textSubItems{
+  font-size: 12px;
+  text-align: right;
+  font-weight: 300;
+}
+.textSubItems:hover{
+color: #fd803f;
+}
+#sidenavForPersonalPage{
+  background-color:#30313f;
+
+}
+#sidenavForPersonalPage2{
+  background-color:#30313f;
+
+}
+.sidenav{
+  position: fixed;
+  width: 280px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  color: black;
+  background-color: #ffffff;
+z-index: 2;
+  .main-buttons{
+    list-style-type: none;
+    margin: 140px 0;
+    padding: 0;
+    color: #fff;
+    button{
+      text-transform: uppercase;
+      // letter-spacing: 2px;
+      font-size: 14px;
+      text-decoration: none;
+
+    }
+
+    & > button{
+      padding: 11px 10px;
+      @include box-sizing(border-box);
+
+      .fa{
+        position: absolute;
+        left: 12px;
+
+      }
+
+      &:hover, &:active, &:focus{
+        .hidden{
+          width: 100%;
+          background: #fff;
+        }
+        background-color: hsla(0,0%,100%,.05);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+.ShowSidenav{
+  position: absolute;
+  width: 280px;
+  top: inherit;
+  right: 0;
+  height: 100%;
+  color: black;
+  background-color: #ffffff;
+z-index: 2;
+  .main-buttons{
+    list-style-type: none;
+    margin: 140px 0;
+    padding: 0;
+    color: #fff;
+    button{
+      text-transform: uppercase;
+      // letter-spacing: 2px;
+      font-size: 14px;
+      text-decoration: none;
+
+    }
+
+    & > button{
+      padding: 11px 10px;
+      @include box-sizing(border-box);
+
+      .fa{
+        position: absolute;
+        left: 12px;
+
+      }
+
+      &:hover, &:active, &:focus{
+        .hidden{
+          width: 100%;
+          background: #fff;
+        }
+        background-color: hsla(0,0%,100%,.05);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
+
+.option-container{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  font-size: 14.5px;
+  font-weight: 300;
+  gap: 10px;
+}
+.hidden{
+  width: 0;
+  height: 100%;
+  padding: 64px 0;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  overflow: hidden;
+
+  list-style-type: none;
+  // background-color: lighten($color-dark, 5);
+  @include transition(0.3s);
+  li{
+    padding: 10px 10px;
+    &:hover, &:active, &:focus{
+      background-color: whitesmoke;
+    }
+  }
+}
+
+
+body{background-color: lighten($color-dark, 68);line-height: 30px;}html,body{height:100%;}@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+li{
+
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(100%); /* Start off the screen on the right */
+  }
+  to {
+    transform: translateX(0); /* Move to the left edge of the screen */
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0); /* Start at the left edge of the screen */
+  }
+  to {
+    transform: translateX(100%); /* Move off the screen on the right */
+  }
+}
+
+.show
+{
+  transform: translateX(0);
+  animation: slide-in 0.5s forwards; /* Add the animation */
+  overflow: hidden;
+}
+.none
+{
+  transform: translateX(0);
+  animation: slide-out 0.5s forwards; /* Add the animation */
+  overflow: hidden;
+}
+.doronSvg{
+  background: url('../../../../assets/dooron.svg');
+
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+}
+#sideBarId2{
+  position: static;
+  width: 500px;
+}
+
+
+
+
+
+.mini-buttons{
+  position: relative;
+  max-height: 43px;
+  overflow: hidden;
+
+}
+.mini-buttons-after{
+  position: relative;
+  max-height: 1000px;
+
+}
+
+
+// .mini-buttons:focus{
+//   position: relative;
+//   max-height: 1000px;
+
+// }
+.customHidden
+{
+  position: static;
+}
+
+
+.customHidden {
+  list-style-type: none;
+
+  padding: 32px 0;
+  width: 100%;
+  max-height: 1000px;
+  // overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customHidden:hover ~ .mini-buttons {
+  max-height: 1000px;
+}
+.mini-buttons:hover ~ .customHidden{
+  max-height: 1000px;
+}
+
+
+
+
+button {
+  /* Your custom styles to override the default CSS */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  /* Add any other styles as needed */
+  padding: 10px 10px;
+
+}

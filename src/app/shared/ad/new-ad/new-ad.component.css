@@ -1,0 +1,164 @@
+*{
+  color: black;
+}
+.container{
+  position: relative;
+  height: 110px;
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);
+  background: #eeeac5;
+  border-radius: 5px;
+  max-width: 693px;
+}
+.container:hover{
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.2);
+  cursor: pointer;
+
+}
+.custom-container{
+  position: relative;
+  height: 110px;
+  border: 1px solid #eee;
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);
+  background: #fff;
+  border-radius: 5px;
+  max-width: 1044px;
+  width: 50vw;
+  height: 136px;
+}
+
+.middle-column{
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.image-container{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius:5px;
+  width: 125px;
+  height: 100px;
+  background: url('https://img.yad2.co.il/Pic/202304/29/2_1/o/y2_1_02676_20230429204411.jpeg?l=5&c=3&w=195&h=117');
+}
+.iconHart{
+  background: url('https://assets.yad2.co.il/yad2site/y2assets/images/web_heart_animation_all_platform.png');
+height: 25px;
+width: 25px;
+border-radius: 50%;
+cursor: pointer;
+background-color: #fff;
+box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+background-repeat:no-repeat;
+background-size:4000%;
+background-position-x:-5.5px;
+background-position-y:-3.5px;
+padding: 0;
+position: absolute;
+right: 5px;
+top: 5px;
+}
+.iconHartOn{
+  animation: pulse 1s ease 0s 1 normal forwards;
+background-position-x:-970.5px;
+background-position-y:-3.5px;
+}
+.middle-column{
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 23%);
+  position: absolute;
+  bottom: 0;
+}
+.custom-middle-column{
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  position: absolute;
+  bottom: 43px;
+  right: 145px;
+  gap: 5px;
+  border-top: none;
+}
+.little-container{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+ justify-content: center;
+ align-items: center;
+}
+.little-num,.little-text{
+  width: fit-content;
+}
+.custom-little-container{
+display: flex;
+flex-direction: row-reverse;
+gap: 5px;
+}
+.price{
+  font-weight: 500;
+  font-size: 14px;
+  width: fit-content;
+
+}
+.street{
+  font-size: 14px;
+  width: fit-content;
+
+}
+.description{
+  font-size: 14px;
+width: fit-content;
+}
+.top-column{
+display: flex;
+justify-content: center;
+align-items: end;
+flex-direction: column;
+width: fit-content;
+position: absolute;
+right: 145px;
+top: 8px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.open-div{
+  height: 0;
+  transition:height 1.3s;
+  display: block;
+  overflow: hidden;
+}
+.show
+{
+  height: fit-content;
+
+}
+
+.custom-a-price
+{
+  font-size: 20px;
+  font-weight: 500;
+}
+.custom-image-container{
+  position: absolute;
+  right: 9px;
+  top: 15px;
+  border-radius:5px;
+  width: 125px;
+  height: 100px;
+  background: url('../../../../assets/emptyHouse.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

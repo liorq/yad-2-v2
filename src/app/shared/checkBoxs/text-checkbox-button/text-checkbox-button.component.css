@@ -1,0 +1,40 @@
+
+*{
+  direction: rtl;
+
+}
+.c7 { filter:hue-rotate(167deg) }
+
+
+input[type=checkbox] {
+  transform: scale(1.3);
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Prevent cursor being `text` between checkboxes */
+body { cursor: default }
+.containerClass{
+  width: 176px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.max{
+  width: max-content;
+    text-align: start;
+}
+.containerClassMax{
+  text-align: end;
+    width: fit-content;
+    max-width: 90vw;
+}
+.bold{
+  font-weight: 500;
+}
+.max-2{
+  font-size: 14px;
+  width: max-content;
+    text-align: end;
+}

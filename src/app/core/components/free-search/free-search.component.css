@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+.input{
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  height: 40px;
+  width: 300px;
+  max-width: 90vw;
+}
+.free-search-input{
+  display: flex;
+  flex-direction: column;
+}
+.img{
+  width: 240px;
+  height: 32px;
+}
+.container{
+   display: flex;
+   align-items: center;
+   gap: 25px;
+   width: 100%;
+}

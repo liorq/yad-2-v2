@@ -1,0 +1,259 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.container-commercial-Part1{
+  height: 200px;
+  background: url('../../../../assets/firstPic.png');
+  position: relative;
+  background-repeat: no-repeat;
+width: 100vw;
+cursor: pointer;
+max-width: 1200px;
+}
+.container-commercial-Part2{
+  height: 200px;
+max-width: 1200px;
+  background: url('../../../../assets/secondPic.png');
+  width: 100vw;
+  position: relative;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+}
+.big-container-commercial-white{
+  background: white;
+
+}
+.big-container-commercial-smoke{
+  background: #f8f8f8;
+
+
+}
+.big-container-commercial > *:first-child {
+  animation: 12s slideRight infinite ease-in-out;
+}
+.big-container-commercial > *:nth-child(2) {
+  animation: 12s slideLeft infinite ease-in-out;
+}
+
+.big-container-commercial{
+  display: flex;
+  overflow-x:hidden;
+  width: 100vw;
+  position: relative;
+max-width: 1200px;
+
+}
+.scroll-div{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.btn{
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.orange-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  font-size: 12px;
+  color: #ff7100;
+  padding: 10px;
+  border: 1px solid #ff7100;
+  height: 32px;
+  background: #fff;
+  border-radius: 15px;
+}
+.text-box{
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+gap: 23px;
+text-align: center;
+}
+
+
+
+
+.text-box{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 25px;
+}
+
+
+#Part2{
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+#Part1{
+  display: flex;
+  justify-content: flex-end;
+ position: relative;
+}
+.Part1ClassTopTitle
+{
+font-size: 20px;
+font-weight: 500;
+}
+.Part1ClassMiddleTitle
+{
+font-size: 20px;
+font-weight: 500;
+}
+.Part1ClassBottomTitle
+{
+font-size: 16px;
+color: gray;
+}
+
+
+
+.Part2ClassTopTitle
+{
+  font-size: 16px;
+  color: gray;
+}
+.Part2ClassMiddleTitle
+{
+  font-size: 16px;
+  color: gray;
+}
+.Part2ClassBottomTitle
+{
+font-size: 20px;
+font-weight: 500;
+}
+.circle{
+ border: 1px solid #ff7100;
+ width: 8px;
+ height: 8px;
+}
+:host{
+
+}
+.scroll-div,.big-container-commercial{
+
+
+}
+.scrollBtns{
+  position: absolute;
+  right: 71px;
+  top:122px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.orange{
+background: #ff7100;
+}
+@media (min-width: 880px) {
+  :host{
+    display: flex;
+    justify-content: center;
+  }
+  .big-container-commercial{
+    border-radius: 25px;
+  }
+.container-commercial-Part1,.container-commercial-Part2{
+  height: 278px;
+  background: url('../../../../assets/banner-bg-desktop.png');
+ background-repeat: no-repeat;
+ background-size: cover;
+overflow: hidden;
+}
+.text-box{
+  position: relative;
+  right: 180px;
+  top: 34px;
+}
+.Part2ClassBottomTitle{
+  font-size: 36px;
+}
+
+
+.Part2ClassTopTitle
+{
+  font-size: 28px;
+  color: gray;
+}
+.Part2ClassMiddleTitle
+{
+  font-size: 28px;
+  color: gray;
+}
+.title-container{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.Part1ClassTopTitle
+{
+font-size: 36px;
+}
+.Part1ClassMiddleTitle
+{
+font-size: 36px;
+
+}
+.Part1ClassBottomTitle
+{
+font-size: 28px;
+}
+.desktopImgFirst{
+background: url('../../../../assets/maya-app-4x.first.webp');
+background-size: cover;
+background-repeat: no-repeat;
+width: 340px;
+height: 278px;
+position: relative;
+right: 25vw;
+}
+.desktopImgSecond{
+background: url('../../../../assets/maya-think-4x.second.webp');
+background-size: cover;
+background-repeat: no-repeat;
+width: 340px;
+height: 278px;
+position: relative;
+right: 15vw;
+}
+.scrollBtns{
+top: 250px;
+}
+.orange-btn{
+  line-height: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  padding:20px;
+  border-radius: 25px;
+}
+}
+
+@media (min-width: 1000px){
+  .desktopImgFirst{
+
+position: relative;
+right: 20vw;
+}
+.desktopImgSecond{
+
+position: relative;
+right: 20vw;
+}
+}

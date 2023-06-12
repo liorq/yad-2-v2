@@ -1,0 +1,301 @@
+*{
+  box-sizing: border-box;
+}
+.title{
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+.halfRec{
+  height: 24px;
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  width: 24px;
+  background: url('../../../assets/half-rec-for-sign-in.svg');
+}
+input{
+  height: 50px;
+  width: 100%;
+  padding: 10px 15px;
+  border: 0.5px solid #e1e1e1;
+  border-radius: 5px;
+  text-align:right;
+}
+.input-title{
+  text-align: end;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title-container{
+
+}
+input:hover{
+
+  border: 0.5px solid black;
+}
+input:focus {
+  border: 0.5px solid black;
+  outline: none;
+}
+#box{
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+.forget{
+  font-weight: 500;
+  font-size: 16px;
+  color: #ff7100;
+  position: absolute;
+  left: 9px;
+  top: 276px;
+}
+.form-item{
+  width: 100%;
+  padding-top:25px
+}
+
+.btn-google{
+
+}
+.btn-apple{
+
+}
+.btn-connect:hover{
+  background: #d86000;
+  cursor: pointer;
+}
+.btn-connect{
+  height: 50px;
+  color: #fff;
+  width: 95vw;
+  background: #ff7100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 20px;
+margin-top: 50px;
+}
+
+.text-separation{
+  color: rgba(167, 163, 163, 0.57);
+margin-top: 50px;
+}
+.btn-google{
+  width: 45vw;
+  border: 0.5px solid #c9c6c6;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 423px;
+  right: 15px;
+}
+.btn-apple:hover,.btn-google:hover{
+  color: #ffa65f;
+  border: 0.5px solid #e97a20;
+  cursor: pointer;
+
+}
+.container-log-as{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+}
+.upper-line{
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #80808080;
+}
+.log-as{
+  color: #363636;
+  cursor: pointer;
+  width: 134px;
+}
+.btn-apple{
+  width: 45vw;
+  border: 0.5px solid #c9c6c6;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 423px;
+  left: 15px;
+}
+.google-icon{
+  background: url(../../../assets/google.svg);
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.apple-icon {
+  background: url(../../../assets/apple.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+
+}
+.dont-have-account-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 523px;
+  gap: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sign-up{
+  font-weight: 500;
+  font-size: 16px;
+  color: #ff7100;
+  cursor: pointer;
+}
+
+
+.account{
+  color: #363636;
+  width: max-content;
+}
+
+@media screen and (min-width: 880px) {
+  .dont-have-account-sign-up{
+    bottom: 4px;
+    top:inherit
+  }app-generic-form{
+    position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  }
+  :host{
+    background: #fff8ef;
+
+    }
+    .container-form{
+      background: #fff8ef;
+      display: inline-block;
+      height: 99vh;
+      width: 100vw;
+      }
+}
+.main-logo{
+  width:72px ;
+  height: 36px;
+  background: url('../../../assets/logo-orange.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 6px;
+  right: 9px;
+}
+
+app-login-info{
+  position: absolute;
+
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

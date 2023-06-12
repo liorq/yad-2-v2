@@ -1,0 +1,45 @@
+<app-container-stage2 [title]="'פרטים ליצירת קשר'" [currentStepNum]="6" [arrayAfterCloseSteps]="[6]" [arrayFirstCloseSteps]="[0,1,2,3,4]">
+  <div>{{'רגע לפני שמפרסמים את המודעה, נבדוק שפרטי הקשר נכונים'}}</div>
+
+      <app-study-result [topTitle]="'שימו לב, מספר נסיונות ההונאה ברשת בתקופה האחרונה הולך וגדל.'" [bigContainer]="'info-container2'" [subTitle]="'גלו ערנות ובדקו שהכסף הועבר אליכם לפני המסירה.\n\nהימנעו מהצעות הכוללות שירותי העברת תשלום או הובלה שאינם קיימים היום דרך האתר.'"  [picClass]="'orangeMega'"></app-study-result>
+
+    <div class="inputs-container" *ngFor="let input of inputs; let i = index" >
+
+
+      <div *ngIf="input.isInputContainerNeeded">
+    <app-text-input *ngIf="input.isInputNeeded" [containerClass]="'containerClass3'" [placeHolder]="input.placeholder" [inputClass]="'inputClass3'" [text]="input.text" [shouldUpdateAdSubject]="input.shouldUpdateAdSubject" [PropertyName]="input.PropertyName">
+      <div class="red" *ngIf="!fieldValidity[input.PropertyName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+
+    </app-text-input>
+    <app-text-input *ngIf="input.isAnotherInputNeeded" [placeHolder]="''" [text]="input.topBtnText"  [containerClass]="'containerClass3'" [inputClass]="'inputClass3'" [shouldUpdateAdSubject]="input.shouldUpdateAdSubject" [PropertyName]="input.secondPropertyName">
+      <div class="red" *ngIf="!fieldValidity[input.PropertyName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+
+       </app-text-input>
+
+  </div>
+
+
+
+  </div>
+  <ng-container *ngFor="let input of optionBtnArray">
+    <app-btn *ngIf="input.ngIf"
+             [text]="input.btnText"
+             [containerClass]="input.containerClass"
+             [iconClass]="input.iconClass"
+             (click)="addAnotherPersonHandler(input.iconClass)">
+    </app-btn>
+  </ng-container>
+
+
+
+
+<div class="checkboxs">
+  <app-text-checkbox-button  *ngFor="let item of checkboxItems" [containerClass]="item.classContainer" [textClass]="item.textClass" [text]="item.text"></app-text-checkbox-button>
+</div>
+
+<div class="container-btn">
+<app-btn (click)="navigate()" *ngFor="let btn of btns" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+</div>
+</app-container-stage2>
+
+

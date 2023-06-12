@@ -1,0 +1,13 @@
+.mobile_select{
+  height: 40px;
+  width: 100%;
+  padding: 0 10px 0 30px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  direction: rtl;
+  min-width: 90px;
+}
+option{
+  height: 40px;
+}

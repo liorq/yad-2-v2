@@ -1,0 +1,13 @@
+<div class="image-container">
+  <div class="image"></div>
+</div>
+<div class="subtitle1">אין לך מודעות פעילות</div>
+<app-btn id="savedBtn" [containerClass]="'savedAdsBtn'" [text]="'?מה תרצו לפרסם היום'"></app-btn>
+<div class="subtitle2">המודעה שלכם בידיים טובות</div>
+
+<div class="no-messages_boxes">
+  <div *ngFor="let box of savedAdsBoxes" class="no-messages-contianer">
+    <div class="no-messages-number">{{ box.number }}</div>
+    <div class="no-messages-text">{{ box.text }}</div>
+  </div>
+</div>

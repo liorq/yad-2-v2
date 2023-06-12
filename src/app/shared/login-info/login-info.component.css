@@ -1,0 +1,52 @@
+.icon-alert{
+  background: url('../../../assets/icon_alert.svg');
+  height: 60px;
+  width: 60px;
+}
+.icon-chat{
+  background: url('../../../assets/icon_chat.svg');
+  height: 60px;
+  width: 60px;
+}
+.icon-pub{
+  background: url('../../../assets/icon_publish.svg');
+  height: 60px;
+  width: 60px;
+}
+.icon-profile{
+  background: url('../../../assets/icon_profile.svg');
+  height: 60px;
+  width: 60px;
+}
+.container{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+}
+.login-item{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left:7px
+}
+.icons-container{
+  display: flex;
+  justify-content: space-between;
+}
+app-generic-container{
+  max-width: 450px;
+  width: 25vw;
+}
+.text{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+

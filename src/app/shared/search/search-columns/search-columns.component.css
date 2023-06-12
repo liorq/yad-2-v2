@@ -1,0 +1,55 @@
+*{
+  text-align: right;
+}
+li{
+  text-decoration: none;
+  list-style-type: none;
+}
+.search-column{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.input-wrapper{
+  display: flex;
+}
+
+.range_input_wrapper{
+  text-align: end;
+}
+app-btn{
+  height: fit-content;
+  position: relative;
+}
+#inputText{
+  width:194px;
+}
+
+.checkboxes{
+  display: flex;
+  flex-direction: column;
+}
+.from-a-z{
+    display: flex;
+
+}
+.ul{
+  width: 66px;
+  background: #fff;
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.30);
+}
+.li{
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.1);
+}
+.room-selectbox{
+  display: flex;
+  background: #fff;
+  height: 62px;
+  position: absolute;
+  top: -32px;
+  right: -131px;
+  gap: 5px;
+}

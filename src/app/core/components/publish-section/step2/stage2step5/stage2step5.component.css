@@ -1,0 +1,23 @@
+.container-inputs-file{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  gap:15px
+}
+.title{
+  font-size: 22.4px;
+  color: #333333;
+margin: .6em 0 .4em 0;
+}
+.title5{
+  text-align: right;
+  color: #333333;
+margin: .6em 0 .4em 0;
+}
+.container-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  cursor: pointer;
+}

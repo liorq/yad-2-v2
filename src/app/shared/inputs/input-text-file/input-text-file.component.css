@@ -1,0 +1,25 @@
+
+ input[type="file"] {
+
+  opacity: 0;
+  height: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.container{
+    border: 1px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  height: 165px;
+  width: 220px;
+  position: relative;
+}
+.file-custom{
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+    transform: translate(-50%, -50%);
+
+}

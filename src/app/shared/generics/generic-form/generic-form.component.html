@@ -1,0 +1,24 @@
+<div id="box">
+  <div *ngIf="!isSignInForm" class="formHeaderImageContainer">
+  <div  class="formHeaderImage"></div>
+</div>
+  <app-generic-container [arrayOfContent]="titleContainerObj.arrayOfContent" [containerClass]="titleContainerObj.containerClass"></app-generic-container>
+
+  <form [formGroup]="form">
+    <div *ngFor="let field of formFields let i=index" class="form-item">
+      <div class="input-title">{{ field.label }}</div>
+
+      <input required [ngClass]="{'eye':field.name=='password'&&field.passwordVisibilityObj.counter==0,'eye-close':field.name=='password'&&field.passwordVisibilityObj.counter==1}" [type]="field.type" [formControlName]="field.name" [placeholder]="field.placeholder" />
+      <div (click)="togglePasswordVisibility(field.passwordVisibilityObj)" class="hidden-svg"></div>
+      <div *ngIf="isFieldsEmpty" [class]="'red errorMessage'+i">{{"לא לשכוח להזין "+field.label}}</div>
+    </div>
+
+    <div *ngIf="isSignInForm" class="forget">{{"שכחתי סיסמה"}}</div>
+    <div *ngIf="isNavigationRequested" class="red errorMessage" [ngClass]="{'postionOfErrorSignUp':this.formTypes === 'SignUpForm'}">{{"אימייל או סיסמה אינם תקינים"}}</div>
+
+    <app-btn  *ngFor="let button of buttons" [containerClass]="button.containerClass" [text]="button.text" [iconClass]="button.iconClass" (click)="authHandler(button)"></app-btn>
+
+    <app-generic-container *ngIf="isSignInForm" [arrayOfContent]="[{label:'כניסה לסוחרי רכבים',class:'log-as'},{label:'|',class:'upper-line'},{label:'כניסה למתווכים',class:'log-as'}]" [containerClass]="'container-log-as'"></app-generic-container>
+  </form>
+  <app-generic-container [arrayOfContent]="accountOptionsObj.array" [containerClass]=" accountOptionsObj.containerClass"></app-generic-container>
+</div>

@@ -1,0 +1,32 @@
+<div (click)="toggleAd()" [class]="'container '+classContainer">
+  <app-btn (click)="isRemovePopUpOpen=!isRemovePopUpOpen"  *ngIf="isMyAd" [containerClass]="'ellipsis-vertical'" [text]="''">
+    <app-mini-pop-up *ngIf="isRemovePopUpOpen" [ad]="ad"></app-mini-pop-up>
+  </app-btn>
+
+  <div class="image-container" [ngClass]="{'custom-image-container':isMyAd}">
+    <div *ngIf="!isMyAd" (click)="onClick()" class="iconHart" [ngClass]="{'iconHartOn':isUserLikedAd}"></div>
+  </div>
+
+  <div class="top-column" >
+    <div *ngFor="let item of topColumn let i=index"  [class]="'top-column'+i" [ngClass]="{ 'price': isNumber(item.content),'custom-a-price': isNumber(item.content)&&isMyAd}">{{item.content}}</div>
+  </div>
+
+
+  <div class="middle-column" [ngClass]="{'custom-middle-column':isMyAd}">
+    <div *ngFor="let item of adsArray let i=index" [class]="'little-container'" [ngClass]="{'custom-little-container':isMyAd}">
+      <span [class]="'little-num'">{{item.num}}</span>
+      <span [class]="'little-text'">{{item.text}}</span>
+      <div *ngIf="isMyAd&&i!=0">|</div>
+    </div>
+  </div>
+
+
+
+  <div></div>
+</div>
+<div >
+<app-ad-description *ngIf="isToggleAdNeeded" [ad]="ad" [isMyAd]="isMyAd" [ngClass]="{'show':isOpenAd}" class="open-div"></app-ad-description>
+</div>
+
+
+

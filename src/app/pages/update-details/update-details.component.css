@@ -1,0 +1,85 @@
+.purple-circle{
+ color: #9a42d0;
+ font-size: 24px;
+ border-radius: 50%;
+ height: 82px;
+ width: 82px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid #9a42d0;
+}
+.container{
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+}
+.inputs-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: self-end;
+  gap: 27px 50px;
+  margin-bottom: 13px;
+}
+app-text-input{
+  width: fit-content;
+}
+.sub-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+ text-align: right;
+}
+.subTitle{
+  width: 275px;
+  text-align: right;
+  color: #999999;
+  font-size: 14px;
+}
+.container-btn{
+  width: 100%;
+  display: flex;
+  gap: 41px;
+  justify-content: space-between;
+  height: fit-content;
+  align-items: center;
+}
+app-btn{
+
+  height: fit-content;
+}
+@media screen and (min-width: 1250px) {
+
+  .purple-circle{
+    position: absolute;
+    right: 27%;
+    top: 6%;
+  }
+  .inputs-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: self-end;
+    gap: 27px 50px;
+    margin-bottom: 26px;
+    height: 280px;
+    width: 49vw;
+    flex-wrap: wrap;
+    position: relative;
+    right: 34%;
+    flex-direction: row;
+  }
+  .sub-container{
+    width: fit-content;
+  }
+
+}

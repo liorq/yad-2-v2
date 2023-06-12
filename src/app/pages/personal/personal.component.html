@@ -1,0 +1,17 @@
+<app-header [logoClass]='"rightSideLogo"' [text]="'איזור אישי'" [isTopLineNeeded]="true" [icons]="personalIcons"></app-header>
+
+<ng-container *ngFor="let sidebarConfig of personalSidebarConfigs">
+  <app-side-bar-nav
+    [id]="sidebarConfig.id"
+    [sideBarId]="sidebarConfig.sideBarId"
+    [RequiredActionsObj]="sidebarConfig.RequiredActionsObj"
+    [textColor]="sidebarConfig.textColor"
+    [sideBarData]="sidebarConfig.sideBarData"
+    [sideBarNavClass]="sidebarConfig.sideBarNavClass"
+    [isFastSearchIconsNeeded]="false"
+  ></app-side-bar-nav>
+</ng-container>
+
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>

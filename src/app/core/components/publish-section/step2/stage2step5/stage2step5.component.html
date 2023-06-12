@@ -1,0 +1,15 @@
+<app-container-stage2 [title]="'תמונות וסרטונים'" [currentStepNum]="5" [arrayAfterCloseSteps]="[5,6]" [arrayFirstCloseSteps]="[0,1,2,3]">
+      <app-study-result [subTitle]="'לא לדאוג, גם אם רואים את התמונה באופן לא ברור כעת, לאחר הפרסום הכל יראה כמו שצריך'"  [picClass]="'light-on'"></app-study-result>
+
+      <ng-container *ngFor="let item of dataArrays ">
+
+    <div class="{{item.titleClass}}">{{item.titleText}}</div>
+<div class="{{item.classContainer}}">
+      <app-input-text-file *ngFor="let item of item.arrayOfInputs" [iconClass]="item.iconClass" [text]="item.text"></app-input-text-file>
+</div>
+      </ng-container>
+<div class="container-btn">
+<app-btn (click)="navigate()" *ngFor="let btn of btns" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+</div>
+</app-container-stage2>
+

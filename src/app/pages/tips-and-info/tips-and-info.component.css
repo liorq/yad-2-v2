@@ -1,0 +1,247 @@
+.lockPic{
+  background: url('../../../assets/hand_img.svg');
+  height: 439px;
+  width:  419px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.fraud_title{
+  font-size: 36px;
+  font-weight: 500;
+  color: #363636;
+}
+.fraud_titleWrapper{
+  text-align: center;
+  position: relative;
+  top: 37px;
+}
+.fraud_header
+
+{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .lockPic{
+    background: url('../../../assets/hand_img.svg');
+    height: 50vw;
+    width:  50vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 10px;
+  }
+  .img-container{
+display: flex;
+justify-content: center;
+  }
+}
+.tabs{
+  display: flex;
+  justify-content: center;
+}
+ul {
+  list-style: none;
+}
+li{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.align{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.car-title{
+  margin-bottom:50px ;
+  line-height: 28px;
+margin: 42px auto 50px;
+font-size: 16px;
+text-align: center;
+}
+.tip-item_tipWrapper__7E64D{
+  font-size: 14px;
+  text-align: right;
+  line-height: 24px;
+  position: relative;
+  margin-bottom: 34px;
+}
+
+.tip-item_tipWrapper__7E64D .tip-item_strip__qRLcD{
+  width: 42px;
+  height: 1px;
+  background-color: #363636;
+  position: absolute;
+  right: 0;
+
+}
+
+.tip-item_tipWrapper__7E64D .tip-item_name__fMoMx{
+  position: relative;
+  font-weight: 700;
+  font-size: 40px;
+  background: linear-gradient(45deg,#ff7100,#f6a035);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent
+}
+
+
+.tip-item_tipWrapper__7E64D .tip-item_name__fMoMx{
+  margin: 20px 0 12px;
+  line-height:normal
+}
+
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 300 100% 'Helvetica Neue', Helvetica, Arial;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+
+
+.home{
+  margin-left: -208px;
+}
+
+.car {
+  margin-left:0px;
+}
+
+.yad2{
+  margin-left: 208px;
+
+}
+
+.homeOff{
+  background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=nadlan,%20active=no.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 104px;
+  height: 104px;
+}
+
+.carOff {
+  background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=vehicle,%20active=no.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 104px;
+  height: 104px;
+}
+
+.yad2Off{
+  background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=second%20hand,%20active=no.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 104px;
+  height: 104px;
+}
+
+.homeOn{
+background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=nadlan,%20active=yes.svg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+width: 104px;
+height: 104px;
+}
+
+.carOn {
+  background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=vehicle,%20active=yes.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 104px;
+  height: 104px;
+}
+
+.yad2On{
+  background: url('https://assets.yad2.co.il/mango/illustrations/property/Property%201=second%20hand,%20active=yes.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 104px;
+  height: 104px;
+}
+
+hr {
+  height: .25rem;
+  width: 104px;
+  margin: 0;
+  background:#ff7100;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.home-title{
+  text-align: center;
+}
+.yad2-title{
+  text-align: center;
+
+}
+.nadlan-tipsWrapper{
+
+}
+.tabs-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 780px) {
+  .tip-item_tipWrapper__7E64D{
+    width: 115px;
+  }
+  .nadlan-tipsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 6%;
+    justify-content: center;
+    padding: 64px;
+  }
+  .yad2_tipsWrapper__K5Z2V{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 6%;
+    justify-content: center;
+    padding: 64px;
+  }
+  .car_tipsWrapper__bqPow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px 6%;
+    justify-content: center;
+    padding: 64px;
+  }
+}

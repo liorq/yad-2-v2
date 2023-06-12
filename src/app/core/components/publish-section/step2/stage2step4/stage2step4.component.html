@@ -1,0 +1,15 @@
+
+<app-container-stage2   [title]="'תשלומים, תאריכים ועוד'" [currentStepNum]="4" [arrayAfterCloseSteps]="[4,5,6]" [arrayFirstCloseSteps]="[0,1,2]">
+    <app-study-result  [subTitle]="'על פי מחקר אונ תא עם מודעה משודרגת מוכרים במחיר גבוה יותר'" [topTitle]="'רגע לפני הוספת המחיר'" [picClass]="'megaphone'"></app-study-result>
+  <app-text-input *ngFor="let input of inputs; let i = index" [min]="input.min"  [type]="input.type" [containerClass]="'containerClass3'" [placeHolder]="input.placeholder" [inputClass]="'inputClass3'" [text]="input.text"  [shouldUpdateAdSubject]="input.shouldUpdateAdSubject" [PropertyName]="input.PropertyName">
+    <div class="red" *ngIf="!fieldValidity[input.PropertyName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+
+  </app-text-input>
+
+<div class="checkboxs" >
+  <app-text-checkbox-button *ngFor="let checkBox of checkboxes " [text]="checkBox.text" [shouldUpdateAd]="checkBox.shouldUpdateAdSubject" [PropertyName]="checkBox.PropertyName"></app-text-checkbox-button>
+</div>
+<div class="container-btn">
+  <app-btn (click)="navigate()" *ngFor="let btn of btns" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+  </div>
+</app-container-stage2>

@@ -1,0 +1,33 @@
+<div class="search-column">
+  <app-text-input  [shouldUpdateSearchAd]="true" id="inputText" [placeHolder]="'לדוגמה: פארק הים'" [textClass]="'slot-text'" [inputClass]="'inputClass'" [text]="'חפשו אזור, עיר, שכונה או רחוב'" [PropertyName]="'city'" ></app-text-input>
+
+  <div *ngFor="let item of searchItems let i=index">
+    <div>{{ item.label }}</div>
+    <app-btn (click)="isDropDownOpen[i]=!isDropDownOpen[i]" [textClass]="''" [iconClass]="'rectangleDown'" [containerClass]="item.containerClass" [text]="item.buttonText">
+
+      <div class="checkboxes" *ngIf="isDropDownOpen[i]">
+      <app-tree *ngIf="item.hasTree" [propertyName]="'arrayOfTypeProperty'" [newTreeData]="item.newTreeData"></app-tree>
+
+      <div *ngIf="!item.hasTree" class="from-a-z">
+    <app-btn (click)="isBtnRoomsOpen=!isBtnRoomsOpen;$event.stopPropagation()" >
+      <div class="room-selectbox">
+      <app-search-select-box *ngFor="let item of [ {PropertyName:'maxRooms'},{PropertyName:'minRooms'}]" [array]="searchColumnsRooms" [PropertyName]="item.PropertyName" [shouldUpdateSearchAd]="true"></app-search-select-box>
+</div>
+    </app-btn>
+</div>
+    </div>
+    </app-btn>
+  </div>
+
+  <div class="range_input_wrapper">
+    <label>מחיר</label>
+    <div class="input-wrapper">
+      <app-text-input *ngFor="let input of [ {PropertyName:'maxPrice',placeholder:'עד-'},{PropertyName:'minPrice',placeholder:'מ-'}]" [shouldUpdateSearchAd]="true" [containerClass]="'containerClass1'" [placeHolder]="input.placeholder" [inputClass]="'inputClass1'" [text]="''" [PropertyName]="input.PropertyName" [shouldUpdateSearchAd]="true"></app-text-input>
+
+    </div>
+  </div>
+
+  <app-btn (click)="isAdvanceSearchOpen=!isAdvanceSearchOpen" [textClass]="'advanceSearchText'" [iconClass]="'advanceSearchIcon'" [containerClass]="'advanceSearchContainerBtn'" [text]="'חיפוש מתקדם'"></app-btn>
+  <app-btn [textClass]="'textSearchBtn'" [iconClass]="'searchIcon'" [containerClass]="'searchContainerBtn'" [text]="'חיפוש'"></app-btn>
+<app-advance-search *ngIf="isAdvanceSearchOpen"></app-advance-search>
+</div>

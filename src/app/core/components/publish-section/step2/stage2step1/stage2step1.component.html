@@ -1,0 +1,17 @@
+
+
+<app-container-stage2 [title]="'?באיזו קטגוריה נפרסם היום'" [currentStepNum]="1" [arrayAfterCloseSteps]="[1,2,3,4,5,6]" [arrayFirstCloseSteps]="[]">
+  <div class="contianer">
+  <div *ngFor="let item of propertyCategories" class="text-image-container"
+  (click)="navigate()" >
+ <div class="{{item.class}}"></div>
+    <div class="text">{{item.title}}</div>
+  </div>
+</div>
+
+
+
+
+
+
+</app-container-stage2>

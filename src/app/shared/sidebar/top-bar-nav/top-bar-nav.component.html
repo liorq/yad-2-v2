@@ -1,0 +1,17 @@
+<app-user-circle></app-user-circle>
+  <nav class="nav" role="navigation">
+    <a href="#head-nav" class="menu-toggle">
+      <span class="icon-menu" aria-hidden="true"></span>
+      <span class="menu-toggle-text">menu</span>
+    </a>
+    <ul id="main-menu" class="top-nav menu clearfix">
+      <li *ngFor="let menuItem of topSidebarItems" class="menu-item">
+        <a href="{{ menuItem.title.url }}">{{ menuItem.title.label }}</a>
+        <ul *ngIf="menuItem.subItems" class="sub-menu">
+          <li *ngFor="let subItem of menuItem.subItems" class="menu-item">
+            <app-side-bar-item [item]='subItem'></app-side-bar-item>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>

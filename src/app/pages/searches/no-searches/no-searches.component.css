@@ -1,0 +1,93 @@
+.text_wrapper{
+  width: 219px;
+  display: flex;
+  flex-direction: column;
+}
+.title1{
+  width: fit-content;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  right: 15px;
+  top: 50px;
+  color: #363636;
+}
+.title2{
+  width: fit-content;
+  font-size: 24px;
+  font-weight: 400;
+  color: #363636;
+}
+.image{
+  background: url('../../../../assets/last_name_search.png');
+  width: 68px;
+  height: 68px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.big-container{
+  padding: 45px 0 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 97%;
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);;
+}
+.title-container{
+  position: relative;
+  height: 85px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+
+
+@media screen and (min-width: 880px) {
+  .text_wrapper{
+    width: 219px;
+    display: flex;
+    flex-direction: column;
+  }
+  .title1{
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    right: 15px;
+    top: 50px;
+    color: #363636;
+  }
+  .title2{
+    line-height: 1.75rem;
+    margin-bottom: 10px;
+  }
+.details{
+  text-align: right;
+}
+  .big-container{
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 97%;
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);;
+  }
+  .title-container{
+    position: relative;
+    height: 85px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+  }
+}

@@ -1,0 +1,28 @@
+
+<app-container-stage2 [title]="'כתובת הנכס'" [currentStepNum]="2" [arrayAfterCloseSteps]="[2,3,4,5,6]" [arrayFirstCloseSteps]="[0]">
+ <app-study-result [subTitle]="'על פי מחקר אונ תא עם מודעה משודרגת מוכרים מהר יותר'" [topTitle]="'הזמן שלך יקר לנו!'" [picClass]="'loader'"></app-study-result>
+
+<div class="contianer-for-inputs">
+  <app-select-box *ngFor="let selectBox of selectBoxes; let i = index" [text]="selectBox.text" [options]="selectBox.options" [selectedOption]="selectBox.selectedOption" [objName]="selectBox.objName" [shouldUpdateAdSubject]="selectBox.shouldUpdateAdSubject" >
+    <div class="red" *ngIf="!fieldValidity[selectBox.objName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+  </app-select-box>
+  <app-search-input-text ></app-search-input-text>
+
+  <app-text-input *ngFor="let input of inputs; let i = index" [containerClass]="'containerClass3'" [placeHolder]="input.placeholder" [inputClass]="'inputClass3'" [text]="input.text" [isInputDisabled]="input.isInputDisabled" [isTextUnderInputExpected]="input.isTextUnderInputNeeded" [TextUnderInput]="input.textUnderInput" [ClassTextUnderInput]="input.classTextUnderInput" [shouldUpdateAdSubject]="input.shouldUpdateAdSubject" [PropertyName]="input.PropertyName">
+    <div class="red" *ngIf="!fieldValidity[input.PropertyName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+
+  </app-text-input>
+
+</div>
+<ng-container *ngFor="let textBox of textBoxes">
+  <app-text-checkbox-button [shouldUpdateAd]="textBox.shouldUpdateAdSubject" [text]="textBox.text" [PropertyName]="textBox.PropertyName" [containerClass]="textBox.containerClass" [textClass]="textBox.textClass"></app-text-checkbox-button>
+</ng-container>
+
+<div class="container-btn">
+<app-btn (click)="navigate()" *ngFor="let btn of btns" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+</div>
+
+</app-container-stage2>
+
+
+

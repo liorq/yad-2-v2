@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="sub-container">
+    <div class="purple-circle">{{"שם"}}</div>
+
+    <ng-container *ngFor="let section of sections">
+      <div class="inputs-container">
+        <div class="title">{{section.title}}</div>
+        <div *ngIf="section.subTitle" class="subTitle">{{section.subTitle}}</div>
+
+        <app-text-input *ngFor="let input of section.inputs"
+          [PropertyName]="input.PropertyName"
+          [type]="input.type"
+          [shouldUpdateSearchAd]="input.shouldUpdateSearchAd"
+          [containerClass]="input.containerClass"
+          [inputClass]="input.inputClass"
+          [text]="input.text"
+        ></app-text-input>
+      </div>
+    </ng-container>
+    <div>
+      <div class="container-btn">
+        <app-btn  *ngFor="let btn of btns" (click)="userUpdateRequest(btn)" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+        </div>
+       </div>
+  </div>
+
+</div>

@@ -1,0 +1,180 @@
+*{
+  box-sizing: border-box;
+}
+.gray-side-bar{
+  position: absolute;
+  right: 0px;
+  width:28%;
+  background:#f0f0f0;
+  height: 100%;
+  max-width: 200px;
+}
+
+.container{
+  position: relative;
+  width: 100vw;
+  max-width: 693px;
+  height: 88vh;
+}
+.content{
+
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  width: 72%;
+}
+.title{
+position: absolute;
+right: 5px;
+font-size: 14px;
+font-weight: 500;
+top: 5px;
+}
+.description-of-the-asset{
+position: absolute;
+top: 42px;
+text-align: right;
+font-size: 14px;
+}
+.table-items{
+position: absolute;
+top:154px;
+display: flex;
+justify-content: space-around;
+height: 50px;
+width: 95%;
+flex-wrap: wrap;
+}
+.item{
+
+}
+.little-container{
+width: fit-content;
+display: flex;
+
+gap: 5px;
+height: fit-content;
+flex-direction: row-reverse;
+}
+.top-left{
+  width: 50%;
+  height: 25px;
+  text-align:end;
+}
+
+
+
+.top-right{
+  width: 43%;
+  height: 25px;
+  text-align:end;
+
+}.bottom-left{
+  width: 50%;
+  height: 25px;
+  text-align:end;
+
+}.bottom-right{
+  width: 43%;
+  height: 25px;
+  text-align:end;
+
+}
+.little-text{
+  font-weight: 500;
+  font-size: 12px;
+}
+
+
+.little-num{
+  font-weight: 400;
+  font-size: 12px;
+}
+.icon-container{
+  position: absolute;
+  top: 225px;
+  width:94%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 22px 20px;
+}
+app-side-bar-item{
+  width: 117px;
+  display: block;
+  position: relative;
+  right: 6px;
+}
+.last-deals{
+  position: absolute;
+  bottom:  43px;
+  text-align: right;
+  right: 0;
+}
+.ad-footer{
+  height: 43px;
+  border:1px solid #d8d8d8;
+  bottom:  0;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 5px;
+
+}
+.how-the-neighbors{
+  position: absolute;
+  bottom: 43px;
+  left: 0;
+  height: 188px;
+  width: 128px;
+  border: 1px solid #eee;
+}
+
+th {
+  padding: 5px; /* add padding between columns */
+  text-align: center; /* center the text */
+ font-weight: normal;
+  font-size: 14px;
+  color: #999999;
+}
+td{
+  font-size: 14px;
+  color: #363636;
+  text-align: center;
+}
+.icons-container{
+  width: 50px;
+
+}
+.ad-footer{
+  display: flex;
+  justify-content: space-between;
+}
+.gray-circle{
+  width: 30px;
+  height: 30px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-side-footer{
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+}
+.num-ad,.found-mistake{
+  width: max-content;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.content{
+  max-width: 493px;
+}
+.min-height{
+  height: 0;
+}

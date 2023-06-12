@@ -1,0 +1,32 @@
+ <app-container-stage2 [title]="'על הנכס'" [currentStepNum]="3" [arrayAfterCloseSteps]="[3,4,5,6]" [arrayFirstCloseSteps]="[0, 1]">
+<ng-container *ngFor="let selectBox of selectBoxes">
+      <app-select-box [text]="selectBox.text" [options]="selectBox.options" [selectedOption]="selectBox.selectedOption" [objName]="selectBox.objName" [shouldUpdateAdSubject]="selectBox.shouldUpdateAdSubject">
+        <div class="red" *ngIf="!fieldValidity[selectBox.objName]&&isNavigationRequested">{{ "שדה חובה" }}</div>
+
+      </app-select-box>
+    </ng-container>
+
+    <ng-container *ngFor="let item of [{val:'חניה',propertyName:'parking',choice:''},{val: 'מרפסת',propertyName:'porch',choice:''}]">
+      <div>{{ item.val }}</div>
+      <div class="container-choices">
+      <div class="choices">
+     <button [ngClass]="{'containerCheckedClass':item.choice==num.val}" (click)="updateAdSubject( item.propertyName, num.val+'',item );" class="num" *ngFor="let num of numbers" [id]="'id' + num.val">{{ num.val }}</button>
+      </div>
+       <div class="red" *ngIf="!fieldValidity[item.propertyName]&&isNavigationRequested">{{ "שדה חובה" }}</div> 
+
+    </div>
+    </ng-container>
+
+
+    <div class="icon-container">
+      <div  *ngFor="let item of buttonsWithIcons">
+        <app-btn [PropertyName]="item.title.propertyName" [shouldUpdateAdSubject]="true" [containerClass]="'containerClass92'" [iconClass]="item.title.iconPathClass" [containerCheckedClass]="'containerCheckedClass'"  [text]="item.title.label"></app-btn>
+      </div>
+    </div>
+
+    <app-apartment-description></app-apartment-description>
+    <div class="container-btn">
+      <app-btn (click)="navigate()" *ngFor="let btn of btns" [text]="btn.text" [containerClass]="btn.containerClass"></app-btn>
+      </div>
+
+</app-container-stage2>

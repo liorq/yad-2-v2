@@ -1,0 +1,6 @@
+<select [(ngModel)]="currentVal" (change)="onChange()" class="mobile_select">
+  <option value="0">הכל</option>
+  <option *ngFor="let floor of array"  [value]="floor.value">
+    <span dir="rtl">&rlm;{{ floor.label }}</span>
+  </option>
+</select>

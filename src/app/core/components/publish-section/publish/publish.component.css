@@ -1,0 +1,143 @@
+div{
+  width: fit-content;
+  height: auto;
+}
+.title2{
+  font-size: 24px;
+  color: #363636;
+}
+.line_1{
+  gap: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.line_2{
+  display: flex;
+    gap: 15px;
+      flex-direction: row-reverse;
+
+}
+.line_3{
+  display: flex;
+  gap: 15px;
+    flex-direction: row-reverse;
+
+}
+.publish{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.category-item{
+  box-shadow: 0 3px 9px rgba(0,0,0,.09);
+  border-radius: 15px;
+
+}
+ .row1 {
+width: 323px;
+height: 225px;
+max-width: 25vw;
+min-width: 209px;
+}
+ .row3 {
+width: 188px;
+height: 56px;
+max-width: 15vw;
+
+
+}
+ .row2 {
+width: 225px;
+height: 236px;
+max-width: 20vw;
+
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.categories{
+  display: flex;
+  gap: 15px;
+}
+.categoryCssWrap.row1{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+
+}
+.categoryCssWrap.row2{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+
+}
+.categoryCssWrap.row3{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+}
+.big-continaer{
+  gap: 25px;
+}
+.chooseCategoryWrap{
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.big-continaer{
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: 81vw;
+}
+.categoryCss{
+  max-width:33vw;
+
+}
+@media (max-width: 620px) {
+  /* .big-continaer{
+    flex-wrap: wrap;
+  } */
+
+  .row1 {
+    width: 33vw;
+    height: 225px;
+    max-width: inherit;
+    min-width: inherit;
+    }
+     .row3 {
+      width: 33vw;
+      height: 56px;
+    max-width: inherit;
+    min-width: inherit;
+
+
+    }
+     .row2 {
+      width: 33vw;
+      height: 236px;
+    max-width: none;
+
+
+    }
+
+
+}
+@media (max-width: 620px) {
+  .row3 {
+    width: 33vw;
+    height: 209px;
+    max-width: inherit;
+  min-width: inherit;
+
+
+  }
+}

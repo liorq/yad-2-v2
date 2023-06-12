@@ -1,0 +1,15 @@
+<div class="big-container">
+
+
+<div class="container">
+  <div  class="searchBy">{{"מיין לפי"}}</div>
+
+  <div class="mini-contianer" *ngFor="let button of buttons">
+    <app-btn (click)="toggleBtn(button.btnType)" id="{{button.id}}" [textClass]="'textBlack'" [iconClass]="button.icon" [containerClass]="button.containerClass" [text]="button.text">
+      <app-radio-btns [allAds]="allAds" *ngIf="button.isRadioBtnsNeeded&&isFilterOptionsOpen"></app-radio-btns>
+      <app-search-filter [allAds]="allAds" *ngIf="button.isTextBoxNeeded&&isFilterResultOpen"></app-search-filter>
+    </app-btn>
+  </div>
+
+</div>
+</div>

@@ -1,0 +1,39 @@
+.title_wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);
+}
+.favorite_page{
+  width: 695px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 22%;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-50%, -20%);
+
+}
+.wrapper-ad-img{
+  display: flex;
+  justify-content: center;
+}
+.wrapper_large_img{
+  display: flex;
+  justify-content: center;
+}
+.title{
+  display: flex;
+  justify-content: center;
+}
+.no_items_content{
+  display: flex;
+  justify-content: center;
+}
+img{
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);
+
+}

@@ -1,0 +1,13 @@
+<div class="container-big">
+  <app-close-step [isCircleChecked]="true" *ngFor="let num of arrayFirstCloseSteps" [num]="num"></app-close-step>
+  <div class="boxesWrap">
+    <div class="title contianer">
+      <app-circled-num [num]="currentStepNum"></app-circled-num>
+      <div>{{title}}</div>
+    </div>
+
+<ng-content ></ng-content>
+
+  </div>
+  <app-close-step *ngFor="let num of arrayAfterCloseSteps" [num]="num"></app-close-step>
+</div>

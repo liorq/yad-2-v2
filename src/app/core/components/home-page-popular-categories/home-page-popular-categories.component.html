@@ -1,0 +1,8 @@
+<div class="all-Categories">
+  <div *ngFor="let category of PopularCategoriesArray" class="continer-category">
+    <div class="square">
+      <div class="{{category.picClass+' pic'}}"></div>
+    </div>
+    <div class="text">{{category.title}}</div>
+  </div>
+</div>

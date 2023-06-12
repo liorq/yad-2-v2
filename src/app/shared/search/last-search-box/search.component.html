@@ -1,0 +1,34 @@
+<div class="container-title" ><div class="title3">חיפושים אחרונים</div><div (click)="removeSearch(0,searches.length)" class="delete-btn">מחק הכל</div></div>
+<div class="container-btns">
+  <div *ngFor="let item of [{text:'הכל',class:'last-search-container'},{text:'נדלן',class:'last-search-container-2'}]" [class]="item.class">{{ item.text }}</div>
+</div>
+
+<div class="big-container" *ngFor="let search of searches let i =index">
+<div class="latest_search latestsearchesPage" >
+  <div class="details_content">
+    <button class="delete_btn">
+    </button>
+    <a  class="container" >
+      <span class="title">{{ search.title }}</span>
+      <div class="details">
+        <div class="search_data" *ngFor="let item of search.details">
+          <span class="field_label">:{{ item.label }}&nbsp;</span>
+          <span class="line">{{'|'}}</span>
+          <span class="field_text">{{checkUndefined(item.value,0)}}</span>
+        </div>
+
+
+        <div class="svg-x" (click)="removeSearch(i,1)"></div>
+      </div>
+    </a>
+  </div>
+  <div>
+
+  </div>
+  <span class="hour">
+    <a [href]="search.link" >
+      {{ search.time }}
+    </a>
+  </span>
+</div>
+</div>

@@ -1,0 +1,20 @@
+
+<div class="container" [ngClass]="{'min-height':isMyAd}">
+<div class="gray-side-bar"></div>
+<div class="content">
+<app-home-info [ad]="ad"></app-home-info>
+<div class="table-items">
+<div *ngFor="let item of adsArray" class="{{item.containerClass}} little-container ">
+  <span [class]="item.numClass">{{item.num}}</span>
+  <span [class]="item.textClass">{{item.text}}</span>
+</div>
+</div>
+<div class="icon-container">
+  <div *ngFor="let item of sidebarItems" >
+    <app-side-bar-item  [textColor]="getItemColor(item)?'black':'gray'"  [item]='item.title'></app-side-bar-item>
+
+</div>
+</div>
+<app-ad-footer></app-ad-footer>
+</div>
+</div>

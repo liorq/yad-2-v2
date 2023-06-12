@@ -1,0 +1,24 @@
+<nav  id="{{sideBarId}}" class="{{sideBarNavClass}} show">
+  <app-user-details [textColor]="textColor" [RequiredActionsObj]="RequiredActionsObj" *ngIf="isUserDetailsNeeded"></app-user-details>
+  <div *ngIf="isSettingIconsNeeded" class="setting-icons">
+    <app-side-bar-item *ngFor="let item of settingSidebarItems" [hasMinimumTextContent]="true" [textColor]='textColor' [isColumnDirection]="true"  [item]='item.title'></app-side-bar-item>
+  </div>
+  <div *ngIf="isFastSearchIconsNeeded" class="fast-search-icons">
+   <span class="title">{{" חיפוש מהיר באתר"}}</span>
+    <button *ngFor="let item of FastSearchSidebarItems" class="'mini-buttons'">
+    <app-side-bar-item   [item]='item.title'></app-side-bar-item>
+   </button>
+  </div>
+
+    <ul   class="main-buttons">
+      <button [class]="isSideBarItemOpen[i]?'mini-buttons-after':''" [ngClass]="customClassObj" *ngFor="let item of sideBarData let i=index" (click)="openItem(i,item)">
+  <app-side-bar-item [textColor]='textColor'  [item]='item.title'></app-side-bar-item>
+        <ul [ngClass]="customHiddenObj" *ngIf="item.subItems!.length>0 ?? 0"   >
+          <li  *ngFor="let subItem of item.subItems" class="textSubItems">
+          <app-side-bar-item [item]='subItem'></app-side-bar-item>
+          </li>
+        </ul>
+      </button>
+    </ul>
+  </nav>
+

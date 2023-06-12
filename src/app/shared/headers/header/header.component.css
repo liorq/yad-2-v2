@@ -1,0 +1,151 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+
+}
+.logo{
+  background: url('../../../../assets/logo-orange.svg');
+  height: 24px;
+  width: 50px;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-style:none;
+}
+.rightSideLogo{
+  position: absolute;
+  right: 10px;
+}
+.leftSideHeart{
+  position: absolute;
+  left: 10px;
+}
+.leftSideMessage{
+  position: absolute;
+  left: 30px;
+}
+.header{
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.10);
+ z-index: 1;
+ position: relative;
+}
+.svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 1rem;
+}
+svg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navBarIconForPersonal{
+
+}
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 880px) and (max-width: 985px) {
+  .icon-container{
+display: none;
+  }}
+.navBarIcon{
+  height: 29px;
+  position: absolute;
+  right:66px;
+
+  padding: 3px;
+  display: block;
+  margin: auto;
+}
+.orange-line{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: orangered;
+}
+
+.navBarIconForPersonal{
+  /* height: 29px; */
+  width: 29px;
+  position: absolute;
+  right:25px;
+/* padding: 1px; */
+  display: block;
+  margin: auto;
+}
+.loveIcon
+{
+
+  position: absolute;
+  left:65px;
+}
+.messagesIcon{
+  position: absolute;
+  left:25px;
+}
+#navBarIconForPersonal{
+  position: absolute;
+  right: 67px;
+  height: 32px;
+  }
+@media screen and (min-width: 880px)  {
+  #navBarIconForPersonal{
+  display: none;
+  }
+  .header{
+    height: 95px;
+  }
+  .logo{
+    width: 74px;
+    height: 36px;
+  }
+}
+li{
+  list-style-type: none;
+}
+.main-buttons{
+  display: flex;
+}
+.sidenav
+{
+  position: inherit;
+  right: inherit;
+  top: inherit;
+
+}
+
+@media screen and (max-width: 880px) {
+  .none{
+    display: none;
+  }
+
+}
+
+
+@media screen and (min-width: 880px) {
+  .navBarIcon{
+    display: none;
+
+  }
+.option-icon_icon__JGLUV{
+  display: none;
+}
+}
+.text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #363636;
+  position: absolute;
+  right: 99px;
+}

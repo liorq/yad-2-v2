@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="title">{{"מאפייני דירה"}}</div>
+  <div class="advanced-search-row">
+    <app-text-checkbox-button *ngFor="let btn of arrayOfCheckBox" [text]="btn.text" [PropertyName]="btn.PropertyName" [shouldUpdateSearchAd]="true"></app-text-checkbox-button>
+  </div>
+
+  <div class="second-part">
+
+    <div class="container-from-a-z">
+      <span>{{"קומה"}}</span>
+      <div class="from-a-z">
+        <app-search-select-box *ngFor="let item of [{PropertyName:'minFloor'}, {PropertyName:'maxFloor'}]" [PropertyName]="item.PropertyName" [shouldUpdateSearchAd]="true" [array]="floors"></app-search-select-box>
+      </div>
+    </div>
+
+    <div class="range_input_wrapper">
+      <label class="title2">{{'גודל דירה (במ"ר)'}}</label>
+      <div class="input-wrapper">
+        <app-text-input *ngFor="let input of [{PropertyName:'minSqm',placeholder:'מ-'}, {PropertyName:'maxSqm',placeholder:'עד-'}]" [shouldUpdateSearchAd]="true" [containerClass]="'containerClass2'" [placeHolder]="input.placeholder" [PropertyName]="input.PropertyName" [inputClass]="'inputClass2'" [text]="''"></app-text-input>
+      </div>
+    </div>
+
+    <div class="date-input-container">
+      <span>{{"תאריך כניסה"}}</span>
+      <app-text-input [PropertyName]="'dateOfEntering'" [type]="'date'" [shouldUpdateSearchAd]="true" [containerClass]="'containerClass'"  [inputClass]="'inputClass'" [text]="''"></app-text-input>
+    </div>
+
+    <app-text-checkbox-button [PropertyName]="'immediate'" [text]="textValue" [shouldUpdateSearchAd]="true" [PropertyName]="'immediate'"></app-text-checkbox-button>
+  </div>
+
+  <app-free-search></app-free-search>
+  <app-advance-search-options></app-advance-search-options>
+</div>

@@ -1,0 +1,50 @@
+<div class="fraud_container__2Wz1s">
+  <div class="fraud_header">
+    <div class="fraud_headerWrapper__c_oEd">
+      <div class="fraud_titleWrapper">
+        <div class="fraud_title">
+          <p *ngFor="let title of titles">{{ title }}</p>
+        </div>
+
+        <div class="fraud_text">
+          <p *ngFor="let sentence of sentences">{{ sentence }}</p>
+        </div>
+      </div>
+      <div class="img-container">
+        <div class="lockPic"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fraud_chooseCategory__L_4lL">
+    <div class="fraud_chooseCategoryWrapper__L3F2b">
+      <div class="tabs-container">
+        <ul class="tabs">
+          <li *ngFor="let tab of tabs">
+            <span class="align" (click)="handleTabClick(tab.id)">
+              <span>{{ tab.title }}</span>
+              <div [ngClass]="tab.iconClass"></div>
+            </span>
+          </li>
+        </ul>
+        <hr [ngClass]="ngClass" class="hr" />
+      </div>
+          <div *ngFor="let item of arrayOfData">
+              <div *ngIf="item.ngIf"  >
+            <div class="{{item.classTitle}}">
+             {{item.titleText}}
+            </div>
+            <div class="{{item.classWrapper}}">
+               <div *ngFor="let obj of item.array">
+                <div class="{{ obj.bigContainer }}">
+                  <div class="{{ obj.classLine }}"></div>
+                  <div class="{{ obj.classNum }}">{{ obj.num }}</div>
+                  <div class="{{ obj.classText }}">{{ obj.text }}</div>
+                  <div class="{{ obj.classBottomDiv }}"></div>
+                </div>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>

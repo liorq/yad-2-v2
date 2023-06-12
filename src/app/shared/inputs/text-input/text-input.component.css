@@ -1,0 +1,87 @@
+*{
+  box-sizing: border-box;
+  direction: rtl;
+}
+.slot-text{
+  width: max-content;
+  display: block;
+}
+.inputClass{
+  font-size: 0.875rem;
+  padding: 10px;
+  width: 100%;
+  max-width: 194px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  height: 40px;
+  outline: none;
+}
+.inputClass2{
+  font-size: 0.875rem;
+  padding: 10px;
+  width:123px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  height: 40px;
+  outline: none;
+}
+.mini-text{
+  font-size: 12px;
+  color: #666666;
+}
+.inputClass1{
+  font-size: 0.875rem;
+  padding: 10px;
+  width:56px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  height: 40px;
+  outline: none;
+}
+.containerClass1{
+width: 56px;
+}
+.containerClass2{
+  width: 123px;
+}
+.inputClass3{
+
+    width: 262px;
+    text-indent: 8px;
+    height:42px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: Rubik,sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    max-width:40vw;
+}
+.containerClass3{
+
+    width: 262px;
+
+}
+.containerClass4{
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  flex-direction: column;
+  width:288px ;
+}
+.inputClass6{
+  font-size: 0.875rem;
+  padding: 10px;
+  width: 288px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 42px;
+  outline: none;
+}
+/* inputClass3  */
+@media (max-width: 880px) {
+
+
+
+}
