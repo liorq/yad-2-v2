@@ -51,9 +51,12 @@ export class GenericFormComponent {
     console.log(this.formTypes)
     if (button.type == "connect") {
       let res: any = await (this.formTypes === 'SignUpForm' ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
+      console.log(res)
       this.setToken(res);
      const isValidToken=res?.error?.text;
       if(this.formTypes === 'SignInForm'&&isValidToken){
+              this.setToken(res);
+
        this.router.navigate([''])
       }
       else if(this.formTypes === 'SignUpForm'&&isValidToken){

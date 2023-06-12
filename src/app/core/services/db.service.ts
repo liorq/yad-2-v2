@@ -125,6 +125,11 @@ export class DbService {
       const res = await this.http
         .post(this.url + "api/Account", u, { headers: this.getHttpHeader() })
         .toPromise();
+
+        if(res){
+          const result=await this.signIn(u)
+          return result;
+        }
       return res;
     } catch (err) {
       return err;
