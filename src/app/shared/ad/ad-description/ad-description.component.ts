@@ -11,6 +11,7 @@ export class AdDescriptionComponent implements OnInit{
   @Input()textColor:string='black';
   @Input()ad:any;
     @Input()isMyAd!:boolean;
+
     ngObj:any;
   adsArray:any[]=[]
   sidebarItems = adDescriptionSidebarItems

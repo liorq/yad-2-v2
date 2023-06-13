@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class HomeInfoComponent {
 @Input()ad:any;
+isReadMoreBtnActive=false;
+
+openDis(){
+  this.isReadMoreBtnActive=!this.isReadMoreBtnActive
+  console.log("hello",this.isReadMoreBtnActive)
+}
 }

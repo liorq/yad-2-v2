@@ -28,6 +28,8 @@
 
 .middle-column{
   border-top: 1px solid rgba(0,0,0,.1);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .image-container{
@@ -100,6 +102,14 @@ gap: 5px;
   width: fit-content;
 
 }
+.top-column1{
+  font-size: 14px;
+
+}
+.top-column2{
+  font-size: 14px;
+
+}
 .street{
   font-size: 14px;
   width: fit-content;
@@ -161,4 +171,7 @@ top: 8px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.little-num,.little-text{
+  font-size: 12px;
 }

@@ -1,4 +1,8 @@
-<div  class="title">{{"תיאור הנכס"}}</div>
-<div class="description-of-the-asset">
-{{ad.des}}
+<div class="title">{{"תיאור הנכס"}}</div>
+<div class="description-of-the-asset" [ngClass]="{'min-height-2': !isReadMoreBtnActive, 'max-height': isReadMoreBtnActive}">
+  {{ad.des}}
+</div>
+<div class="read-more-container">
+<div *ngIf="!isReadMoreBtnActive" (click)="openDis()" class="read-more">קרא עוד</div>
+<div *ngIf="isReadMoreBtnActive" (click)="openDis()" class="read-more">פחות</div>
 </div>

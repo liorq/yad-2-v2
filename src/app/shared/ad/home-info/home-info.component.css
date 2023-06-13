@@ -1,0 +1,17 @@
+.max-height{
+  max-height: max-content;
+}
+.min-height-2{
+max-height: 35px;
+}
+.read-more{
+  color: #ff7100;
+  line-height: 1.0625rem;
+  font-size: 14px;
+  text-align: right;
+  text-decoration: underline #ff7100;
+  cursor: pointer;
+}
+.read-more-container{
+
+}
