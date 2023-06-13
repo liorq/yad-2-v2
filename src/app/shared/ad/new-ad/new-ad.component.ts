@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DbService } from 'src/app/core/services/db.service';
 import { apartment } from 'src/app/data/interfaces';
 
@@ -14,6 +14,8 @@ export class NewAdComponent implements OnInit{
  @Input()ad:any;
  @Input()isToggleAdNeeded:boolean=true;
 @Input()isRemovePopUpOpen:boolean=false;
+@Output() isUserRemoveLike: EventEmitter<boolean> = new EventEmitter<boolean>();
+@Input()fatherComponent!:string;
  @Input()classContainer!:string
 adsArray:any[]=[]
 topColumn:any[] = [];
@@ -37,7 +39,11 @@ async ngOnInit() {
     { content: `${typeOfProperty}, ${city}  ${city}` },
   ];
 }
+removeLike() {
 
+console.log("hi")
+  this.isUserRemoveLike.emit(true);
+}
 async isAdLikedByUser() {
   const res:any = await this.dbSvc.getAllMyLikedAds();
   this.myLikedMessages = res || [];
@@ -47,12 +53,13 @@ async isAdLikedByUser() {
 
 
 
+
 isNumber(content: string): boolean {
   return /^₪?\d+(?: \₪?)?$/.test(content);
 }
 
 
-
+////change the name of the function
 async onClick(){
 this.isUserLikedAd=!this.isUserLikedAd;
 

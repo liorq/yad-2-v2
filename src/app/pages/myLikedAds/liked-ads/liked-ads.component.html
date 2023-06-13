@@ -1,0 +1,23 @@
+<div class="favorite_page">
+  <div class="title_wrapper">
+    <h1 class="page_title">מודעות שאהבתי</h1>
+    <div class="wrapper breadcrumbs">
+      <app-btn id="disabled-btn" [containerClass]="'disabled-btn'" [iconClass]="'men'" [text]="'נגישות'"></app-btn>
+    </div>
+  </div>
+  <div class="title_wrapper">
+    <div class="right-side-title">
+      <h1 class="page_title-3">מודעות נדל"ן</h1>
+      <app-btn id="nadlan-btn" [containerClass]="'print-button'" [iconClass]="'print-icon'" [textClass]="'text-max-content-print'" [text]="'הדפסת הרשימה'"></app-btn>
+    </div>
+    <div class="wrapper breadcrumbs">
+      <app-btn id="print-btn" [containerClass]="'share-btn'" [iconClass]="'share-icon'" [text]="'שיתוף'"></app-btn>
+    </div>
+  </div>
+
+  <div class="ads-container">
+    <div *ngFor="let ad of allAds">
+      <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
+    </div>
+  </div>
+</div>

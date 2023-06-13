@@ -7,7 +7,6 @@ import { PersonalComponent } from './pages/personal/personal.component';
 import { SavedAdsComponent } from './pages/saved-ads-page/saved-ads/saved-ads.component';
 import { LastSearchesComponent } from './pages/searches/last-searches/last-searches.component';
 import { TipsAndInfoComponent } from './pages/tips-and-info/tips-and-info.component';
-import { MyAdsComponent } from './pages/my-ads/my-ads.component';
 import { NewAdComponent } from './shared/ad/new-ad/new-ad.component';
 import { AdDescriptionComponent } from './shared/ad/ad-description/ad-description.component';
 import { RealestateComponent } from './pages/realestate/realestate.component';
@@ -23,6 +22,7 @@ import { Stage2step6Component } from './core/components/publish-section/step2/st
 import { Stage2step7Component } from './core/components/publish-section/step2/stage2step7/stage2step7.component';
 import { Stage2FinalComponent } from './core/components/publish-section/step2/stage2-final/stage2-final.component';
 import { UpdateDetailsComponent } from './pages/update-details/update-details.component';
+import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
 
 
 const routes: Routes = [
@@ -52,7 +52,7 @@ const routes: Routes = [
     { path: 'saved-ads', component: SavedAdsComponent },
     { path: 'last-searches', component: LastSearchesComponent },
     { path: 'tips-and-info', component: TipsAndInfoComponent },
-    { path: 'my-ads', component: MyAdsComponent }
+    { path: 'my-liked-ads', component: MyLikedAdsComponent }
 
   ]},
 

@@ -30,7 +30,6 @@ import { GenericContainerComponent } from './shared/generics/generic-container/g
 import { GenericFormComponent } from './shared/generics/generic-form/generic-form.component';
 import { LoginInfoComponent } from './shared/login-info/login-info.component';
 import { SubHeaderComponent } from './shared/headers/sub-header/sub-header.component';
-import { MyAdsComponent } from './pages/my-ads/my-ads.component';
 import { FormsModule } from '@angular/forms';
 import { ChecklistDatabase, TreeComponent } from './shared/checkBoxs/tree/tree.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -88,6 +87,9 @@ import { NoActiveAdsComponent } from './pages/saved-ads-page/no-active-ads/no-ac
 import { MiniPopUpComponent } from './shared/mini-pop-up/mini-pop-up.component';
 import { NoSearchesComponent } from './pages/searches/no-searches/no-searches.component';
 import { SearchComponent } from './shared/search/last-search-box/search.component';
+import { LikedAdsComponent } from './pages/myLikedAds/liked-ads/liked-ads.component';
+import { NoLikedAdsComponent } from './pages/myLikedAds/no-liked-ads/no-liked-ads.component';
+import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
 
 
 
@@ -122,7 +124,6 @@ import { SearchComponent } from './shared/search/last-search-box/search.componen
     GenericFormComponent,
     LoginInfoComponent,
     SubHeaderComponent,
-    MyAdsComponent,
     TreeComponent,
     DialogComponent,
     UpdateDetailsComponent,
@@ -171,6 +172,9 @@ import { SearchComponent } from './shared/search/last-search-box/search.componen
     MiniPopUpComponent,
     NoSearchesComponent,
     SearchComponent,
+    LikedAdsComponent,
+    NoLikedAdsComponent,
+    MyLikedAdsComponent,
 
   ],
   imports: [

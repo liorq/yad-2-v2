@@ -1,0 +1,32 @@
+.page_title-3{
+  color: #363636;
+  font-weight: 400;
+  padding: 6px 0 0;
+  font-size: 18px;
+}
+.right-side-title{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+.title_wrapper{
+  box-shadow: none;
+  max-width: 765px;
+}
+.favorite_page{
+  gap: 15px;
+}
+.ads-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+app-new-ad{
+  display: block;
+  max-height: 110px;
+  overflow: hidden;
+  box-shadow: 0 2.64px 7.94px rgba(0,0,0,.12);
+
+}
