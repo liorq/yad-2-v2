@@ -893,9 +893,9 @@ export const finalMessageLines= [
 ];
 
 export const finalLinks = [
-  { href: "/publish", class: "publishLink", text: "פרסום מודעה נוספת" },
-  { href: "", class: "homePageLink", text: "לאזור האישי" },
-  { href: "https://www.yad2.co.il", class: "homePageLink", text: "לדף הבית" }
+  { href: "/publish/stage-1", class: "publishLink", text: "פרסום מודעה נוספת" },
+  { href: "/personal/update", class: "homePageLink", text: "לאזור האישי" },
+  { href: "", class: "homePageLink", text: "לדף הבית" }
 ];
 
 export const adDescriptionSidebarItems = [

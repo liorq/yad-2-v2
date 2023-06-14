@@ -66,6 +66,10 @@ this.isUserLikedAd=!this.isUserLikedAd;
 const {apartmentId}=this.ad
 const res=await this.dbSvc.toggleLikedAdd(apartmentId,this.isUserLikedAd);
 console.log(res)
+if(this.fatherComponent=='likedAds'){
+  ////remove this from the subject
+  console.log("koko")
+}
 }
 toggleAd(){
   this.isOpenAd=!this.isOpenAd
