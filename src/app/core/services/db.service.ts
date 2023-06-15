@@ -136,9 +136,10 @@ export class DbService {
     }
   }
   async updateUserInfo(userUpdateRequest:userUpdateRequest) {
+    console.log(userUpdateRequest)
     try {
       const res = await this.http
-        .post(this.url + `api/Account/update/`,userUpdateRequest, {
+        .post(this.url + `api/Account/update`,userUpdateRequest, {
           headers: this.getHttpHeader(),
         })
         .toPromise();
@@ -147,10 +148,11 @@ export class DbService {
       return err;
     }
   }
+  ///duplicate
   async getUserObject() {
     try {
       const res = await this.http
-        .get(this.url + `api/Account/update/`, {
+        .get(this.url + `api/Account`, {
           headers: this.getHttpHeader(),
         })
         .toPromise();

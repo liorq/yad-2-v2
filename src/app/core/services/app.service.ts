@@ -35,7 +35,7 @@ export class AppService {
   }
   updateUserRequest(value:any){
     this.userUpdateRequestSubject.next(Object.assign( this.userUpdateRequestSubject.getValue()||{},value))
-  console.log(this.userUpdateRequestSubject)
+  console.log(this.userUpdateRequestSubject.getValue())
   }
   updateAdFilterSubject(value:any){
     this.adFilterSubject.next(Object.assign( this.adFilterSubject.getValue()||{},value))

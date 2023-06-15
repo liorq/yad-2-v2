@@ -6,10 +6,10 @@
     </a>
     <ul id="main-menu" class="top-nav menu clearfix">
       <li *ngFor="let menuItem of topSidebarItems" class="menu-item">
-        <a href="{{ menuItem.title.url }}">{{ menuItem.title.label }}</a>
+        <a routerLink="{{ menuItem.title.url }}">{{ menuItem.title.label }}</a>
         <ul *ngIf="menuItem.subItems" class="sub-menu">
           <li *ngFor="let subItem of menuItem.subItems" class="menu-item">
-            <app-side-bar-item [item]='subItem'></app-side-bar-item>
+            <app-side-bar-item [item]='subItem' routerLink="{{subItem.url}}"></app-side-bar-item>
           </li>
         </ul>
       </li>

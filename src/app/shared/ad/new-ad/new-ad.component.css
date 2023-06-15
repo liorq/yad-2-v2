@@ -66,7 +66,7 @@ background-position-y:-3.5px;
 .middle-column{
   display: flex;
   justify-content: space-between;
-  width: calc(100% - 23%);
+  width: calc(100% - 133px);
   position: absolute;
   bottom: 0;
 }
@@ -174,4 +174,18 @@ top: 8px;
 }
 .little-num,.little-text{
   font-size: 12px;
+}
+.image-icon{
+  width: 44px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+  position: relative;
+  top: 2px;
+  left: 2px;
 }

@@ -94,12 +94,12 @@ export class UpdateDetailsComponent implements OnInit{
       ]
     }
   ];
-  userUpdateRequest(btn:any){
+  async userUpdateRequest(btn:any){
     ///userUpdateRequest
     console.log("wd")
    if(btn.requiresUserRequestUpdate){
-    const userUpdateRequest:userUpdateRequest=this.appSvc.userUpdateRequestSubject.getValue()
-   const res= this.dbSvc.updateUserInfo(userUpdateRequest);
+    const obj:userUpdateRequest=this.appSvc.userUpdateRequestSubject.getValue()
+   const res=await this.dbSvc.updateUserInfo(obj);
    console.log(res)
    }
   }

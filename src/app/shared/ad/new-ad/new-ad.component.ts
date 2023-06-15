@@ -57,10 +57,13 @@ async isAdLikedByUser() {
 isNumber(content: string): boolean {
   return /^₪?\d+(?: \₪?)?$/.test(content);
 }
-
+stopProp(event:Event){
+  event.stopPropagation()
+}
 
 ////change the name of the function
-async onClick(){
+async onClick(event:Event){
+  event.stopPropagation()
 this.isUserLikedAd=!this.isUserLikedAd;
 
 const {apartmentId}=this.ad
