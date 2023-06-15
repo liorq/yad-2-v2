@@ -108,8 +108,16 @@ gap: 5px;
 }
 .top-column2{
   font-size: 14px;
+width: max-content;
+}
+.top-column{
+width: 33vw;
+overflow: hidden;
+text-overflow: ellipsis;
+
 
 }
+
 .street{
   font-size: 14px;
   width: fit-content;
@@ -188,4 +196,16 @@ top: 8px;
   position: relative;
   top: 2px;
   left: 2px;
+}
+@media (min-width: 423px) and (max-width:615px) {
+  .top-column{
+ width: 20vw;
+
+  }
+}
+@media (min-width: 100px) and (max-width:423px) {
+  .top-column{
+ display: none;
+
+  }
 }
