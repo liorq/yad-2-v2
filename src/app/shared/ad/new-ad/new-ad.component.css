@@ -38,7 +38,7 @@
   top: 5px;
   border-radius:5px;
   width: 125px;
-  height: 100px;
+  height: 91%;
   background: url('https://img.yad2.co.il/Pic/202304/29/2_1/o/y2_1_02676_20230429204411.jpeg?l=5&c=3&w=195&h=117');
 }
 .iconHart{
@@ -279,5 +279,22 @@ color: #363636;
 }
 .open-container{
   height: 120px;
+}
+.open-image-container{
+  width: 195px;
+}
+.open-middle-column{
+  border-left: 0;
+  border-right: 0;
+  position: absolute;
+  right: 29%;
+  top: 54%;
+  width: 186px;
+
+}
+.open-top-column{
+  overflow: initial;
+  position: absolute;
+  right: 32%;
 }
 }
