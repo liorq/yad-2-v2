@@ -27,7 +27,13 @@
       <div *ngIf="isMyAd&&i!=0">|</div>
     </div>
   </div>
-  <div></div>
+
+  <div class="left-col">
+    <div class="new-price">{{ad.price | currency:'ILS':'symbol':'1.2-2'}}</div>
+<div class="press">{{"לחצו לפרטים"}}</div>
+<div class="today">{{"עודכן היום"}}</div>
+
+  </div>
 </div>
 <div >
 <app-ad-description *ngIf="isToggleAdNeeded" [ad]="ad" [isMyAd]="isMyAd" [ngClass]="{'show':isOpenAd}" class="open-div"></app-ad-description>

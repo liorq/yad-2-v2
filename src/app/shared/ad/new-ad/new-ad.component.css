@@ -204,6 +204,9 @@ top: 8px;
  text-overflow: ellipsis;
   }
 }
+.left-col{
+  display: none;
+}
 @media (min-width: 100px) and (max-width:423px) {
   .top-column{
  display: none;
@@ -215,7 +218,17 @@ top: 8px;
   color: #363636;
 }
 @media (min-width: 880px) and (max-width:1800px) {
-.container{
+  .top-column{
+    height: 81px;
+  }
+.today{
+  font-size: 13px;
+  color: #999;
+}
+.press{
+  display: none;
+}
+    .container{
   width: 695px;
   height: 86px;
 }
@@ -245,5 +258,22 @@ font-size: 16px;
 .little-text{
   color: rgba(0,0,0,.5);
   font-size: 14px;
+}
+.left-col{
+  padding: 0 0 0 15px;
+display: block;
+width: 166px;
+height: 86px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.top-column1{
+  font-size: 16px;
+}
+.new-price{
+font-size: 16px;
+color: #363636;
+
 }
 }
