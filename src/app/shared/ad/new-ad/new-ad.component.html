@@ -2,6 +2,7 @@
 <div (click)="toggleAd()" [class]="'container '+classContainer">
   <app-btn (click)="stopProp($event)"  *ngIf="isOpenAd" [iconClass]="'phone-icon'" [containerClass]="'phone-container'" [text]="'הצגת מספר טלפון'">  </app-btn>
   <app-btn  (click)="stopProp($event)" *ngIf="isOpenAd" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
+  <app-btn (click)="stopProp($event)"   [iconClass]="'share-ads-icon'" [containerClass]="'share-ads-container'" >  </app-btn>
 
   <app-btn (click)="isRemovePopUpOpen=!isRemovePopUpOpen"  *ngIf="isMyAd" [containerClass]="'ellipsis-vertical'" [text]="''">
     <app-mini-pop-up *ngIf="isRemovePopUpOpen" [ad]="ad"></app-mini-pop-up>
