@@ -2,8 +2,18 @@
   <div class="icon-map"></div>
   <div class="icon-heart"></div>
   <div class="icon-x"></div>
+</div>
+<div class="nav-bar-popup-desktop">
+  <div class="right-col">
+  <app-btn (click)="stopProp($event)"    [containerClass]="'black-map-icon-container'" [iconClass]="'black-map-icon'" [text]="'מפה'">  </app-btn>
+  <app-btn (click)="stopProp($event)"    [containerClass]="'map-open-icon-container'" [iconClass]="'map-open-icon'" [text]="'תצוגת רחוב'">  </app-btn>
+  </div>
+  <app-btn (click)="navigateToImageGallery($event)"    [containerClass]="'close-gal-icon-container'" [iconClass]="'close-gal-icon'" [text]="'סגירת גלריה'">  </app-btn>
+
 
 </div>
+
+
 <ul class="flex-gallery">
   <li *ngFor="let item of imageItems; let i = index" [class]="'grid-gallery-item image-index-' + i">
     <img [src]="item.imageUrl" alt="" [class]="'media'+i">
