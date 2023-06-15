@@ -1,0 +1,16 @@
+<div class="nav-bar-popup">
+  <div class="icon-map"></div>
+  <div class="icon-heart"></div>
+  <div class="icon-x"></div>
+
+</div>
+<ul class="flex-gallery">
+  <li *ngFor="let item of imageItems; let i = index" [class]="'grid-gallery-item image-index-' + i">
+    <img [src]="item.imageUrl" alt="" [class]="'media'+i">
+  </li>
+</ul>
+<div class="footer">
+    <app-btn (click)="stopProp($event)"    [containerClass]="'message-container'" [text]="'הודעה'">  </app-btn>
+ <app-btn (click)="stopProp($event)"   [containerClass]="'call-container'" [text]="'שיחה'">  </app-btn>
+
+</div>
