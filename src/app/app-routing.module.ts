@@ -23,14 +23,16 @@ import { Stage2step7Component } from './core/components/publish-section/step2/st
 import { Stage2FinalComponent } from './core/components/publish-section/step2/stage2-final/stage2-final.component';
 import { UpdateDetailsComponent } from './pages/update-details/update-details.component';
 import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
+import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
 
 
 const routes: Routes = [
-////PublishComponent
+
   { path: 'home', component: HomePageComponent },
   { path: 'new-ad', component: NewAdComponent },
   { path: 'ad-des', component: AdDescriptionComponent },
   { path: 'realestate', component: RealestateComponent },
+  { path: 'image-gallery', component: ImageGalleryComponent },
   { path: 'advance', component: AdvanceSearchComponent },
 { path: 'publish' , children: [
     { path: 'stage-1', component: PublishComponent },

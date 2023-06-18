@@ -229,6 +229,9 @@ top: 8px;
 .press{
   display: none;
 }
+.left-col:hover + .press{
+  display: block;
+}
     .container{
   width: 695px;
   height: 86px;
@@ -296,5 +299,9 @@ color: #363636;
   overflow: initial;
   position: absolute;
   right: 32%;
+}
+.open-left-col{
+  position: absolute;
+  top: 16%;
 }
 }

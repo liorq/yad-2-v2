@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {  Router } from '@angular/router';
 import { DbService } from 'src/app/core/services/db.service';
 import { apartment } from 'src/app/data/interfaces';
 
@@ -20,7 +21,7 @@ export class NewAdComponent implements OnInit{
 adsArray:any[]=[]
 topColumn:any[] = [];
 myLikedMessages!:any[]
-constructor(private dbSvc:DbService){}
+constructor(private dbSvc:DbService,private router:Router){}
 async ngOnInit() {
 
  await this.isAdLikedByUser();
@@ -43,6 +44,10 @@ removeLike() {
 
 console.log("hi")
   this.isUserRemoveLike.emit(true);
+}
+navigateToImageGallery(event:Event){
+  this.stopProp(event)
+  this.router.navigate(['/image-gallery'])
 }
 async isAdLikedByUser() {
   const res:any = await this.dbSvc.getAllMyLikedAds();

@@ -90,6 +90,8 @@ import { SearchComponent } from './shared/search/last-search-box/search.componen
 import { LikedAdsComponent } from './pages/myLikedAds/liked-ads/liked-ads.component';
 import { NoLikedAdsComponent } from './pages/myLikedAds/no-liked-ads/no-liked-ads.component';
 import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
+import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
+import { MyNewAdComponent } from './shared/ad/my-new-ad/my-new-ad.component';
 
 
 
@@ -175,6 +177,8 @@ import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ad
     LikedAdsComponent,
     NoLikedAdsComponent,
     MyLikedAdsComponent,
+    ImageGalleryComponent,
+    MyNewAdComponent,
 
   ],
   imports: [
