@@ -4,9 +4,22 @@
 <div class="{{textClass}}">{{text}}</div>
 
   <div *ngFor="let icon of icons" class="icon-container">
+    <div class="{{icon.type+1}}">
     <svg (click)="icon.id=='navBarIcon'?toggleSideBar():''" id="{{icon.id}}" [attr.width]="icon.size" [attr.height]="icon.size" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'black':true}" [attr.class]="icon.class" >
       <path  fill-rule="evenodd" clip-rule="evenodd" [attr.d]="icon.path" [attr.fill]="icon.fill"></path>
     </svg>
+    </div>
+      <div class="bell-container" *ngIf="icon.type=='bell'">
+       <div>התראות שלי</div>
+       <div>  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
+      </div>
+      <div *ngIf="icon.type=='love'">
+        <div class="ads-container">
+          <div *ngFor="let ad of allAds">
+            <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
+          </div>
+        </div>
+      </div>
 
   </div>
 

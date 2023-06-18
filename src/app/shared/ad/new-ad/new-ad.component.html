@@ -1,6 +1,6 @@
 
 <div (click)="toggleAd()" [class]="'container '+classContainer" [ngClass]="{'open-container':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
-  <app-btn    (click)="stopProp($event)" *ngIf="isOpenAd" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
+  <app-btn    (click)="stopProp($event)" *ngIf="isOpenAd&&!isMyAd" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
   <app-btn *ngIf="!isMyAd" (click)="stopProp($event)"   [iconClass]="'share-ads-icon'" [containerClass]="'share-ads-container'" >  </app-btn>
 
   <app-btn (click)="isRemovePopUpOpen=!isRemovePopUpOpen"  *ngIf="isMyAd" [containerClass]="'ellipsis-vertical'" [text]="''">
@@ -9,12 +9,12 @@
 
   <div class="image-container" [ngClass]="{'custom-image-container':isMyAd,'open-image-container':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
     <div *ngIf="!isMyAd" (click)="onClick($event)" class="iconHart" [ngClass]="{'iconHartOn':isUserLikedAd}"></div>
-    <div (click)="navigateToImageGallery($event)" *ngIf="isOpenAd" class="image-icon">
+    <div  (click)="navigateToImageGallery($event)" *ngIf="isOpenAd&&!isMyAd" class="image-icon">
       <img src="//assets.yad2.co.il/yad2site/y2assets/images/images-gallery/PIC.svg">
       <span class="count">2</span>
     </div>
   </div>
-  <div class="top-column" [ngClass]="{'open-top-column':isToggleAdNeeded&&isOpenAd}">
+  <div class="top-column" [ngClass]="{'open-top-column':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
     <div *ngFor="let item of topColumn let i=index"  [class]="'top-column'+i" [ngClass]="{ 'price': isNumber(item.content),'custom-a-price': isNumber(item.content)&&isMyAd}">{{item.content}}</div>
   </div>
 
