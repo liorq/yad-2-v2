@@ -22,7 +22,7 @@
 
 }
 .custom-circle{
-right: initial;
+right: -9px;
 }
 app-side-bar-item {
   display: block;

@@ -1,5 +1,5 @@
 <div *ngIf="isUserLogged" class="circle " [ngClass]="{'custom-circle':isPopUpNeeded}">{{"ZC"}}</div>
-<div *ngIf="isPopUpNeeded" class="user-container">
+<div *ngIf="isPopUpNeeded&&isUserLogged" class="user-container">
 
   <div class="icon-container">
     <div *ngFor="let item of sidebarItems" >
