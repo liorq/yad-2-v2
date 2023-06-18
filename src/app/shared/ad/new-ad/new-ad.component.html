@@ -1,25 +1,25 @@
 
-<div (click)="toggleAd()" [class]="'container '+classContainer" [ngClass]="{'open-container':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
-  <app-btn    (click)="stopProp($event)" *ngIf="isOpenAd&&!isMyAd" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
-  <app-btn *ngIf="!isMyAd" (click)="stopProp($event)"   [iconClass]="'share-ads-icon'" [containerClass]="'share-ads-container'" >  </app-btn>
+<div (click)="toggleAd()" [class]="'container '+classContainer" [ngClass]="{'open-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
+  <app-btn    (click)="stopProp($event)" *ngIf="isOpenAd&&!isMyAd&&!isTopAds" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
+  <app-btn *ngIf="!isMyAd&&!isTopAds" (click)="stopProp($event)"   [iconClass]="'share-ads-icon'" [containerClass]="'share-ads-container'" >  </app-btn>
 
   <app-btn (click)="isRemovePopUpOpen=!isRemovePopUpOpen"  *ngIf="isMyAd" [containerClass]="'ellipsis-vertical'" [text]="''">
     <app-mini-pop-up *ngIf="isRemovePopUpOpen" [ad]="ad"></app-mini-pop-up>
   </app-btn>
 
-  <div class="image-container" [ngClass]="{'custom-image-container':isMyAd,'open-image-container':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
+  <div class="image-container" [ngClass]="{'custom-image-container':isMyAd,'open-image-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
     <div *ngIf="!isMyAd" (click)="onClick($event)" class="iconHart" [ngClass]="{'iconHartOn':isUserLikedAd}"></div>
-    <div  (click)="navigateToImageGallery($event)" *ngIf="isOpenAd&&!isMyAd" class="image-icon">
+    <div  (click)="navigateToImageGallery($event)" *ngIf="isOpenAd&&!isMyAd&&!isTopAds" class="image-icon">
       <img src="//assets.yad2.co.il/yad2site/y2assets/images/images-gallery/PIC.svg">
       <span class="count">2</span>
     </div>
   </div>
-  <div class="top-column" [ngClass]="{'open-top-column':isToggleAdNeeded&&isOpenAd&&!isMyAd}">
+  <div class="top-column" [ngClass]="{'open-top-column':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
     <div *ngFor="let item of topColumn let i=index"  [class]="'top-column'+i" [ngClass]="{ 'price': isNumber(item.content),'custom-a-price': isNumber(item.content)&&isMyAd}">{{item.content}}</div>
   </div>
 
 
-  <div class="middle-column" [ngClass]="{'custom-middle-column':isMyAd,'open-middle-column':isOpenAd&&isToggleAdNeeded&&!isMyAd}">
+  <div *ngIf="!isTopAds" class="middle-column" [ngClass]="{'custom-middle-column':isMyAd,'open-middle-column':isOpenAd&&isToggleAdNeeded&&!isMyAd&&!isTopAds}">
     <div *ngFor="let item of adsArray let i=index" [class]="'little-container'" [ngClass]="{'custom-little-container':isMyAd}">
       <span [class]="'little-num'">{{item.num}}</span>
       <span [class]="'little-text'">{{item.text}}</span>
@@ -29,8 +29,8 @@
 
   <div class="left-col" [ngClass]="{'open-left-col':isToggleAdNeeded&&isOpenAd}">
     <div class="new-price">{{ad.price | currency:'ILS':'symbol':'1.2-2'}}</div>
-<div class="press">{{"לחצו לפרטים"}}</div>
-<div class="today">{{"עודכן היום"}}</div>
+<div *ngIf="!isTopAds"  class="press">{{"לחצו לפרטים"}}</div>
+<div *ngIf="!isTopAds" class="today">{{"עודכן היום"}}</div>
 
   </div>
 </div>

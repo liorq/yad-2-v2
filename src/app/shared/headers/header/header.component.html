@@ -10,13 +10,13 @@
     </svg>
     </div>
       <div class="bell-container" *ngIf="icon.type=='bell'">
-       <div>התראות שלי</div>
-       <div>  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
+       <div class="bell-title">התראות שלי</div>
+       <div class="bell-sub-title">  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
       </div>
-      <div *ngIf="icon.type=='love'">
-        <div class="ads-container">
+      <div class="love-container" *ngIf="icon.type=='love'">
+        <div class="ads-container" >
           <div *ngFor="let ad of allAds">
-            <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
+            <app-new-ad  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
           </div>
         </div>
       </div>
@@ -28,3 +28,9 @@
 
 <app-top-bar-nav *ngIf="isTopBarNeeded" class="none"></app-top-bar-nav>
 </div>
+
+
+
+
+
+

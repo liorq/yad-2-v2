@@ -26,22 +26,35 @@ constructor(private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
 
   async ngOnInit() {
+
     this.appSvc.allMyFavAds.subscribe((newData)=>{
       this.allAds=newData
     })
     ////FROM THE SERVER MY LIKED ADS
     const res:any = await this.dbSvc.getAllMyLikedAds();
+    this.allAds = res?.map((obj:any) => obj?.apartment)|| [];
 
     if(res?.error?.text){
       const allAds = res?.map((obj:any) => obj?.apartment)|| [];
       this.appSvc.allMyFavAds.next(allAds);
+    }
+
+
+
+
+
+
+
+
+
+
 this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
   this.isSideBarOpen=newStatus;
 })
 this.isUserLogged=this.appSvc.isUserLogged();
 console.log(this.isUserLogged)
 }
-  }
+
 toggleSideBar(){
   this.appSvc.updateSubject(this.appSvc.isSideBarOpen,!this.isSideBarOpen)
 

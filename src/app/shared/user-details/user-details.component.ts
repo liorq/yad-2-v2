@@ -11,6 +11,7 @@ export class UserDetailsComponent {
   @Input()textColor:string='black';
   isSideBarOpen!:boolean;
  @Input()isTopBarNeeded!:boolean;
+ @Input()isPopUpNeeded!:boolean;
 constructor(private appSvc:AppService){}
 toggleSideBar(){
   ///updateSubject

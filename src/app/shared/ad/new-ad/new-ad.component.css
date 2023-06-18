@@ -348,3 +348,15 @@ color: #363636;
     overflow: hidden;
   }
 }
+.custom-container-header{
+  display: none;
+}
+@media (min-width: 880px) and (max-width:1600px)
+{
+.custom-container-header{
+  display: block;
+  width: 460px;
+  background: #fff;
+}
+
+}

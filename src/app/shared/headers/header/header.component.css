@@ -59,24 +59,52 @@ svg{
   box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.30);
 }
 .icon-container:hover .bell-container {
-  display: block;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 130px;
   width: 250px;
 }
 
-.bell-container{
+.ads-container{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 460px;
+  min-width:160px;
+  height: 273px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+
+
+
+.love-container{
   padding: 24px 20px;
    position: absolute;
-  top:85px;
+  top:59px;
   left:16px;
   display: none;
   height: 120px;
   width: 250px;
-  background: #fff;
-  /* display: block; */
-  box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.30);
+
 }
-.icon-container:hover .bell-container {
+.bell-sub-title{
+  font-size: 0.875rem;
+
+line-height: 1.0625rem;
+color: #363636;
+}
+.bell-title{
+  font-size: 1rem;
+padding-bottom: 15px;
+line-height: 1.18rem;
+color: #363636;
+}
+.icon-container:hover .love-container {
   display: block;
   height: 130px;
   width: 250px;

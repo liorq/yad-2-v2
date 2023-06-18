@@ -17,7 +17,8 @@ export class NewAdComponent implements OnInit{
 @Input()isRemovePopUpOpen:boolean=false;
 @Output() isUserRemoveLike: EventEmitter<boolean> = new EventEmitter<boolean>();
 @Input()fatherComponent!:string;
- @Input()classContainer!:string
+ @Input()classContainer!:string;
+ @Input()isTopAds=false;
 adsArray:any[]=[]
 topColumn:any[] = [];
 myLikedMessages!:any[]

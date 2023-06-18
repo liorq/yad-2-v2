@@ -1,1 +1,10 @@
-<div *ngIf="isUserLogged" class="circle">{{"ZC"}}</div>
+<div *ngIf="isUserLogged" class="circle " [ngClass]="{'custom-circle':isPopUpNeeded}">{{"ZC"}}</div>
+<div *ngIf="isPopUpNeeded" class="user-container">
+
+  <div class="icon-container">
+    <div *ngFor="let item of sidebarItems" >
+      <app-side-bar-item   [item]='item.title'></app-side-bar-item>
+
+  </div>
+  </div>
+</div>

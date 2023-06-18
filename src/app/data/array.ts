@@ -1057,3 +1057,30 @@ export const filterItems = [
 
 
 ];
+
+
+export const UserInfoSidebarItems = [
+  {
+     title:{ isHalfRectangleNeeded:false,label: 'איזור אישי', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'user'  },
+
+},
+{
+title: {isHalfRectangleNeeded:false, label: 'השוואת רכבים', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'compare-cars'  },
+
+
+},
+{
+title: {isHalfRectangleNeeded:false ,label: 'חיפושים אחרונים', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'user-last-search' },
+
+
+},
+
+{
+title:      {isHalfRectangleNeeded:false, label: 'התנתקות', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'disconnect-icon'  },
+
+
+}
+
+];
+
+
