@@ -19,33 +19,31 @@ export class InputTextFileComponent implements OnInit{
   ngOnInit() {
   }
 
-uploadFile(){
-  this.isPicNeeded=true;
-  this.isInputFileNeeded=false;
-  const inputFile = document.getElementById(this.InputId) as HTMLInputElement;
+  uploadFile() {
+    this.isPicNeeded = true;
+    this.isInputFileNeeded = false;
+    const inputFile = document.getElementById(this.InputId) as HTMLInputElement;
 
-  if (inputFile.files == null) {
-    return;
-  }
-
-  const reader = new FileReader();
-
-  reader.onload = () => {
-    const file = reader.result;
-    console.log(file);
-
-    if(typeof file== 'string'){
-      ///push to the array
-    const currentPics=JSON.parse(localStorage.getItem("imgPreArray")||"[]")
-    currentPics.push(file)
-    localStorage.setItem("imgPreArray", JSON.stringify(currentPics));
-    const img= document.getElementById(this.ImgId)
-    img?.setAttribute("src",file)
+    if (inputFile.files == null || inputFile.files.length === 0) {
+      return;
     }
 
-  };
+    const reader = new FileReader();
 
-  reader.readAsDataURL(inputFile.files[0]);
-}
+    reader.onload = () => {
+      const file = reader.result;
+
+      if (typeof file === 'string') {
+        // Push to the array
+        const currentPics = JSON.parse(localStorage.getItem("imgPreArray") || "[]");
+        currentPics.push(file);
+        localStorage.setItem("imgPreArray", JSON.stringify(currentPics));
+        const img = document.getElementById(this.ImgId) as HTMLImageElement;
+        img.src = file;
+      }
+    };
+
+    reader.readAsDataURL(inputFile.files[0]);
+  }
 
 }
