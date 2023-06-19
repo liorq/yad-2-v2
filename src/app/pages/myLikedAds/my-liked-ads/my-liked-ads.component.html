@@ -1,2 +1,2 @@
-<!-- <app-no-liked-ads></app-no-liked-ads> -->
-<app-liked-ads></app-liked-ads>
+<app-no-liked-ads *ngIf="allAds.length==0"></app-no-liked-ads>
+<app-liked-ads [allAds]="allAds" *ngIf="allAds.length>0"></app-liked-ads>

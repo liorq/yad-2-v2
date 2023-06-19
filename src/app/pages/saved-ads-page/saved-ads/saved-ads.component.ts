@@ -1,8 +1,8 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
-import { savedAdsBoxes, filterItems } from 'src/app/data/array';
-import { apartment } from 'src/app/data/interfaces';
+import {  filterItems } from 'src/app/data/array';
+
 
 @Component({
   selector: 'app-saved-ads',

@@ -92,6 +92,8 @@ import { NoLikedAdsComponent } from './pages/myLikedAds/no-liked-ads/no-liked-ad
 import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
 import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
 import { MyNewAdComponent } from './shared/ad/my-new-ad/my-new-ad.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { CommentComponent } from './shared/comment/comment.component';
 
 
 
@@ -179,6 +181,8 @@ import { MyNewAdComponent } from './shared/ad/my-new-ad/my-new-ad.component';
     MyLikedAdsComponent,
     ImageGalleryComponent,
     MyNewAdComponent,
+    ChatPageComponent,
+    CommentComponent,
 
   ],
   imports: [

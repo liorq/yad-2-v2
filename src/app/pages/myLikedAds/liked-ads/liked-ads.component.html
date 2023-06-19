@@ -18,6 +18,7 @@
   <div class="ads-container">
     <div *ngFor="let ad of allAds">
       <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
+      <app-comment [ad]="ad"></app-comment>
     </div>
   </div>
 </div>

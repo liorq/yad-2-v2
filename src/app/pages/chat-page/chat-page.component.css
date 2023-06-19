@@ -1,0 +1,29 @@
+.main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 11px;
+  box-shadow: 0 6px 10px -10px #949494;
+}
+.title{
+  color: #fc910f;
+  font-weight: 400;
+  vertical-align: middle;
+  letter-spacing: .6px;
+}
+.half-rec{
+  transform: rotate(180deg);
+  cursor: pointer;
+}

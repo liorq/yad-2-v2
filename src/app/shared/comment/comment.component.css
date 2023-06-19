@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+
+}
+app-btn{
+  width: 128px;
+  display: block;
+}
+.comment-main{
+  display: flex;
+  justify-content: flex-end;
+  background: #fffaea;
+  margin: 5px 10px 5px 0;
+  border: 1px solid rgba(0,0,0,.1);
+}

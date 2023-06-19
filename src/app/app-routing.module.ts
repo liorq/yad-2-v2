@@ -24,6 +24,7 @@ import { Stage2FinalComponent } from './core/components/publish-section/step2/st
 import { UpdateDetailsComponent } from './pages/update-details/update-details.component';
 import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
 import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
+import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,8 @@ const routes: Routes = [
     { path: 'my-liked-ads', component: MyLikedAdsComponent }
 
   ]},
+  
+  { path: 'chat', component: ChatPageComponent },
 
   { path: 'signUp', component: SignUpComponent },
   { path: 'signIn', component: SignInComponent },

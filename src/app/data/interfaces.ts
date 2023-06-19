@@ -1,6 +1,6 @@
 export interface apartment{
 apartmentId :string,
-
+comment:string,
 category:'sale',
 street:string,
 price:number,

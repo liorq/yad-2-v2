@@ -11,7 +11,8 @@ import { apartment } from 'src/app/data/interfaces';
 export class NewAdComponent implements OnInit{
   isUserLikedAd!:boolean;
   isOpenAd!:boolean;
-  @Input()isMyAd:boolean=false
+  @Input()isMyAd:boolean=false;
+  
  @Input()ad:any;
  @Input()isToggleAdNeeded:boolean=true;
 @Input()isRemovePopUpOpen:boolean=false;

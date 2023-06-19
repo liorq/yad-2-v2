@@ -1,0 +1,20 @@
+<div class="comment-header"></div>
+
+<!-- <div style="height: 50px; background-color: aqua;" class="comment-main">
+  <textarea placeholder="כתיבת הערה..." maxlength="200"></textarea>
+</div> -->
+<div *ngIf="this.ad.comment==null&&!isOpen" class="comment-main">
+  <app-btn (click)="isOpen=true"  [containerClass]="'first-comment-icon-container'" [iconClass]="'first-comment-icon'" [text]="'הוספת הערה'">  </app-btn>
+</div>
+<div (click)="isOpen=true" *ngIf="this.ad.comment!=null&&!isOpen" class="comment-main">
+  <app-btn   [containerClass]="'second-comment-icon-container'" [iconClass]="'second-comment-icon'" [text]="this.ad.comment">  </app-btn>
+</div>
+<div *ngIf="isOpen" class="comment-open-main">
+  <textarea placeholder="כתיבת הערה..." maxlength="200"></textarea>
+</div>
+
+
+<div class="comment-footer"></div>
+
+
+<div class="close-comment"></div>
