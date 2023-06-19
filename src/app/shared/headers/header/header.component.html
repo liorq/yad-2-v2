@@ -5,7 +5,7 @@
 
   <div *ngFor="let icon of icons" class="icon-container">
     <div class="{{icon.type+1}}">
-    <svg (click)="icon.id=='navBarIcon'?toggleSideBar():''" id="{{icon.id}}" [attr.width]="icon.size" [attr.height]="icon.size" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'black':true}" [attr.class]="icon.class" >
+    <svg (click)="icon.id=='navBarIcon'||icon.id=='navBarIconForPersonal'?toggleSideBar():''" id="{{icon.id}}" [attr.width]="icon.size" [attr.height]="icon.size" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" [ngClass]="{'black':true}" [attr.class]="icon.class" >
       <path  fill-rule="evenodd" clip-rule="evenodd" [attr.d]="icon.path" [attr.fill]="icon.fill"></path>
     </svg>
     </div>
@@ -13,18 +13,23 @@
        <div class="bell-title">התראות שלי</div>
        <div class="bell-sub-title">  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
       </div>
-      <div class="love-container" *ngIf="icon.type=='love'">
-        <div class="ads-container" >
+      <div  class="love-container" *ngIf="icon.type=='love'">
+        <div *ngIf="isUserLogged" class="ads-container" >
           <div *ngFor="let ad of allAds">
             <app-new-ad  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
           </div>
         </div>
+     <div [ngClass]="{'custom-love-container':!isUserLogged}">
+      <div class="love-title">מודעות שאהבתי</div>
+      <div class="love-sub-title">אין לך עדיין מודעות שאהבת. כדי לשמור מודעות שאהבת, ולשמור נוספות, יש להתחבר לחשבון שלך </div>
+
+     </div>
       </div>
 
   </div>
 
 
-  <app-btn *ngIf="isUserLogged" [containerClass]="'green-btn-2'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'" routerLink="/publish/stage-1"></app-btn>
+  <app-btn  [containerClass]="'green-btn-2'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'"  [routerLink]="isUserLogged ? '/publish/stage-1' : '/signIn'" ></app-btn>
 
 <app-top-bar-nav *ngIf="isTopBarNeeded" class="none"></app-top-bar-nav>
 </div>

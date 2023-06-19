@@ -329,6 +329,8 @@ color: #363636;
   right: 145px;
   gap: 5px;
   border-top: none;
+  border-left: 0;
+  border-right: 0;
 }
 }
 

@@ -1084,3 +1084,21 @@ title:      {isHalfRectangleNeeded:false, label: 'התנתקות', url: '',iconP
 ];
 
 
+export const UserInfoDisSidebarItems = [
+  {
+     title:{ isHalfRectangleNeeded:false,label: 'איזור אישי', url: '/signIn',iconPathClass:'user'  },
+
+},
+{
+title: {isHalfRectangleNeeded:false, label: 'השוואת רכבים', url: '/signIn',iconPathClass:'compare-cars'  },
+
+
+},
+{
+title: {isHalfRectangleNeeded:false ,label: 'חיפושים אחרונים', url: '/signIn',iconPathClass:'user-last-search' },
+
+
+},
+
+];
+

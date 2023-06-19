@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
-import { UserInfoSidebarItems } from 'src/app/data/array';
+import { UserInfoDisSidebarItems, UserInfoSidebarItems } from 'src/app/data/array';
 
 @Component({
   selector: 'app-user-circle',
@@ -12,11 +12,12 @@ export class UserCircleComponent implements OnInit{
   isUserLogged!:boolean;
 
 
-  sidebarItems=UserInfoSidebarItems
+  sidebarItems!:any[];
  @Input() isPopUpNeeded:boolean=false;
   ngOnInit(): void {
     this.isUserLogged=this.appSvc.isUserLogged();
-   console.log(this.isUserLogged)
+   this.sidebarItems= this.isUserLogged?UserInfoSidebarItems:UserInfoDisSidebarItems
+
   }
   disconnectUser(){
     this.appSvc.isUserLoggedSubject.next(false);

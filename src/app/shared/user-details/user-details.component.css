@@ -32,6 +32,9 @@
 
 
 }
+.publish{
+  cursor: pointer;
+}
 .userName{
   font-weight: 500;
 }
@@ -39,6 +42,7 @@
 .personalArea{
   text-decoration: underline;
   text-align: end;
+  cursor: pointer;
 }
 .logout{
   position: absolute;

@@ -251,3 +251,36 @@ li{
     top: 35px;
   }
 }
+/* .custom-love-container{
+  height: 100px;
+  width: 100px;
+} */
+.custom-love-container{
+  padding: 24px 20px;
+   position: absolute;
+  /* top:-15px; */
+  left:16px;
+  /* display: none; */
+  height: 120px;
+  width: 250px;
+  background: #fff;
+  /* display: block; */
+  box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.love-sub-title{
+  font-size: 0.875rem;
+
+line-height: 1.0625rem;
+color: #363636;
+}
+.love-title{
+  font-size: 1rem;
+padding-bottom: 15px;
+line-height: 1.18rem;
+color: #363636;
+}

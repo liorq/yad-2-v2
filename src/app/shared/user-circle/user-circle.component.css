@@ -12,6 +12,22 @@
   /* display: block; */
   box-shadow:  0 3px 5px 0 rgba(0,0,0,.2), 0 1px 18px 0 rgba(0,0,0,.12), 0 6px 10px 0 rgba(0,0,0,.14);
 }
+
+
+
+.user-container2{
+  gap: 15px;
+  padding:9px 10px;
+   position: relative;
+  top:48px;
+  left:-50px;
+  display: none;
+  height: 128px;
+  width: 170px;
+  background: #fff;
+  /* display: block; */
+  box-shadow:  0 3px 5px 0 rgba(0,0,0,.2), 0 1px 18px 0 rgba(0,0,0,.12), 0 6px 10px 0 rgba(0,0,0,.14);
+}
 .circle:hover + .user-container ,.user-container:hover {
   display: flex;
   text-align: center;
@@ -22,8 +38,29 @@
 
 }
 
+.dis-circle:hover + .user-container2 ,.user-container2:hover {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.dis-circle{
+  background: url('../../../assets/dis-circle.png');
+  height: 38px;
+  width: 39px;
+  background-repeat: no-repeat;
+  background-size: cover;
+position: relative;
+top: 39px;
+left: -33px;
+}
+
+
 .custom-circle{
-right: initial;
+right: -19px;
 }
 app-side-bar-item {
   display: block;
