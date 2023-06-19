@@ -5,7 +5,7 @@
 
     <div class="{{item.titleClass}}">{{item.titleText}}</div>
 <div class="{{item.classContainer}}">
-      <app-input-text-file *ngFor="let item of item.arrayOfInputs" [iconClass]="item.iconClass" [text]="item.text"></app-input-text-file>
+      <app-input-text-file *ngFor="let item of item.arrayOfInputs let i=index" [iconClass]="item.iconClass" [InputId]="'InputId'+i" [text]="item.text"></app-input-text-file>
 </div>
       </ng-container>
 <div class="container-btn">
