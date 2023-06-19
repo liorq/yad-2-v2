@@ -11,11 +11,15 @@ export class UserCircleComponent implements OnInit{
   constructor(private appSvc:AppService){}
   isUserLogged!:boolean;
 
-  
+
   sidebarItems=UserInfoSidebarItems
  @Input() isPopUpNeeded:boolean=false;
   ngOnInit(): void {
     this.isUserLogged=this.appSvc.isUserLogged();
    console.log(this.isUserLogged)
   }
+  disconnectUser(){
+    this.appSvc.isUserLoggedSubject.next(false);
+    localStorage.setItem("token","");
+    }
 }

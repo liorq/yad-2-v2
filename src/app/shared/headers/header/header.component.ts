@@ -26,11 +26,18 @@ constructor(private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
 
   async ngOnInit() {
+    this.isUserLogged=this.appSvc.isUserLogged();
+    console.log(this.isUserLogged)
 
     this.appSvc.allMyFavAds.subscribe((newData)=>{
       this.allAds=newData
     })
-    ////FROM THE SERVER MY LIKED ADS
+    this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
+      this.isSideBarOpen=newStatus;
+    })
+    if(!this.isUserLogged){
+     return;
+    }
     const res:any = await this.dbSvc.getAllMyLikedAds();
     this.allAds = res?.map((obj:any) => obj?.apartment)|| [];
 
@@ -38,21 +45,6 @@ constructor(private dbSvc:DbService,private appSvc:AppService){}
       const allAds = res?.map((obj:any) => obj?.apartment)|| [];
       this.appSvc.allMyFavAds.next(allAds);
     }
-
-
-
-
-
-
-
-
-
-
-this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
-  this.isSideBarOpen=newStatus;
-})
-this.isUserLogged=this.appSvc.isUserLogged();
-console.log(this.isUserLogged)
 }
 
 toggleSideBar(){

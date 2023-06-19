@@ -9,7 +9,7 @@
       <path  fill-rule="evenodd" clip-rule="evenodd" [attr.d]="icon.path" [attr.fill]="icon.fill"></path>
     </svg>
     </div>
-      <div class="bell-container" *ngIf="icon.type=='bell'">
+      <div class="bell-container" *ngIf="icon.type=='bell'&&isUserLogged">
        <div class="bell-title">התראות שלי</div>
        <div class="bell-sub-title">  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
       </div>
