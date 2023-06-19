@@ -13,9 +13,14 @@ isScrollButtonClicked1 = true;
 isScrollButtonClicked2 = false;
 
 ngOnInit(){
-this.autoSlideToNextCommercial()
-}
+this.autoSlideToNextCommercial();
+window.addEventListener('resize', () => this.handleResize());
 
+}
+handleResize(){
+  console.log("hello");
+  this.slideToNextCommercial('Part2')
+}
 autoSlideToNextCommercial(){
   setInterval(()=>{
     if(this.isScrollButtonClicked1)
