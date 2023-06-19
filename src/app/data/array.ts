@@ -392,20 +392,20 @@ import { RequiredActionsObj } from "./objects";
 ];
 export const imageUploadInputs =[
 
-  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'},
-    {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
-,  {iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+  {id:"imgPre10",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'},
+    {id:"imgPre11",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre12",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre13",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre14",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre15",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre16",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre17",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
+,  {id:"imgPre18",iconClass:'plus',text:'העלאת תמונה',container:'containerClass10'}
 
 ]
 export const mediaUploadInputs =[
-  {iconClass:'plus',text:'העלאת תמונה',container:''},
-  {iconClass:'video',text:'העלאת סרטון',container:'containerClass10'}]
+  {id:"imgPre19",iconClass:'plus',text:'העלאת תמונה',container:''},
+  {id:"imgPre20",iconClass:'video',text:'העלאת סרטון',container:'containerClass10'}]
 
   export const step5DataArrays =[{arrayOfInputs:mediaUploadInputs ,classContainer:'container-inputs-file',titleClass:'title5',titleText:'ידעת שמודעות עם תמונות ברורות מקבלות פי 10 יותר פניות?\nלא להסס להעלות לפה תמונות (אפשר עד 10 + וידאו) ולהבליט את הצדדים הטובים ביותר של הנכס'},
                {arrayOfInputs:imageUploadInputs,classContainer:'container-inputs-file',titleClass:'title',titleText:'תמונות שיופיעו בגוף המודעה'}

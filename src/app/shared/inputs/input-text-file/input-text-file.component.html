@@ -2,5 +2,4 @@
    <input (change)="uploadFile()" id="{{InputId}}" type="file"  >
   <app-btn [containerClass]="containerClass" [iconClass]="iconClass" class="file-custom" [text]="text"></app-btn>
 </div>
-<img *ngIf="isPicNeeded" id="imgPre" src="">
-<!-- <input (change)="uploadFile()" id="myFile" type="file"> -->
+<img *ngIf="isPicNeeded" id="{{ImgId}}" src="">

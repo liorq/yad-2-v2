@@ -10,6 +10,8 @@ export class InputTextFileComponent implements OnInit{
 @Input()iconClass!:string;
 @Input()containerClass:string='containerClass10';
 @Input()InputId:string="";
+@Input()ImgId:string="";
+
 @Input()isInputFileNeeded=true;
 @Input()isPicNeeded=false;
 
@@ -33,8 +35,11 @@ uploadFile(){
     console.log(file);
 
     if(typeof file== 'string'){
-    localStorage.setItem("imgPre",file)
-    const img= document.getElementById("imgPre")
+      ///push to the array
+    const currentPics=JSON.parse(localStorage.getItem("imgPreArray")||"[]")
+    currentPics.push(file)
+    localStorage.setItem("imgPreArray", JSON.stringify(currentPics));
+    const img= document.getElementById(this.ImgId)
     img?.setAttribute("src",file)
     }
 
