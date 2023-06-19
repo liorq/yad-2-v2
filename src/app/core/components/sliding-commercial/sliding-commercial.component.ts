@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { slidingCommercialArray } from 'src/app/data/array';
 
 @Component({
@@ -18,11 +18,12 @@ window.addEventListener('resize', () => this.handleResize());
 
 }
 handleResize(){
-  console.log("hello");
   this.slideToNextCommercial('Part2')
 }
 autoSlideToNextCommercial(){
   setInterval(()=>{
+
+
     if(this.isScrollButtonClicked1)
     this.slideToNextCommercial('Part2')
     else
