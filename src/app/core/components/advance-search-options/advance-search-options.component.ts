@@ -15,6 +15,8 @@ const res=await this.dbSvc.findApartments(this.appSvc.searchSubject.getValue())
 ////
 this.addLastSearch()
 console.log(res)
+// if(Array.isArray(res))
+Array.isArray(res)&&this.appSvc.allAds.next(res)
   }
   addLastSearch(){
   const {hasWindowBars,hasStorage,minSqm,maxSqm,isResidentialUnit,parking,hasFurniture,minPrice,maxPrice,hasAccessibilityForDisabled,hasCentralAirConditioning,hasElevator,minFloor,maxFloor}=this.appSvc.searchSubject.getValue()

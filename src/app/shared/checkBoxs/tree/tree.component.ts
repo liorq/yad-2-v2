@@ -4,6 +4,7 @@ import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {BehaviorSubject} from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AppService } from 'src/app/core/services/app.service';
 
 
 
@@ -108,6 +109,12 @@ export class TreeComponent implements OnInit{
 @Input()propertyName!:string
 ngOnInit(){
   this._database.initialize(this.newTreeData);
+  this.appSvc.typeOfProperty.subscribe((newData)=>{
+   
+     this.appSvc.updateSearchSubject({arrayOfTypeProperty:newData})
+    console.log(this.appSvc.searchSubject.getValue())
+
+  })
 }
 
 
@@ -134,7 +141,7 @@ ngOnInit(){
   checklistSelection = new SelectionModel<TodoItemFlatNode>(true /* multiple */);
   form: FormGroup;
 
-  constructor(private _database: ChecklistDatabase,private formBuilder: FormBuilder) {
+  constructor(private appSvc:AppService,private _database: ChecklistDatabase,private formBuilder: FormBuilder) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
@@ -185,16 +192,48 @@ ngOnInit(){
       descendants.every(child => {
         return this.checklistSelection.isSelected(child);
       });
-     
     return descAllSelected;
   }
 
+
+////final the answer
+////get selected Items
+  traverseTree(nodes: TodoItemNode[]): void {
+    for (const node of nodes) {
+      ////final the answer
+      // console.log("Selected:", this.checklistSelection.selected.map(n=>n.item));
+      this.appSvc.typeOfProperty.next(this.checklistSelection.selected.map(n=>n.item))
+      if (node.children) {
+        this.traverseTree(node.children);
+      }
+    }
+  }
+
+
+
+
+
   /** Whether part of the descendants are selected */
   descendantsPartiallySelected(node: TodoItemFlatNode): boolean {
-    console.log('Updated item:',this.treeControl);
+    // console.log('Updated item:',this.treeControl);
+    // console.log('Updated item:',this.treeControl);
+
+    // console.log('Updated item2:',this.treeFlattener);
+
+    // const nestedNode = this.flatNodeMap.get(node);
+    // this._database.updateItem(nestedNode!, itemValue);
+    console.log("Node:", this.flatNodeMap.get(node));
+
+    console.log("Data:");
+    this.traverseTree(this._database.data);
+
+
 
     const descendants = this.treeControl.getDescendants(node);
     const result = descendants.some(child => this.checklistSelection.isSelected(child));
+    // console.log('Updated item2:',result);
+    // console.log('Updated item22:',descendants);
+    //  console.log(this.flatNodeMap.get(node),this._database.data)
     return result && !this.descendantsAllSelected(node);
   }
 

@@ -36,7 +36,7 @@ dateOfEntering:string
 }
 export interface apartmentSearchQuery extends  apartment
     {
- freeSearchText :string,
+  
   minFloor:number,
   minSqm:number,
   minPrice:number,
@@ -45,7 +45,7 @@ export interface apartmentSearchQuery extends  apartment
   maxRooms:number,
   maxFloor:number,
   maxSqm:number,
-
+  arrayOfTypeProperty:string[],
     }
 
    export  interface userUpdateRequest {

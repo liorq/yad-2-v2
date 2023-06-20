@@ -21,6 +21,9 @@ export class AppService {
   allMyAds = new BehaviorSubject<apartment[] | never[]>([]);
   allMyFavAds = new BehaviorSubject<apartment[] | never[]>([]);
   adsToDisplay = new BehaviorSubject<apartment[] | never[]>([]);
+  typeOfProperty = new BehaviorSubject<any[]>([]);
+
+
   removeApartment(ad:apartment){
     const newData=this.allMyAds.getValue().filter(a=>a.apartmentId!=ad.apartmentId);
     this.allMyAds.next(newData)
@@ -29,6 +32,9 @@ export class AppService {
   updateSearchSubject(value:any){
     this.searchSubject.next(Object.assign( this.searchSubject.getValue()||{},value))
     console.log(this.searchSubject.getValue())
+  }
+  typeOfPropertySubject(value:any){
+    this.typeOfProperty.next(Object.assign( this.typeOfProperty.getValue()||{},value))
   }
   updateAdUploadSubject(value:any){
     this.adUploadSubject.next(Object.assign( this.adUploadSubject.getValue()||{},value))
