@@ -16,7 +16,7 @@
 
 <ul class="flex-gallery">
   <li *ngFor="let item of imageItems; let i = index" [class]="'grid-gallery-item image-index-' + i">
-    <img [src]="item.imageUrl" alt="" [class]="'media'+i">
+    <img [src]="this.imageItems[i]" alt="" [class]="'media'+i">
   </li>
 </ul>
 <div class="footer">

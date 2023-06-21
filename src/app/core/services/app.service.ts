@@ -12,6 +12,7 @@ export class AppService {
   isSideBarOpen=new BehaviorSubject<boolean>(false);
   isUserLoggedSubject=new BehaviorSubject<boolean>(false);
   currentPage=new BehaviorSubject<string>("");
+  currentAdImages=new BehaviorSubject<string[]>([]);
 
   adUploadSubject=new BehaviorSubject<apartment>({}as apartment);
   adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});

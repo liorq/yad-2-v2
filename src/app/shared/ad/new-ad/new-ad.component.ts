@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {  Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { apartment } from 'src/app/data/interfaces';
 
@@ -20,18 +21,20 @@ export class NewAdComponent implements OnInit{
 @Input()fatherComponent!:string;
  @Input()classContainer!:string;
  @Input()isTopAds=false;
+ pics:string[]=[]
 adsArray:any[]=[]
 topColumn:any[] = [];
 myLikedMessages!:any[]
-constructor(private dbSvc:DbService,private router:Router){}
+constructor(private appSvc:AppService,private dbSvc:DbService,private router:Router){}
 async ngOnInit() {
 
-  if(this.ad.apartmentId.toUpperCase()=='E6413CD8-D808-464F-BB5F-031C82C0F31F'){
     const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
-    if(Array.isArray(pics))
-    console.log(pics.map((p: any) => p.value));
+    console.log(this.ad.apartmentId.toUpperCase())
+    if(Array.isArray(pics)){
+      this.pics=pics.map((p: any) => p.value);
+    }
 
-  }
+
 
  await this.isAdLikedByUser();
   const { totalFloorInBuilding, floor,roomNumber,price, street,houseNumber,typeOfProperty,city } = this.ad;
@@ -54,9 +57,18 @@ removeLike() {
 console.log("hi")
   this.isUserRemoveLike.emit(true);
 }
-navigateToImageGallery(event:Event){
+async navigateToImageGallery(event:Event){
   this.stopProp(event)
+ await this.updateCurrentImages();
   this.router.navigate(['/image-gallery'])
+}
+async updateCurrentImages(){
+  const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
+  if(Array.isArray(pics)){
+    this.pics=pics.map((p: any) => p.value);
+  }
+   this.appSvc.currentAdImages.next(this.pics)
+
 }
 async isAdLikedByUser() {
   const res:any = await this.dbSvc.getAllMyLikedAds();
