@@ -11,9 +11,9 @@ export class MyAlertWidgetComponent implements OnInit{
 allAds!:apartment[]
 constructor(private appSvc:AppService){}
 ngOnInit(): void {
-  this.appSvc.allMyAds.subscribe((data)=>{
+  this.appSvc.allAds.subscribe((data)=>{
     this.allAds=data;
-    console.log(this.allAds)
+    console.log(this.allAds.length)
   })
 }
 }
