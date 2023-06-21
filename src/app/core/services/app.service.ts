@@ -13,7 +13,7 @@ export class AppService {
   isUserLoggedSubject=new BehaviorSubject<boolean>(false);
   currentPage=new BehaviorSubject<string>("");
 
-  adUploadSubject=new BehaviorSubject<apartment|null>(null);
+  adUploadSubject=new BehaviorSubject<apartment>({}as apartment);
   adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});
   searchSubject=new BehaviorSubject<apartmentSearchQuery>({} as apartmentSearchQuery);
   userUpdateRequestSubject=new BehaviorSubject<userUpdateRequest>({} as userUpdateRequest);
@@ -31,7 +31,7 @@ export class AppService {
   }
   updateSearchSubject(value:any){
     this.searchSubject.next(Object.assign( this.searchSubject.getValue()||{},value))
-    console.log(this.searchSubject.getValue())
+    // console.log(this.searchSubject.getValue())
   }
   typeOfPropertySubject(value:any){
     this.typeOfProperty.next(Object.assign( this.typeOfProperty.getValue()||{},value))

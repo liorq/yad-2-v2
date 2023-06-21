@@ -79,7 +79,16 @@ export class DbService {
       return err;
     }
   }
-
+  async getAllApartmentImages(apartmentId: string) {
+    try {
+      const res = await this.http
+        .get(this.url + `api/Apartment/images/${apartmentId}`)
+        .toPromise();
+      return res;
+    } catch (err) {
+      return err;
+    }
+  }
   async getAllRangeAd(page: number) {
     try {
       const res = await this.http

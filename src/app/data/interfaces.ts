@@ -17,8 +17,8 @@ hasCentralAirConditioning:boolean,
 hasFurniture:boolean,
 isResidentialUnit:boolean,
 agreedToGetUpdates: boolean,
-totalSquareFootage: number;
-
+totalSquareFootage: number,
+pics:string[],
 city: string,
 conditionOfProperty: string,
 des: string,
@@ -36,7 +36,7 @@ dateOfEntering:string
 }
 export interface apartmentSearchQuery extends  apartment
     {
-  
+
   minFloor:number,
   minSqm:number,
   minPrice:number,

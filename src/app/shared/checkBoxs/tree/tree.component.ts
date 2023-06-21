@@ -110,9 +110,8 @@ export class TreeComponent implements OnInit{
 ngOnInit(){
   this._database.initialize(this.newTreeData);
   this.appSvc.typeOfProperty.subscribe((newData)=>{
-   
+
      this.appSvc.updateSearchSubject({arrayOfTypeProperty:newData})
-    console.log(this.appSvc.searchSubject.getValue())
 
   })
 }
@@ -215,25 +214,16 @@ ngOnInit(){
 
   /** Whether part of the descendants are selected */
   descendantsPartiallySelected(node: TodoItemFlatNode): boolean {
-    // console.log('Updated item:',this.treeControl);
-    // console.log('Updated item:',this.treeControl);
 
-    // console.log('Updated item2:',this.treeFlattener);
 
-    // const nestedNode = this.flatNodeMap.get(node);
-    // this._database.updateItem(nestedNode!, itemValue);
-    console.log("Node:", this.flatNodeMap.get(node));
-
-    console.log("Data:");
+  
     this.traverseTree(this._database.data);
 
 
 
     const descendants = this.treeControl.getDescendants(node);
     const result = descendants.some(child => this.checklistSelection.isSelected(child));
-    // console.log('Updated item2:',result);
-    // console.log('Updated item22:',descendants);
-    //  console.log(this.flatNodeMap.get(node),this._database.data)
+
     return result && !this.descendantsAllSelected(node);
   }
 
@@ -317,9 +307,6 @@ ngOnInit(){
 
   }
 
-print(){
-  console.log(this.checklistSelection)
 
-}
 
 }

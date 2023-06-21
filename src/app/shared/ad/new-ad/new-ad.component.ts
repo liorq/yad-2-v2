@@ -12,7 +12,7 @@ export class NewAdComponent implements OnInit{
   isUserLikedAd!:boolean;
   isOpenAd!:boolean;
   @Input()isMyAd:boolean=false;
-  
+
  @Input()ad:any;
  @Input()isToggleAdNeeded:boolean=true;
 @Input()isRemovePopUpOpen:boolean=false;
@@ -25,6 +25,13 @@ topColumn:any[] = [];
 myLikedMessages!:any[]
 constructor(private dbSvc:DbService,private router:Router){}
 async ngOnInit() {
+
+  if(this.ad.apartmentId.toUpperCase()=='E6413CD8-D808-464F-BB5F-031C82C0F31F'){
+    const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
+    if(Array.isArray(pics))
+    console.log(pics.map((p: any) => p.value));
+
+  }
 
  await this.isAdLikedByUser();
   const { totalFloorInBuilding, floor,roomNumber,price, street,houseNumber,typeOfProperty,city } = this.ad;
