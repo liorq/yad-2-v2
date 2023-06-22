@@ -20,6 +20,7 @@ this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
   this.isSideBarOpen=newStatus;
   this.toggleSideBar()
 })
+this.appSvc.isSideBarOpen.next(false)
 }
 
  openItem(index:number, item:any) {

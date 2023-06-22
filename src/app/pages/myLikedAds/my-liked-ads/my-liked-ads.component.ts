@@ -11,6 +11,9 @@ import { apartment } from 'src/app/data/interfaces';
 export class MyLikedAdsComponent implements OnInit{
   constructor(private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
+@Input()allLikedAdsId!:string[];
+@Input()allComments!:string[];
+
 async ngOnInit() {
   this.appSvc.allMyFavAds.subscribe((newData)=>{
     this.allAds=newData
@@ -20,6 +23,9 @@ async ngOnInit() {
   console.log("hello")
   if(Array.isArray(res)){
     const allAds = res?.map((obj:any) => obj?.apartment)|| [];
+    this.allLikedAdsId = res?.map((obj:any) => obj?.likedApartmentId.toUpperCase())|| [];
+    this.allComments = res?.map((obj:any) => obj?.comment)|| [];
+
     this.appSvc.allMyFavAds.next(allAds);
 
   }

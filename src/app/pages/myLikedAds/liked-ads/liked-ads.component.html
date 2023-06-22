@@ -16,9 +16,9 @@
   </div>
 
   <div class="ads-container">
-    <div *ngFor="let ad of allAds">
+    <div *ngFor="let ad of allAds let i=index">
       <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
-      <app-comment [ad]="ad"></app-comment>
+      <app-comment [comment]="allComments[i]" [likedAdId]="allLikedAdsId[i]" [ad]="ad"></app-comment>
     </div>
   </div>
 </div>

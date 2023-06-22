@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DbService } from 'src/app/core/services/db.service';
 import { apartment } from 'src/app/data/interfaces';
 
 @Component({
@@ -7,13 +8,29 @@ import { apartment } from 'src/app/data/interfaces';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit{
+  constructor(private dbSvc:DbService){}
 @Input()ad!:apartment;
+@Input()likedAdId!:string;
+
+@Input()comment:string="";
+items: string[] = [
+  'אין תשובה',
+  'טלפון שגוי',
+  'לא רלוונטי',
+  'להתקשר החל מהשעה',
+  'להתקשר מאוחר יותר'
+];
 isOpen:boolean=false;
 ngOnInit(): void {
-  console.log(this.ad.comment)
-  // console.warn("hi")
+  console.log(this.likedAdId)
+
 }
-addComment(text:string){
-  console.log(text)
+addWords(word:string){
+this.comment+=" "+word;
+}
+async saveComment(){
+const res= await this.dbSvc.addCommentToLikedApartment(this.likedAdId,this.comment)
+console.log(res)
+
 }
 }

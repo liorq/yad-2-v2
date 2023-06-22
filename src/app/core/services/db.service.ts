@@ -100,6 +100,25 @@ export class DbService {
     }
   }
 
+
+  async addCommentToLikedApartment(apartmentLikedId: string, comment: string) {
+    try {
+      const res = await this.http
+        .post(this.url + `api/Apartment/myApartments/likedApartments/${apartmentLikedId}/${comment}`,null, {
+          headers: this.getHttpHeader(),
+        })
+        .toPromise();
+      return res;
+    } catch (err) {
+      return err;
+    }
+  }
+
+
+
+
+
+
   async toggleLikedAdd(apartmentId: string, isUserLikedAd: boolean) {
     try {
       const res = await this.http

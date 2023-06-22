@@ -887,7 +887,7 @@ cursor: pointer;
   align-items: center;
   border-radius: 25px;
   font-size: 16px;
-height: 48px;
+height: 41px;
 }
 .green-btn{
   background: #0fca80;
@@ -1208,7 +1208,7 @@ line-height: 1.75rem;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  flex-direction: row-reverse;
+  flex-direction: row;
   color: #363636;
 }
 .first-comment-icon{
@@ -1221,17 +1221,21 @@ line-height: 1.75rem;
 
 .second-comment-icon-container{
 
-  width: 129px;
+  width: 693px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+
   height: 32px;
   border-radius: 25px;
   display: flex;
   /* gap: 5px; */
   font-size: 14px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  flex-direction: row-reverse;
+  flex-direction: row;
   color: #363636;
+  padding-right: 17px;
 }
 .second-comment-icon{
   background-image: url('../../../assets/pen-for-comment.png');
@@ -1240,3 +1244,33 @@ line-height: 1.75rem;
   height: 17px;
   width: 18px;
 }
+.comment-save-container{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 31px;
+width: 90px;
+margin: 0;
+border: 1px solid #ff7100;
+border-radius: 25px;
+font-weight: 500;
+color: #ff7100;
+font-size: 0.875rem;
+cursor: pointer;
+}
+.comment-cancel-container{
+width: 40px;
+height: 17px;
+color: #ccc;
+line-height: 1.0625rem;
+font-size: .875rem;
+padding: 0 5px;
+margin: 0 5px;
+cursor: pointer;
+}
+
+
+
+
+
+

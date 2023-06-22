@@ -10,5 +10,7 @@ import { apartment } from 'src/app/data/interfaces';
 })
 export class LikedAdsComponent {
   @Input()  allAds:apartment[]=[];
+  @Input()  allLikedAdsId:string[]=[];
+  @Input()  allComments:string[]=[];
 
 }
