@@ -26,25 +26,11 @@ export class ModalSavedAdComponent implements OnInit {
   ];
 
 isDesOpen:boolean=false;
-features = [
-  { id: 'air_conditioner', title: 'מיזוג', checked: true },
-  { id: 'bars', title: 'סורגים', checked: false },
-  { id: 'elevator', title: 'מעלית', checked: false },
-  { id: 'kosher_kitchen', title: 'מטבח כשר', checked: true },
-  { id: 'boiler', title: 'דוד שמש', checked: true },
-  { id: 'accessibility', title: 'גישה לנכים', checked: false },
-  { id: 'renovated', title: 'משופצת', checked: false },
-  { id: 'shelter', title: 'ממ"ד', checked: true },
-  { id: 'warhouse', title: 'מחסן', checked: true },
-  { id: 'tadiran_c', title: 'מזגן תדיראן', checked: false },
-  { id: 'housing_unit', title: 'יחידת דיור', checked: true },
-  { id: 'flexible_enter_date', title: 'גמיש', checked: false },
-  { id: 'furniture', title: 'ריהוט', checked: false }
-];
+features!:{ id: string, title: string, checked: boolean }[];
+
+
 
   ngOnInit(): void {
-
-
 
     this.appSvc.currentAdOpen.subscribe((newAd) => {
       this.ad = newAd;
@@ -52,7 +38,7 @@ features = [
     this.imageItems = this.appSvc.currentAdImages.getValue();
     console.log(this.ad)
     if(this.ad){
-      const {parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= this.ad
+      const {hasFurniture,isResidentialUnit,hasCentralAirConditioning,hasStorage,isRenovated,hasAccessibilityForDisabled,hasSolarHeater,hasKosherKitchen,hasElevator,hasWindowBars,hasAirConditioning,parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= this.ad
       this.data= [
        { value: `${roomNumber}`, label: 'חדרים' },
        { value: `${floor}`, label: 'קומה' },
@@ -65,6 +51,22 @@ features = [
       { item: 'מ"ר בנוי', value: `${totalSquareFootage}` },
       { item: 'מרפסות', value: `${porch}` },
       { item: 'חניות', value: `${parking}` }
+    ];
+
+    this.features = [
+      { id: 'air_conditioner', title: 'מיזוג', checked: hasAirConditioning },
+      { id: 'bars', title: 'סורגים', checked: hasWindowBars },
+      { id: 'elevator', title: 'מעלית', checked: hasElevator },
+      { id: 'kosher_kitchen', title: 'מטבח כשר', checked: hasKosherKitchen },
+      { id: 'boiler', title: 'דוד שמש', checked: hasSolarHeater },
+      { id: 'accessibility', title: 'גישה לנכים', checked: hasAccessibilityForDisabled },
+      { id: 'renovated', title: 'משופצת', checked: isRenovated },
+      { id: 'shelter', title: 'ממ"ד', checked: true },
+      { id: 'warhouse', title: 'מחסן', checked: hasStorage },
+      { id: 'tadiran_c', title: 'מזגן תדיראן', checked: hasCentralAirConditioning },
+      { id: 'housing_unit', title: 'יחידת דיור', checked: isResidentialUnit },
+      { id: 'flexible_enter_date', title: 'גמיש', checked: false },
+      { id: 'furniture', title: 'ריהוט', checked: hasFurniture }
     ];
        }
   }
