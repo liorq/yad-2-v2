@@ -29,8 +29,6 @@ addWords(word:string){
 this.comment+=" "+word;
 }
 async saveComment(){
-const res= await this.dbSvc.addCommentToLikedApartment(this.likedAdId,this.comment)
-console.log(res)
-
+ await this.dbSvc.addCommentToLikedApartment(this.likedAdId,this.comment)
 }
 }

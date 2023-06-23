@@ -1,0 +1,37 @@
+<div class="container" (click)="toggleModal($event)">
+  <div class="content" (click)="preventEventPropagation($event)">
+    <div class="top">
+      <span class="right">{{ ad.typeOfProperty + '/' + ad.city }}</span>
+      <span class="left">עודכן היום</span>
+    </div>
+    <div *ngFor="let picture of imageItems | paginate: { itemsPerPage: 1, currentPage: currentPage}">
+      <img class="pic" [src]="picture">
+    </div>
+    <div class="ngx-pagination-container">
+    <pagination-controls (pageChange)="currentPage = $event;">
+    </pagination-controls>
+  </div>
+<div class="ad-info">
+  <div class="street">{{this.ad.street+" "+this.ad.houseNumber}}</div>
+  <div class="city">{{this.ad.city}}</div>
+
+  <div class="table">
+    <dl *ngFor="let item of data" class="cell">
+      <dd class="value">{{ item.value }}</dd>
+      <dt class="label">{{ item.label }}</dt>
+    </dl>
+  </div>
+  <div class="price">{{this.ad.price| currency:'ILS':'symbol':'1.2-2'}} </div>
+
+  <div class="title-des">על הנכס</div>
+  <div class="des" [ngClass]="{'max-des':isDesOpen}">{{this.ad.des}}</div>
+  <div (click)="isDesOpen=!isDesOpen" *ngIf="!isDesOpen" class="show-more">{{"הצג עוד"}}</div>
+  <div (click)="isDesOpen=!isDesOpen" *ngIf="isDesOpen" class="show-less">{{"פחות"}}</div>
+</div>
+
+
+
+
+
+  </div>
+</div>

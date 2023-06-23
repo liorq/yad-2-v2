@@ -13,6 +13,7 @@ export class AppService {
   isUserLoggedSubject=new BehaviorSubject<boolean>(false);
   currentPage=new BehaviorSubject<string>("");
   currentAdImages=new BehaviorSubject<string[]>([]);
+  currentAdOpen=new BehaviorSubject<apartment>({} as apartment);
 
   adUploadSubject=new BehaviorSubject<apartment>({}as apartment);
   adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});

@@ -94,6 +94,7 @@ import { ImageGalleryComponent } from './core/components/image-gallery/image-gal
 import { MyNewAdComponent } from './shared/ad/my-new-ad/my-new-ad.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { CommentComponent } from './shared/comment/comment.component';
+import { ModalSavedAdComponent } from './core/components/modal-saved-ad/modal-saved-ad.component';
 
 
 
@@ -183,6 +184,7 @@ import { CommentComponent } from './shared/comment/comment.component';
     MyNewAdComponent,
     ChatPageComponent,
     CommentComponent,
+    ModalSavedAdComponent,
 
   ],
   imports: [

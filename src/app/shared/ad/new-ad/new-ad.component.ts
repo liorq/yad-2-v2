@@ -52,12 +52,24 @@ async ngOnInit() {
     { content: `${typeOfProperty}, ${city}  ${city}` },
   ];
 }
+async openModal(){
+  ////updateSubjectToGiveInfoForTheModal
+  await this.updateCurrentImages()
+  if(this.fatherComponent=="likedAds"){
+    this.appSvc.currentAdOpen.next(this.ad)
+    console.log(this.ad)
+
+  }
+}
 removeLike() {
 
 console.log("hi")
   this.isUserRemoveLike.emit(true);
 }
 async navigateToImageGallery(event:Event){
+  if(this.fatherComponent=='likedAds')
+  return;
+
   this.stopProp(event)
  await this.updateCurrentImages();
   this.router.navigate(['/image-gallery'])

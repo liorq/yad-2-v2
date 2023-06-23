@@ -1,0 +1,138 @@
+.container{
+  position: fixed;
+  height: 188vh;
+  width: 100vw;
+  background-color:rgba(11, 11, 11, 0.215);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+overflow: scroll;
+}
+.content{
+  background: #fff;
+  height: 185vh;
+  width: calc(100% - 120px);
+  /* border: 1px solid black; */
+  max-width: 960px;
+  overflow: scroll;
+}
+.top{
+  height: 20px;
+  color: #999;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.26rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 9px;
+  flex-direction: row-reverse;
+}
+.pic{
+  width: 100%;
+  height: 278px;
+  margin-top: 15px;
+  background-size: 100% auto;
+  object-fit:cover;
+
+}
+ul{
+  margin-inline-start: 0;
+}
+.ngx-pagination-container{
+  display: flex;
+  justify-content: center;
+}
+.ad-info{
+padding: 15px;
+}
+.street{
+  font-size:1.125rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  text-align: end;
+  padding-right: 15px;
+  color: #363636;
+}
+
+.city{
+font-size: 1rem;
+overflow:hidden;
+text-overflow: ellipsis;
+white-space:nowrap;
+line-height:1.7rem;
+text-align: end;
+padding-right: 15px;
+color: #363636;
+}
+.value{
+  color: #363636;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.0625rem;
+  width: fit-content;
+}
+
+.label{
+  color: #363636;
+  font-size: .875rem;
+  line-height: 1.0625rem;
+  width: fit-content;
+}
+.cell{
+  width: fit-content;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.table{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+  border-top:none;
+  border-bottom: none;
+  border-radius: 4px;
+  margin:17px 0 0;
+  padding:10px 0;
+}
+.price{
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: #363636;
+  text-align: end;
+  margin-top: 8px;
+}
+.title-des{
+overflow: hidden;
+color: #363636;
+text-align: end;
+margin-right: 15px;
+font-size: 18px;
+font-weight: 500;
+}
+.des{
+  overflow: hidden;
+  color: #363636;
+  text-align: end;
+ font-size: 16px;
+ line-height:1.5rem;
+ max-height: 4.5em;
+}
+.max-des{
+  max-height: 300em;
+
+}
+.show-more,.show-less{
+white-space: nowrap;
+font-size: .875rem;
+color: #ff7100;
+text-decoration: underline #ff7100;
+cursor: pointer;
+text-align: end;
+}
+.show-less{
+
+}

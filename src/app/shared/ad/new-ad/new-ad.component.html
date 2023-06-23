@@ -7,7 +7,7 @@
     <app-mini-pop-up *ngIf="isRemovePopUpOpen" [ad]="ad"></app-mini-pop-up>
   </app-btn>
 
-  <div class="image-container" [style.background-image]="'url(' + pics[0] + ')'" [style]="'background-size:cover;background-repeat:no-repeat;'" [ngClass]="{'custom-image-container':isMyAd,'open-image-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
+  <div (click)="openModal()" class="image-container" [style.background-image]="'url(' + pics[0] + ')'" [style]="'background-size:cover;background-repeat:no-repeat;'" [ngClass]="{'custom-image-container':isMyAd,'open-image-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
     <div *ngIf="!isMyAd" (click)="onClick($event)" class="iconHart" [ngClass]="{'iconHartOn':isUserLikedAd}"></div>
     <div  (click)="navigateToImageGallery($event)" *ngIf="isOpenAd&&!isMyAd&&!isTopAds" class="image-icon">
       <img src="//assets.yad2.co.il/yad2site/y2assets/images/images-gallery/PIC.svg">
