@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ad-footer',
@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['../ad-description/ad-description.component.css','./ad-footer.component.css']
 })
 export class AdFooterComponent {
-  sidebarItems5 = [
+  @Input()isModalFooter=false
+  @Input() sidebarItems5 = [
     {
        title:{ isHalfRectangleNeeded:false,label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'link' },
       subItems: [ ]

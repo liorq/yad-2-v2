@@ -8,30 +8,38 @@
       <img class="pic" [src]="picture">
     </div>
     <div class="ngx-pagination-container">
-    <pagination-controls (pageChange)="currentPage = $event;">
-    </pagination-controls>
-  </div>
-<div class="ad-info">
-  <div class="street">{{this.ad.street+" "+this.ad.houseNumber}}</div>
-  <div class="city">{{this.ad.city}}</div>
-
-  <div class="table">
-    <dl *ngFor="let item of data" class="cell">
-      <dd class="value">{{ item.value }}</dd>
-      <dt class="label">{{ item.label }}</dt>
-    </dl>
-  </div>
-  <div class="price">{{this.ad.price| currency:'ILS':'symbol':'1.2-2'}} </div>
-
-  <div class="title-des">על הנכס</div>
-  <div class="des" [ngClass]="{'max-des':isDesOpen}">{{this.ad.des}}</div>
-  <div (click)="isDesOpen=!isDesOpen" *ngIf="!isDesOpen" class="show-more">{{"הצג עוד"}}</div>
-  <div (click)="isDesOpen=!isDesOpen" *ngIf="isDesOpen" class="show-less">{{"פחות"}}</div>
-</div>
-
-
-
-
-
+      <pagination-controls (pageChange)="currentPage = $event;"></pagination-controls>
+    </div>
+    <div class="ad-info">
+      <div class="street">{{ ad.street + ' ' + ad.houseNumber }}</div>
+      <div class="city">{{ ad.city }}</div>
+      <div class="table">
+        <dl *ngFor="let item of data" class="cell">
+          <dd class="value">{{ item.value }}</dd>
+          <dt class="label">{{ item.label }}</dt>
+        </dl>
+      </div>
+      <div class="price">{{ ad.price | currency:'ILS':'symbol':'1.2-2'}}</div>
+      <div class="title-des">על הנכס</div>
+      <div class="des" [ngClass]="{'max-des': isDesOpen}">{{ ad.des }}</div>
+      <div (click)="isDesOpen=!isDesOpen" *ngIf="!isDesOpen" class="show-more">הצג עוד</div>
+      <div (click)="isDesOpen=!isDesOpen" *ngIf="isDesOpen" class="show-less">פחות</div>
+      <div class="details_wrapper">
+        <dl *ngFor="let item of data2" class="cell2">
+          <dd class="item">{{ item.item }}</dd>
+          <dt class="value">{{ item.value }}</dt>
+        </dl>
+      </div>
+      <div class="wrapper_container">
+        <div class="title-des">?מה יש בנכס</div>
+        <div class="info-feature-container">
+          <div *ngFor="let feature of features" [id]="feature.id" class="info_feature">
+            <div class="checked" *ngIf="feature.checked"></div>
+            <div class="unChecked" *ngIf="!feature.checked"></div>
+            <span class="title" [ngClass]="{'gray': !feature.checked}">{{ feature.title }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
