@@ -4,22 +4,33 @@
       <span class="right">{{ ad.typeOfProperty + '/' + ad.city }}</span>
       <span class="left">עודכן היום</span>
     </div>
-    <div *ngFor="let picture of imageItems | paginate: { itemsPerPage: 1, currentPage: currentPage}">
+    <div class="pics-container" *ngFor="let picture of imageItems | paginate: { itemsPerPage: 1, currentPage: currentPage}">
       <img class="pic" [src]="picture">
     </div>
     <div class="ngx-pagination-container">
       <pagination-controls (pageChange)="currentPage = $event;"></pagination-controls>
-    </div>
+    </div >
+
+    <div class="current-page">{{currentPage+' /'+this.imageItems.length}}</div>
     <div class="ad-info">
+
+       <div class="top-wrapper-container">
       <div class="street">{{ ad.street + ' ' + ad.houseNumber }}</div>
       <div class="city">{{ ad.city }}</div>
+
+
       <div class="table">
         <dl *ngFor="let item of data" class="cell">
           <dd class="value">{{ item.value }}</dd>
           <dt class="label">{{ item.label }}</dt>
         </dl>
       </div>
+
       <div class="price">{{ ad.price | currency:'ILS':'symbol':'1.2-2'}}</div>
+</div>
+
+      <div class="big-wrapper-container">
+      <div class="wrapper_container">
       <div class="title-des">על הנכס</div>
       <div class="des" [ngClass]="{'max-des': isDesOpen}">{{ ad.des }}</div>
       <div (click)="isDesOpen=!isDesOpen" *ngIf="!isDesOpen" class="show-more">הצג עוד</div>
@@ -30,6 +41,8 @@
           <dt class="value">{{ item.value }}</dt>
         </dl>
       </div>
+</div>
+
       <div class="wrapper_container">
         <div class="title-des">?מה יש בנכס</div>
         <div class="info-feature-container">
@@ -40,6 +53,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </div>

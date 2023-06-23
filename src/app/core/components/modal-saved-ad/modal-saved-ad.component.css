@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
 overflow: scroll;
+overflow: visible; /* Ensures the image overflows the container */
+
 }
 .content{
   background: #fff;
@@ -197,3 +199,87 @@ background-size: cover;
 .gray{
   color: #99999982;
 }
+
+.ngx-pagination-container ::ng-deep .ngx-pagination .current {
+  background: #fff1e5;
+  color: #ff7100;
+
+}
+.current-page{
+color: #fff;
+position: relative;
+bottom: 70px;
+right: 15px;
+text-align: end;
+font-size: 14px;
+line-height: 1.0625rem;
+}
+.wrapper_container{
+  margin-top: 24px;
+  padding: 20px 15px;
+  max-width: 480px;
+}
+.big-wrapper-container{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+.top-wrapper-container{
+  /* border: 1px solid #eee; */
+}
+@media (min-width: 880px){
+  .top-wrapper-container{
+    max-width: 330px;
+    min-width: 255px;
+    width: 37%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 34px;
+  }
+.wrapper_container{
+ border: 1px solid #eee;
+ border-radius: 6px;
+}
+.pics-container{
+    display: flex;
+  justify-content: flex-end;
+}
+.pic{
+  width: 60%;
+
+}
+.ngx-pagination-container{
+  justify-content: end;
+  padding-right: 50px;
+}
+.street{
+font-size: 24px;
+font-weight: 500;
+margin: 0;
+
+}
+.city{
+  font-size: 18px;
+}
+.table{
+  margin: 40px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  box-shadow: none;
+  justify-content: space-evenly;
+}
+.label{
+  color: rgba(0,0,0,.5);
+}
+.price{
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+}
+

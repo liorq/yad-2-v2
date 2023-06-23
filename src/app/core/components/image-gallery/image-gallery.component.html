@@ -9,11 +9,7 @@
   <app-btn (click)="stopProp($event)"    [containerClass]="'map-open-icon-container'" [iconClass]="'map-open-icon'" [text]="'תצוגת רחוב'">  </app-btn>
   </div>
   <app-btn (click)="navigateToImageGallery($event)"    [containerClass]="'close-gal-icon-container'" [iconClass]="'close-gal-icon'" [text]="'סגירת גלריה'">  </app-btn>
-
-
 </div>
-
-
 <ul class="flex-gallery">
   <li *ngFor="let item of imageItems; let i = index" [class]="'grid-gallery-item image-index-' + i">
     <img [src]="this.imageItems[i]" alt="" [class]="'media'+i">

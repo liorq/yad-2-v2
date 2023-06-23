@@ -81,22 +81,4 @@ features!:{ id: string, title: string, checked: boolean }[];
     event.stopPropagation();
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
