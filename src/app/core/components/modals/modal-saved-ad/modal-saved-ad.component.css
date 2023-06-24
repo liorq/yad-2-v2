@@ -161,7 +161,7 @@ text-align: end;
 }
 .checked{
 
-    background-image: url('../../../../assets/check2.png');
+    background-image: url('../../../../../assets/check2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -170,7 +170,7 @@ text-align: end;
 
 }
 .unChecked{
-background-image: url('../../../../assets/checkX2.png');
+background-image: url('../../../../../assets/checkX2.png');
 background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { apartment } from 'src/app/data/interfaces';
-import { AppService } from '../../services/app.service';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-modal-saved-ad',

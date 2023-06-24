@@ -7,7 +7,8 @@
         </div>
         <div class="title">{{ category.title }}</div>
         <div *ngIf="!showContent&&i!=2" class="subTitle">{{ category.subTitle }}</div>
-        <app-btn (click)="navigateToStage2()" *ngIf="showContent&&i!=2" [text]="'מתחילים'" [containerClass]="'getting-started-container'"></app-btn>
+        <app-btn (click)="toggleModal()" *ngIf="showContent&&i!=2" [text]="'מתחילים'" [containerClass]="'getting-started-container'"></app-btn>
 
       </div>
+      <app-modal-create-ad (closeModal)="toggleModal()" *ngIf="isModalOpen"></app-modal-create-ad>
     </section>

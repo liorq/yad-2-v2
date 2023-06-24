@@ -12,8 +12,9 @@ export class CategoryItemComponent {
 @Input()i!:number;
 showContent!:boolean;
 constructor(private router :Router){}
+isModalOpen=false;
 
-navigateToStage2(){
-  this.router.navigate(['publish/stage-2/step1'])
+toggleModal(){
+  this.isModalOpen=!this.isModalOpen;
 }
 }

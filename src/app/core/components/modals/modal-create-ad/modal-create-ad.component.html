@@ -1,0 +1,17 @@
+<div class="container" (click)="emitCloseModalEvent()">
+  <div class="content" (click)="preventEventPropagation($event)">
+ <div>
+  <div class="white-circle">
+  <div class="home-circle"></div>
+</div>
+<div (click)="emitCloseModalEvent()" class="x-icon"></div>
+  <div class="text">?איזה סוג מודעה תרצו לפרסם</div>
+  <div class="btn-container">
+  <div (click)="navigate()" class="gray-btn">{{"פרטי"}}</div>
+  <div (click)="navigate()" class="gray-btn">{{"מתווך"}}</div>
+</div>
+ </div>
+
+</div>
+
+</div>
