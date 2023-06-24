@@ -12,7 +12,7 @@ export class CommentComponent implements OnInit{
 @Input()ad!:apartment;
 @Input()likedAdId!:string;
 @Input() isUserRemovedLike!:boolean;
-@Input() userMissedUnlike:boolean=false;
+@Input() userMissedUnlike!:boolean;
 @Input()comment:string="";
 items: string[] = [
   'אין תשובה',

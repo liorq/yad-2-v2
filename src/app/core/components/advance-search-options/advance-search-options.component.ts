@@ -12,13 +12,13 @@ constructor(private appSvc :AppService,private dbSvc:DbService){}
  async findApartments(){
 console.log(this.appSvc.searchSubject.getValue())
 const res=await this.dbSvc.findApartments(this.appSvc.searchSubject.getValue())
-////
 this.addLastSearch()
 console.log(res)
-// if(Array.isArray(res))
 Array.isArray(res)&&this.appSvc.allAds.next(res)
   }
+  
   addLastSearch(){
+    ///getLastSearchData
   const {hasWindowBars,hasStorage,minSqm,maxSqm,isResidentialUnit,parking,hasFurniture,minPrice,maxPrice,hasAccessibilityForDisabled,hasCentralAirConditioning,hasElevator,minFloor,maxFloor}=this.appSvc.searchSubject.getValue()
   const newSearch ={
     title: 'נדל"ן - מכירה',

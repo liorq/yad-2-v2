@@ -13,6 +13,7 @@ export class LikedAdsComponent implements OnInit{
   @Input()  allLikedAdsId:string[]=[];
   @Input()  allComments:string[]=[];
   @Input()  isCommentRemoved:boolean[]=[];
+  @Input()  isUserMissedUnlike:boolean[]=[];
   isModalOpen=true;
   constructor(private appSvc:AppService){}
   ngOnInit(): void {
@@ -21,9 +22,15 @@ export class LikedAdsComponent implements OnInit{
       console.log(this.isModalOpen)
     })
     this.isCommentRemoved = Array(this.allComments.length).fill(false);
+    this.isUserMissedUnlike = Array(this.allComments.length).fill(false);
+
   }
   removedLike(index:number){
     this.isCommentRemoved[index]=!this.isCommentRemoved[index]
     console.log("reomved!"+this.isCommentRemoved[index])
+   setTimeout(()=>{
+    this.isUserMissedUnlike[index]=!this.isUserMissedUnlike[index]
+
+   },10000)
   }
 }
