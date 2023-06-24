@@ -37,6 +37,7 @@ features!:{ id: string, title: string, checked: boolean }[];
     });
     this.imageItems = this.appSvc.currentAdImages.getValue();
     console.log(this.ad)
+    ///init objects
     if(this.ad){
       const {hasFurniture,isResidentialUnit,hasCentralAirConditioning,hasStorage,isRenovated,hasAccessibilityForDisabled,hasSolarHeater,hasKosherKitchen,hasElevator,hasWindowBars,hasAirConditioning,parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= this.ad
       this.data= [

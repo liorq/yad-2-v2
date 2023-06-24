@@ -11,7 +11,8 @@ export class CommentComponent implements OnInit{
   constructor(private dbSvc:DbService){}
 @Input()ad!:apartment;
 @Input()likedAdId!:string;
-
+@Input() isUserRemovedLike!:boolean;
+@Input() userMissedUnlike:boolean=false;
 @Input()comment:string="";
 items: string[] = [
   'אין תשובה',
@@ -30,5 +31,8 @@ this.comment+=" "+word;
 }
 async saveComment(){
  await this.dbSvc.addCommentToLikedApartment(this.likedAdId,this.comment)
+}
+unremovedLike(){
+  location.reload();
 }
 }

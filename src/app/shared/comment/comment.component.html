@@ -2,12 +2,24 @@
 
 
 <div class="container">
-<div *ngIf="this.comment==''&&!isOpen||this.comment==null&&!isOpen" class="comment-main">
+
+
+<div *ngIf="!userMissedUnlike&&!isUserRemovedLike&&this.comment==''&&!isOpen||this.comment==null&&!isOpen" class="comment-main">
   <app-btn (click)="isOpen=true"  [containerClass]="'first-comment-icon-container'" [iconClass]="'first-comment-icon'" [text]="'הוספת הערה'">  </app-btn>
 </div>
-<div (click)="isOpen=true" *ngIf="this.comment!=''&&this.comment!=null&&!isOpen" class="comment-main">
+
+<div (click)="isOpen=true" *ngIf="!userMissedUnlike&&!isUserRemovedLike&&this.comment!=''&&this.comment!=null&&!isOpen" class="comment-main">
   <app-btn   [containerClass]="'second-comment-icon-container'" [iconClass]="'second-comment-icon'" [text]="this.comment">  </app-btn>
 </div>
+
+<div  *ngIf="!userMissedUnlike&&isUserRemovedLike" class="comment-main-2">
+  <div class="street-removed">{{"המודעה" +" "+this.ad.street+" "+ this.ad.houseNumber+"  הוסרה"}}</div>
+ <div class="second-side">
+  <app-btn  (click)="unremovedLike()" [containerClass]="'second-comment-icon-container'" [iconClass]="'restore-comment-icon'" [text]="'שחזור'">  </app-btn>
+  <app-btn (click)="userMissedUnlike=true"  [containerClass]="'second-comment-icon-container'" [iconClass]="'x-comment-icon'" >  </app-btn>
+</div>
+</div>
+
 
 <div *ngIf="isOpen" class="comment-open-main">
   <div class="comment-header">

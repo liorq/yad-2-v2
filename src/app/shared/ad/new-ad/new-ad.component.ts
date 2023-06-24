@@ -17,7 +17,7 @@ export class NewAdComponent implements OnInit{
  @Input()ad:any;
  @Input()isToggleAdNeeded:boolean=true;
 @Input()isRemovePopUpOpen:boolean=false;
-@Output() isUserRemoveLike: EventEmitter<boolean> = new EventEmitter<boolean>();
+@Output() isUserRemoveLike= new EventEmitter<apartment>();
 @Input()fatherComponent!:string;
  @Input()classContainer!:string;
  @Input()isTopAds=false;
@@ -63,8 +63,8 @@ async openModal(){
 }
 removeLike() {
 
-console.log("hi")
-  this.isUserRemoveLike.emit(true);
+
+  this.isUserRemoveLike.emit(this.ad);
 }
 async navigateToImageGallery(event:Event){
   if(this.fatherComponent=='likedAds')
@@ -100,17 +100,18 @@ stopProp(event:Event){
 }
 
 ////change the name of the function
-async onClick(event:Event){
+async removeLikeFromAd(event:Event){
   event.stopPropagation()
-this.isUserLikedAd=!this.isUserLikedAd;
+  const milliSeconds = (this.fatherComponent === 'likedAds') ? 10000 : 0;
 
+setTimeout(async ()=>{
+this.isUserLikedAd=!this.isUserLikedAd;
 const {apartmentId}=this.ad
 const res=await this.dbSvc.toggleLikedAdd(apartmentId,this.isUserLikedAd);
 console.log(res)
-if(this.fatherComponent=='likedAds'){
-  ////remove this from the subject
-  console.log("koko")
-}
+},milliSeconds)
+
+
 }
 toggleAd(){
   this.isOpenAd=!this.isOpenAd

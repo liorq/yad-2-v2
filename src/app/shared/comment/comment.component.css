@@ -13,6 +13,22 @@ app-btn{
   margin: 5px 10px 5px 0;
   border: 1px solid rgba(0,0,0,.1);
 }
+.comment-main-2{
+  display: flex;
+  justify-content: space-between;
+  background: #fffaea;
+  margin: 5px 10px 5px 0;
+  border: 1px solid rgba(0,0,0,.1);
+  padding-right:12px;
+}
+.street-removed{
+  color: #363636;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .comment-open-main{
   height: auto;
   border: 1px solid #ccc;
@@ -77,4 +93,8 @@ width: 695px;
   justify-content: flex-end;
   padding-left: 50px;
   align-items:center;
+}
+.second-side{
+  display: flex;
+  gap: 20px;
 }

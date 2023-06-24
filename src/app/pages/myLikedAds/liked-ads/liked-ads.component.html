@@ -17,8 +17,8 @@
 
   <div class="ads-container">
     <div *ngFor="let ad of allAds let i=index">
-      <app-new-ad [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
-      <app-comment [comment]="allComments[i]" [likedAdId]="allLikedAdsId[i]" [ad]="ad"></app-comment>
+      <app-new-ad *ngIf="!isCommentRemoved[i]" (isUserRemoveLike)="removedLike(i)" [fatherComponent]="'likedAds'" [ad]="ad"></app-new-ad>
+      <app-comment [isUserRemovedLike]="isCommentRemoved[i]" [likedAdId]="allLikedAdsId[i]" [ad]="ad"></app-comment>
     </div>
   </div>
 </div>

@@ -1244,6 +1244,20 @@ line-height: 1.75rem;
   height: 17px;
   width: 18px;
 }
+.restore-comment-icon{
+  background-image: url('../../../assets/refrese-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 17px;
+  width: 18px;
+}
+.x-comment-icon{
+  background-image: url('../../../assets/x-icon-comment.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 17px;
+  width: 18px;
+}
 .comment-save-container{
 display: flex;
 justify-content: center;

@@ -91,7 +91,6 @@ import { LikedAdsComponent } from './pages/myLikedAds/liked-ads/liked-ads.compon
 import { NoLikedAdsComponent } from './pages/myLikedAds/no-liked-ads/no-liked-ads.component';
 import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ads.component';
 import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
-import { MyNewAdComponent } from './shared/ad/my-new-ad/my-new-ad.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { CommentComponent } from './shared/comment/comment.component';
 import { ModalSavedAdComponent } from './core/components/modal-saved-ad/modal-saved-ad.component';
@@ -181,7 +180,6 @@ import { ModalSavedAdComponent } from './core/components/modal-saved-ad/modal-sa
     NoLikedAdsComponent,
     MyLikedAdsComponent,
     ImageGalleryComponent,
-    MyNewAdComponent,
     ChatPageComponent,
     CommentComponent,
     ModalSavedAdComponent,
