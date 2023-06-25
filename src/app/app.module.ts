@@ -48,7 +48,6 @@ import { HomeInfoComponent } from './shared/ad/home-info/home-info.component';
 import { SearchColumnsComponent } from './shared/search/search-columns/search-columns.component';
 import { TextInputComponent } from './shared/inputs/text-input/text-input.component';
 import { MyAlertWidgetComponent } from './core/components/my-alert-widget/my-alert-widget.component';
-import { HeaderSearchBarComponent } from './shared/search/header-search-bar/header-search-bar.component';
 import { FeedOptionsComponent } from './core/components/feed-options/feed-options.component';
 import { AdvanceSearchComponent } from './core/components/advance-search/advance-search.component';
 import { TextCheckboxButtonComponent } from './shared/checkBoxs/text-checkbox-button/text-checkbox-button.component';
@@ -140,7 +139,6 @@ import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad
     SearchColumnsComponent,
     TextInputComponent,
     MyAlertWidgetComponent,
-    HeaderSearchBarComponent,
     FeedOptionsComponent,
     AdvanceSearchComponent,
     TextCheckboxButtonComponent,

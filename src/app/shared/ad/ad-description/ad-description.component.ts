@@ -17,7 +17,7 @@ export class AdDescriptionComponent implements OnInit{
   sidebarItems = adDescriptionSidebarItems
 
   ngOnInit(): void {
-    console.log(this.ad)
+    // console.log(this.ad)
     const {porch,parking,dateOfEntering,flexible}=this.ad;
    this.adsArray=getAdsArray(flexible,dateOfEntering,porch,parking)
   }

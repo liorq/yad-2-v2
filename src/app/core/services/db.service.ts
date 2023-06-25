@@ -72,10 +72,10 @@ export class DbService {
     try {
       const res = await this.http.post(this.url + "api/Apartment/myApartments/likedApartments",null,
        {headers: this.getHttpHeader()} ).toPromise();
-      console.log(res);
+      // console.log(res);
       return res;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return err;
     }
   }

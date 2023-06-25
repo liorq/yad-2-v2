@@ -13,7 +13,7 @@ constructor(private appSvc:AppService){}
 ngOnInit(): void {
   this.appSvc.allAds.subscribe((data)=>{
     this.allAds=data;
-    console.log(this.allAds.length)
+    // console.log(this.allAds.length)
   })
 }
 }
