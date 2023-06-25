@@ -163,6 +163,7 @@ display: none;
   position: absolute;
   top: 15px;
   left:25px;
+  cursor: pointer;
 }
 #navBarIconForPersonal{
   position: absolute;

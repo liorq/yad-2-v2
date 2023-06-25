@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { headerIcons } from 'src/app/data/array';
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit{
   @Input() heartClass = 'leftSideHeart';
   @Input() messageClass = 'leftSideMessage';
   @Input()isTopBarNeeded!:boolean;
-constructor(private dbSvc:DbService,private appSvc:AppService){}
+constructor(private router:Router,private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
 
   async ngOnInit() {
@@ -46,7 +47,9 @@ constructor(private dbSvc:DbService,private appSvc:AppService){}
       this.appSvc.allMyFavAds.next(allAds);
     }
 }
-
+navigate(val:string){
+  this.router.navigate([`/${val}`])
+}
 toggleSideBar(){
   this.appSvc.updateSubject(this.appSvc.isSideBarOpen,!this.isSideBarOpen)
 

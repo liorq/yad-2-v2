@@ -36,7 +36,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogComponent } from './shared/dialog/dialog.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { UpdateDetailsComponent } from './pages/update-details/update-details.component';
 import { SavedAdsComponent } from './pages/saved-ads-page/saved-ads/saved-ads.component';
@@ -130,7 +129,6 @@ import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad
     LoginInfoComponent,
     SubHeaderComponent,
     TreeComponent,
-    DialogComponent,
     UpdateDetailsComponent,
     SavedAdsComponent,
     LastSearchesComponent,

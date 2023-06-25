@@ -53,33 +53,19 @@ export class GenericFormComponent {
       let res: any = await (this.formTypes === 'SignUpForm' ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
       this.setToken(res);
      const isValidToken=res?.error?.text;
-      if(this.formTypes === 'SignInForm'&&isValidToken){
+      if(this.formTypes === 'SignInForm'&&isValidToken||this.formTypes === 'SignUpForm'&&isValidToken){
        this.router.navigate([''])
       }
-      else if(this.formTypes === 'SignUpForm'&&isValidToken){
-        this.router.navigate([''])
-      }
+
     }
 
     ////logic of fields
     const areFieldsInvalid=this.password.value.length==0||this.email.value.length==0
-    if(areFieldsInvalid){
-      this.isFieldsEmpty=true;
-      this.isNavigationRequested=false;
-    }
-    else{
-      this.isNavigationRequested=true;
-      this.isFieldsEmpty=false;
-    }
+    this.isFieldsEmpty = areFieldsInvalid;
+    this.isNavigationRequested = !areFieldsInvalid;
   }
  setToken(res:any){
    if(res?.error?.text)
       localStorage.setItem('token',res?.error?.text)
  }
-  async signInHandler() {
-
-  }
-  async signUpHandler() {
-
-  }
 }
