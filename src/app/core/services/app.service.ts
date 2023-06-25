@@ -127,5 +127,31 @@ isFieldPhone(field:string){
     this.setLastSearches(allSearches)
    }
 
+
+   addLastSearch(){
+    ///getLastSearchData
+  const {hasWindowBars,hasStorage,minSqm,maxSqm,isResidentialUnit,parking,hasFurniture,minPrice,maxPrice,hasAccessibilityForDisabled,hasCentralAirConditioning,hasElevator,minFloor,maxFloor}=this.searchSubject.getValue()
+  const newSearch ={
+    title: 'נדל"ן - מכירה',
+    link: '',
+    details: [
+      { label: 'מחיר', value: `${minPrice} - ${maxPrice}` },
+      { label: 'גישה לנכים', value: hasAccessibilityForDisabled ? 'כן' : 'לא' },
+      { label: 'מיזוג', value: hasCentralAirConditioning ? 'כן' : 'לא' },
+      { label: 'מרפסת', value:hasElevator ? 'כן' : 'לא' },
+      { label: 'סורגים', value: hasWindowBars ? 'כן' : 'לא'  },
+      { label: 'מעלית', value: hasElevator ? 'כן' : 'לא'  },
+      { label: 'קומה', value: `${minFloor} - ${maxFloor}` },
+      { label: 'מרוהטת',value:  hasFurniture ? 'כן' : 'לא'},
+      { label: 'חניה', value:  parking ? 'כן' : 'לא' },
+      { label: 'ממ"ד', value: isResidentialUnit ? 'כן' : 'לא'  },
+      { label: 'גודל דירה (במ"ר)', value: `${minSqm} - ${maxSqm}` },
+      { label: 'מחסן', value: hasStorage ? 'כן' : 'לא'  },
+    ],
+    time: '12:00',
+  };
+  this.AddToLastSearches(newSearch)
+  }
+
 }
 

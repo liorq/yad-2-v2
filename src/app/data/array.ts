@@ -746,6 +746,7 @@ title: {isHalfRectangleNeeded:false, label: 'מודעות שאהבתי', url: '/
 subItems: [],
 },
 {
+  // <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
 title: {isHalfRectangleNeeded:false, label: 'חיפושים אחרונים', url: '/chat/v2/inbox?serviceInitiator=Header', iconPath: 'M15.332 5.107a7.818 7.818 0 00-9.865 3.445l2.11-.006a.75.75 0 11.004 1.5l-3.82.01a.75.75 0 01-.752-.748L3 5.488a.75.75 0 111.5-.003l.004 1.754C6.908 3.533 11.69 1.96 15.91 3.723a9.317 9.317 0 11-12.623 10.89.75.75 0 011.453-.371 7.817 7.817 0 0014.788 1.09 7.815 7.815 0 00-4.196-10.225z" fill="currentColor"></path><path d="M12.743 9.017a.75.75 0 00-1.493.102V14l.007.104a.75.75 0 00.234.447l2.418 2.231.087.07a.75.75 0 00.973-.113l.069-.087a.75.75 0 00-.112-.972l-2.177-2.01.001-4.551-.007-.102z' },
 
 subItems:[],

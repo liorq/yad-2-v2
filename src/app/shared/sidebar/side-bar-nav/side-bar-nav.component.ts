@@ -13,14 +13,14 @@ export class SideBarNavComponent implements OnInit{
 constructor(private appSvc:AppService){}
 @Input()customClassObj:any={"mini-buttons":false};
  @Input()customHiddenObj:any={'customHidden':false,'hidden':true};
-
+clickCounter=0
 ngOnInit(): void {
 
 this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
   this.isSideBarOpen=newStatus;
-  this.toggleSideBar()
+     this.toggleSideBar()
+
 })
-this.appSvc.isSideBarOpen.next(false)
 }
 
  openItem(index:number, item:any) {

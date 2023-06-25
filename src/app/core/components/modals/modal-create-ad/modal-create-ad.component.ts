@@ -10,9 +10,6 @@ import { apartment } from 'src/app/data/interfaces';
 export class ModalCreateAdComponent {
   constructor(private router:Router){}
   @Output() closeModal = new EventEmitter<void>();
-
-
-
   preventEventPropagation(event: Event): void {
     event.stopPropagation();
   }

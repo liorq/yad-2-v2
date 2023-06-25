@@ -1,4 +1,4 @@
-<nav  id="{{sideBarId}}" class="{{sideBarNavClass}} show">
+<nav *ngIf="isSideBarOpen" id="{{sideBarId}}" class="{{sideBarNavClass}} show">
   <app-user-details [textColor]="textColor" [RequiredActionsObj]="RequiredActionsObj" *ngIf="isUserDetailsNeeded"></app-user-details>
   <div *ngIf="isSettingIconsNeeded" class="setting-icons">
     <app-side-bar-item *ngFor="let item of settingSidebarItems" [hasMinimumTextContent]="true" [textColor]='textColor' [isColumnDirection]="true"  [item]='item.title'></app-side-bar-item>

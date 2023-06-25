@@ -33,9 +33,9 @@ constructor(private router:Router,private dbSvc:DbService,private appSvc:AppServ
     this.appSvc.allMyFavAds.subscribe((newData)=>{
       this.allAds=newData
     })
-    this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
-      this.isSideBarOpen=newStatus;
-    })
+    // this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
+    //   this.isSideBarOpen=newStatus;
+    // })
     if(!this.isUserLogged){
      return;
     }

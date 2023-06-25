@@ -9,9 +9,7 @@ import { AppService } from '../../services/app.service';
 })
 export class ImageGalleryComponent implements OnInit{
   constructor(private router:Router,private appSvc:AppService){}
-  imageItems :any[]= [
-
-  ];
+  imageItems :any[]= [];
   ngOnInit(): void {
 this.imageItems=this.appSvc.currentAdImages.getValue()
   }
