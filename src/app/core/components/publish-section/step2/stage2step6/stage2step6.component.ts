@@ -17,7 +17,7 @@ export class Stage2step6Component {
   inputs = step6Inputs
   optionBtnArray=step6OptionBtnArray
   btns=step6Btns
-    constructor(private router:Router,private appSvc:AppService){}
+    constructor(private appSvc:AppService){}
 
 
 
@@ -34,10 +34,9 @@ export class Stage2step6Component {
 
     this.formValidationHandler()
     if(this.isFormValid()){
-    this.router.navigate(['publish/stage-2/step7'])
+    this.appSvc.navigate('publish/stage-2/step7')
       }
       this.isNavigationRequested=true
-   console.log(this.fieldValidity)
 
   }
 

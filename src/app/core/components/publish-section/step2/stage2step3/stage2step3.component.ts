@@ -18,12 +18,13 @@ btns=step3Btns;
 buttonsWithIcons = step3ButtonsWithIcons;
 isNavigationRequested=false;
 
-constructor(private router:Router,private appSvc:AppService){}
+constructor(private appSvc:AppService){}
 
 navigate(){
   this.formValidationHandler()
   if(this.isFormValid()){
-    this.router.navigate(['publish/stage-2/step4'])
+
+    this.appSvc.navigate('publish/stage-2/step4')
   }
   this.isNavigationRequested=true;
  console.log(this.fieldValidity)

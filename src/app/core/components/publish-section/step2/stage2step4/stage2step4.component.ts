@@ -11,14 +11,12 @@ import { step4FieldValidity } from 'src/app/data/objects';
   styleUrls: ['./stage2step4.component.css']
 })
 export class Stage2step4Component   {
-
   checkboxes=step4Checkboxes
   btns=step4Btns
   inputs = step4Inputs
   isNavigationRequested=false;
   fieldValidity=step4FieldValidity
-  constructor(private router:Router,private appSvc:AppService){}
-
+  constructor(private appSvc:AppService){}
 
   formValidationHandler(){
     this.fieldValidity= this.appSvc.getFormValues('builtUpArea','totalSquareFootage','price','dateOfEntering')
@@ -27,19 +25,14 @@ export class Stage2step4Component   {
     return this.appSvc.isFormValid(this.fieldValidity)
    }
 
-
    navigate(){
-
     this.formValidationHandler()
-    if(this.isFormValid()){
-      this.router.navigate(['publish/stage-2/step5'])
-    }
-    this.isNavigationRequested=true;
-   console.log(this.fieldValidity)
+    if(this.isFormValid())
+      this.appSvc.navigate('publish/stage-2/step5')
 
+    this.isNavigationRequested=true;
   }
 getCurrentDay(){
 return getCurrentDay()
 }
-
 }

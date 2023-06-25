@@ -6,10 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './generic-container.component.html',
   styleUrls: ['./generic-container.component.css','../../../auth/sign-in/sign-in.component.css']
 })
-export class GenericContainerComponent implements OnInit{
+export class GenericContainerComponent {
 @Input()containerClass!:string;
 @Input()arrayOfContent!:any[];
-ngOnInit(): void {
- console.log(this.arrayOfContent)
-}
+
 }

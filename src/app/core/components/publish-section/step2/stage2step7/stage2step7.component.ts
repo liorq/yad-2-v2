@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { routeToChooseArray } from 'src/app/data/array';
 
@@ -9,10 +10,10 @@ import { routeToChooseArray } from 'src/app/data/array';
   styleUrls: ['./stage2step7.component.css']
 })
 export class Stage2step7Component {
-  constructor(private router:Router,private dbSvc:DbService){}
+  constructor(private appSvc:AppService,private dbSvc:DbService){}
 
 navigate(){
-  this.router.navigate(['publish/stage-2/final'])
+  this.appSvc.navigate('publish/stage-2/final')
 }
 routeToChooseArray=routeToChooseArray
 }

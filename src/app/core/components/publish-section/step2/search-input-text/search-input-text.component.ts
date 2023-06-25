@@ -19,18 +19,9 @@ ngOnInit(): void {
     city:this.appSvc.getValueFromObject('city')
   }
 }
-
-
 updateAddress(){
  this.AppSvc.updateAdUploadSubject(this.address)
-  console.log(this.AppSvc.adUploadSubject.getValue())
 }
-
-
-
-
-
-
 }
 
 

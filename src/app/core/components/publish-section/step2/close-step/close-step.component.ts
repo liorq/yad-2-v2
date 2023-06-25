@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { closeStepStages } from 'src/app/data/array';
 
 @Component({
@@ -11,11 +12,9 @@ export class CloseStepComponent {
   @Input()num!:number;
   @Input() isCircleChecked!:boolean;
   closeStepStages=closeStepStages
-
-
-  constructor(private router:Router){}
+  constructor(private appSvc:AppService){}
    navigate(path:string){
-  this.router.navigate([`publish/stage-2/${path}`])
+    this.appSvc.navigate(`publish/stage-2/${path}`)
 }
 
 }

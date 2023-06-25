@@ -13,7 +13,6 @@ export class PersonalComponent implements OnInit{
 
   ngOnInit() {
     this.route.url.subscribe(segments => {
-      // segments is an array of UrlSegments
       console.log(segments.map(s => s.path));
     });
   }

@@ -18,16 +18,13 @@ async ngOnInit() {
   this.appSvc.allMyFavAds.subscribe((newData)=>{
     this.allAds=newData
   })
-  ////FROM THE SERVER MY LIKED ADS
+  ////make function
   const res:any = await this.dbSvc.getAllMyLikedAds();
-  console.log("hello")
   if(Array.isArray(res)){
     const allAds = res?.map((obj:any) => obj?.apartment)|| [];
     this.allLikedAdsId = res?.map((obj:any) => obj?.likedApartmentId.toUpperCase())|| [];
     this.allComments = res?.map((obj:any) => obj?.comment)|| [];
-
     this.appSvc.allMyFavAds.next(allAds);
-
   }
 }
 }

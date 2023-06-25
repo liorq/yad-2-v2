@@ -8,16 +8,18 @@ import { AppService } from '../../services/app.service';
   styleUrls: ['./image-gallery.component.css']
 })
 export class ImageGalleryComponent implements OnInit{
-  constructor(private router:Router,private appSvc:AppService){}
+  constructor(private appSvc:AppService){}
   imageItems :any[]= [];
   ngOnInit(): void {
 this.imageItems=this.appSvc.currentAdImages.getValue()
   }
   stopProp(event:Event){
-   event.stopPropagation()
+    this.appSvc.preventEventPropagation(event)
+
   }
   navigateToImageGallery(event:Event){
     this.stopProp(event)
-    this.router.navigate(['/realestate'])
+    this.appSvc.navigate('/realestate')
+
   }
 }

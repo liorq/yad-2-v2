@@ -26,10 +26,8 @@ export class SavedAdsComponent implements OnInit {
       this.myAds = res;
       this.appSvc.allMyAds.next(this.myAds);
     }
-    console.log(this.myAds,"hi");
   }
   toggleBtn(num:number){
     this.isDropDownOpen = this.isDropDownOpen.map((value, index) => index === num ? !value : false);
-
   }
 }

@@ -17,7 +17,6 @@ export class AdDescriptionComponent implements OnInit{
   sidebarItems = adDescriptionSidebarItems
 
   ngOnInit(): void {
-    // console.log(this.ad)
     const {porch,parking,dateOfEntering,flexible}=this.ad;
    this.adsArray=getAdsArray(flexible,dateOfEntering,porch,parking)
   }
@@ -51,8 +50,6 @@ export class AdDescriptionComponent implements OnInit{
       flexible: ''
     };
 
-    // console.log(obj)
-    // console.log(obj[item?.title?.iconPathClass])
  return ngObj[item?.title?.iconPathClass]
   }
 

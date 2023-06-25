@@ -24,7 +24,6 @@ constructor(private appSvc:AppService){}
       this.shouldUpdateSearchAd && this.appSvc.updateSearchSubject({ [this.PropertyName]: this.isChecked });
       this.shouldUpdateAd && this.appSvc.updateAdUploadSubject({ [this.PropertyName]: this.isChecked });
       this.shouldUpdateFilterAd && this.appSvc.updateAdFilterSubject({ [this.PropertyName]: this.isChecked });
-      console.log(`the btn status is ${this.isChecked}`);
     }, 1000);
   }
 

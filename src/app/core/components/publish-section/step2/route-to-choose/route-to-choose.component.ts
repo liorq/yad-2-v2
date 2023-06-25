@@ -18,22 +18,14 @@ export class RouteToChooseComponent {
 @Input()classBtn:string='vipBtnContainer';
 @Input()arrayOfData!:any[];
 
-constructor(private dbSvc:DbService,private AppSvc:AppService,private router:Router){}
+constructor(private dbSvc:DbService,private appSvc:AppService){}
 async publishAdd(){
-  console.log("published!")
-  let obj:apartment|null=this.AppSvc.adUploadSubject.getValue()
-  console.log(obj)
-
+  let obj:apartment|null=this.appSvc.adUploadSubject.getValue()
 
 if(obj){
    obj!.category='sale'
 console.log(await this.dbSvc.addAd(obj))
-this.router.navigate(['publish/stage-2/final'])
-
+this.appSvc.navigate('publish/stage-2/final')
 }
-
-
 }
-
-
 }

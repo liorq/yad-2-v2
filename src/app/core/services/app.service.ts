@@ -152,6 +152,11 @@ isFieldPhone(field:string){
   };
   this.AddToLastSearches(newSearch)
   }
-
+  preventEventPropagation(event: Event): void {
+    event.stopPropagation();
+  }
+  navigate(value:string){
+    this.router.navigate([`${value}`])
+  }
 }
 

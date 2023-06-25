@@ -22,7 +22,6 @@ ngOnInit(): void {
 onClick(){
  if(this.shouldUpdateAdSubject){
   this.appSvc.updateAdUploadSubject({ [this.objName]: this.selectedOption })
- console.log(this.appSvc.adUploadSubject.getValue())
  }
 }
 }

@@ -11,7 +11,6 @@ export class CategoryItemComponent {
 @Input()category:any;
 @Input()i!:number;
 showContent!:boolean;
-constructor(private router :Router){}
 isModalOpen=false;
 
 toggleModal(){

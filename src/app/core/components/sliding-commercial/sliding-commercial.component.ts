@@ -54,9 +54,6 @@ slideToNextCommercial(target: string): void {
     },1000)
 
   }
-  console.log( target)
-
-console.log( id)
 
 }
 }

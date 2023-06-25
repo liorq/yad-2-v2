@@ -7,6 +7,5 @@ import { allCategories } from 'src/app/data/array';
   styleUrls: ["./publish.component.css"],
 })
 export class PublishComponent {
-
   allCategories = allCategories;
 }

@@ -13,10 +13,7 @@ export class RadioBtnsComponent {
  @Input() allAds:apartment[]=[]
  @Input() options = [{hebrew:'לפי תאריך',english:'date'}, {hebrew:'מחיר-מהזול ליקר',english:'priceLowToHigh'}, {hebrew:'מחיר-מהיקר לזול',english:'priceHighToLow'}];
 constructor(private dbSvc:DbService,private appSvc:AppService){}
-printVal(val:string){
-console.log(val)
 
-}
 sortByParameter(parameter: string) {
   console.log(parameter);
   this.allAds = this.allAds.sort((a: Record<string, any>, b: Record<string, any>) => {

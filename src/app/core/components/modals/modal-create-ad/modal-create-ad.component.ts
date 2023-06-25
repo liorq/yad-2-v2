@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { apartment } from 'src/app/data/interfaces';
 
 @Component({
@@ -8,7 +9,7 @@ import { apartment } from 'src/app/data/interfaces';
   styleUrls: ['./modal-create-ad.component.css']
 })
 export class ModalCreateAdComponent {
-  constructor(private router:Router){}
+  constructor(private appSvc:AppService){}
   @Output() closeModal = new EventEmitter<void>();
   preventEventPropagation(event: Event): void {
     event.stopPropagation();
@@ -17,6 +18,6 @@ export class ModalCreateAdComponent {
     this.closeModal.emit();
   }
   navigate(){
-   this.router.navigate(['publish/stage-2/step1'])
+    this.appSvc.navigate('publish/stage-2/step1')
     }
 }

@@ -24,12 +24,10 @@ getTextLength(): number {
   this.calcLoaderValue = Math.min(this.textBoxValue.length / 1.5, 100);
   return this.textBoxValue.length;
 }
-
 updateLoaderData(){
   this.textLoaderArray=getUpdatedLoaderData(this.textBoxValue)
 }
 updateAdSubject(){
 this.appSvc.updateAdUploadSubject({des:this.textBoxValue})
-console.log(this.appSvc.adUploadSubject.getValue())
 }
 }

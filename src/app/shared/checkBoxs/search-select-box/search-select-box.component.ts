@@ -14,8 +14,7 @@ currentVal="0";
 
 constructor(private appSvc:AppService){}
 onChange(){
-  console.log("e")
-  console.log(this.shouldUpdateSearchAd)
+
   this.shouldUpdateSearchAd && this.appSvc.updateSearchSubject({ [this.PropertyName]: this.currentVal });
 }
 }

@@ -16,12 +16,11 @@ export class BtnComponent implements OnInit{
 @Input()containerCheckedClass='';
 isChecked:boolean=false;
 ngClass:any;
+constructor(private appSvc:AppService){}
 ngOnInit(): void {
      this.isChecked=this.appSvc.getValueFromObject(this.PropertyName)
-
   this.ngClass={[this.containerCheckedClass]:this.isChecked}
 }
-constructor(private appSvc:AppService){}
 handleButtonClick(){
   this.ngClass={[this.containerCheckedClass]:this.isChecked}
 
@@ -30,7 +29,6 @@ handleButtonClick(){
     this.ngClass={[this.containerCheckedClass]:this.isChecked}
     if(this.shouldUpdateAdSubject){
       this.appSvc.updateAdUploadSubject({[this.PropertyName]:this.isChecked})
-     console.log(this.appSvc.adUploadSubject.getValue())
     }
   })
 }

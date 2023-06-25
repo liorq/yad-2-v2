@@ -16,22 +16,11 @@ export class ModalSavedAdComponent implements OnInit {
   constructor(private appSvc: AppService) {}
   data:{ value: string, label: string }[]= [  ];
 
-  data2:{ value: string, item: string }[] = [
-    { item: 'מצב הנכס', value: 'במצב שמור' },
-    { item: 'כניסה', value: 'א' },
-    { item: 'תאריך כניסה', value: 'כניסה מיידית' },
-    { item: 'מ"ר בנוי', value: '166' },
-    { item: 'מרפסות', value: '2' },
-    { item: 'חניות', value: '2' }
-  ];
-
+  data2!:{ value: string, item: string }[]
 isDesOpen:boolean=false;
 features!:{ id: string, title: string, checked: boolean }[];
 
-
-
   ngOnInit(): void {
-
     this.appSvc.currentAdOpen.subscribe((newAd) => {
       this.ad = newAd;
     });
@@ -73,13 +62,13 @@ features!:{ id: string, title: string, checked: boolean }[];
   }
 
   toggleModal(event: Event): void {
-    event.stopPropagation();
+   this.preventEventPropagation(event)
     this.appSvc.currentAdOpen.next({} as apartment);
   }
 
 
   preventEventPropagation(event: Event): void {
-    event.stopPropagation();
+   this.appSvc.preventEventPropagation(event)
   }
 
 }

@@ -20,7 +20,7 @@ selectBoxes = step2SelectBoxes;
 textBoxes = step2TextBoxes;
 inputs = step2Inputs;
 
-  constructor(public dbSvc:GovService,private router:Router,private appSvc:AppService){}
+  constructor(public dbSvc:GovService,private appSvc:AppService){}
 
 
 async ngOnInit() {
@@ -31,7 +31,7 @@ async ngOnInit() {
 
     this.formValidationHandler()
    if(this.appSvc.isFormValid(this.fieldValidity)){
-     this.router.navigate(['publish/stage-2/step3'])
+    this.appSvc.navigate('publish/stage-2/step3')
    }
    this.isNavigationRequested=true;
     console.log("form not valid")
@@ -39,9 +39,6 @@ async ngOnInit() {
 
   formValidationHandler(){
      this.fieldValidity=this.appSvc.getFormValues('totalFloorInBuilding','city','street','houseNumber','floor','typeOfProperty','conditionOfProperty')
-     console.log(this.fieldValidity )
   }
-
-
 
 }

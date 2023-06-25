@@ -11,6 +11,5 @@ isReadMoreBtnActive=false;
 
 openDis(){
   this.isReadMoreBtnActive=!this.isReadMoreBtnActive
-  console.log("hello",this.isReadMoreBtnActive)
 }
 }

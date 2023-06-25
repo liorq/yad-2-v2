@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { propertyCategories } from 'src/app/data/array';
 
 @Component({
@@ -9,9 +10,8 @@ import { propertyCategories } from 'src/app/data/array';
 })
 export class Stage2step1Component {
 propertyCategories=propertyCategories
-
-constructor(private router:Router){}
+constructor(private appSvc:AppService){}
 navigate(){
-  this.router.navigate(['publish/stage-2/step2'])
+  this.appSvc.navigate('publish/stage-2/step2')
 }
 }

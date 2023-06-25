@@ -19,7 +19,6 @@ export class LikedAdsComponent implements OnInit{
   ngOnInit(): void {
     this.appSvc.currentAdOpen.subscribe(()=>{
       this.isModalOpen=!this.isModalOpen;
-      console.log(this.isModalOpen)
     })
     this.isCommentRemoved = Array(this.allComments.length).fill(false);
     this.isUserMissedUnlike = Array(this.allComments.length).fill(false);
@@ -27,7 +26,6 @@ export class LikedAdsComponent implements OnInit{
   }
   removedLike(index:number){
     this.isCommentRemoved[index]=!this.isCommentRemoved[index]
-    console.log("reomved!"+this.isCommentRemoved[index])
    setTimeout(()=>{
     this.isUserMissedUnlike[index]=!this.isUserMissedUnlike[index]
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { imageUploadInputs, mediaUploadInputs, step5Btns, step5DataArrays } from 'src/app/data/array';
 
 @Component({
@@ -12,10 +12,10 @@ export class Stage2step5Component {
   mediaUploadInputs =mediaUploadInputs
   dataArrays =step5DataArrays
   btns=step5Btns
-  constructor(private router:Router){}
+  constructor(private appSvc:AppService){}
 
 navigate(){
-  this.router.navigate(['publish/stage-2/step6'])
+  this.appSvc.navigate('publish/stage-2/step6')
 }
 
 

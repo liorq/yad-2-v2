@@ -47,10 +47,5 @@ console.log(await this.dbSvc.getAllRangeAd(pageNumber))
       return 0;
     });
   }
-onClick(){
-
-}
-
-
 
 }

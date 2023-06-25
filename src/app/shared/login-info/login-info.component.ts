@@ -8,7 +8,4 @@ import { loginArray } from 'src/app/data/array';
 })
 export class LoginInfoComponent {
    loginArray = loginArray
-
-
-
 }
