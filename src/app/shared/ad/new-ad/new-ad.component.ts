@@ -37,6 +37,7 @@ async ngOnInit() {
 
 
  await this.isAdLikedByUser();
+ ///initAdData(){}
   const { totalFloorInBuilding, floor,roomNumber,price, street,houseNumber,typeOfProperty,city } = this.ad;
 
   this.adsArray=[
@@ -52,18 +53,12 @@ async ngOnInit() {
     { content: `${typeOfProperty}, ${city}  ${city}` },
   ];
 }
-async openModal(){
-  ////updateSubjectToGiveInfoForTheModal
-  await this.updateCurrentImages()
-  if(this.fatherComponent=="likedAds"){
-    this.appSvc.currentAdOpen.next(this.ad)
-    // console.log(this.ad)
-
-  }
+async openModal() {
+  await this.updateCurrentImages();
+  this.fatherComponent === "likedAds" && this.appSvc.currentAdOpen.next(this.ad);
 }
+
 removeLike() {
-
-
   this.isUserRemoveLike.emit(this.ad);
 }
 async navigateToImageGallery(event:Event){
@@ -80,8 +75,8 @@ async updateCurrentImages(){
     this.pics=pics.map((p: any) => p.value);
   }
    this.appSvc.currentAdImages.next(this.pics)
-
 }
+
 async isAdLikedByUser() {
   const res:any = await this.dbSvc.getAllMyLikedAds();
   this.myLikedMessages = res || [];
@@ -89,14 +84,11 @@ async isAdLikedByUser() {
   this.isUserLikedAd = !!res?.find((a: any) => a.apartment.apartmentId === this.ad.apartmentId);
 }
 
-
-
-
 isNumber(content: string): boolean {
   return /^₪?\d+(?: \₪?)?$/.test(content);
 }
 stopProp(event:Event){
-  event.stopPropagation()
+  this.appSvc.preventEventPropagation(event)
 }
 
 ////change the name of the function
@@ -115,6 +107,5 @@ console.log(res)
 }
 toggleAd(){
   this.isOpenAd=!this.isOpenAd
-
 }
 }
