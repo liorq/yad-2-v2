@@ -14,6 +14,10 @@ export class AppService {
   currentPage=new BehaviorSubject<string>("");
   currentAdImages=new BehaviorSubject<string[]>([]);
   currentAdOpen=new BehaviorSubject<apartment>({} as apartment);
+  adsHasPictures=new BehaviorSubject<string[]>([]);
+
+
+
 
   adUploadSubject=new BehaviorSubject<apartment>({}as apartment);
   adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});
@@ -33,7 +37,11 @@ export class AppService {
   }
   updateSearchSubject(value:any){
     this.searchSubject.next(Object.assign( this.searchSubject.getValue()||{},value))
-    // console.log(this.searchSubject.getValue())
+  }
+  updateAdsHasPicturesSubject(value: any) {
+    const currentValue = this.adsHasPictures.getValue() || []; // Retrieve the current value or initialize it as an empty array
+    const updatedValue = [...new Set([...currentValue, value])]; // Use Set to remove duplicates and merge with the current value
+    this.adsHasPictures.next(updatedValue);
   }
   typeOfPropertySubject(value:any){
     this.typeOfProperty.next(Object.assign( this.typeOfProperty.getValue()||{},value))

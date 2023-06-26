@@ -14,9 +14,19 @@ export class SearchFilterComponent {
  @Input() allAds!:apartment[];
  constructor(private dbSvc:DbService,private appSvc:AppService){}
  filterAds() {
-  const { withPrice, withPictures, business } = this.appSvc.adFilterSubject.getValue();
-  if (withPrice) this.allAds = this.allAds.filter(a => a.price > 1);
-  this.appSvc.updateSubject(this.appSvc.allAds,this.allAds)
+  const { withPrice, withPictures } = this.appSvc.adFilterSubject.getValue();
+
+  if (withPrice)
+   this.allAds = this.allAds.filter(a => a.price > 1);
+   if(withPictures){
+    const allAdsHasPic=this.appSvc.adsHasPictures.getValue()||[]
+     this.allAds = this.allAds.filter(a => allAdsHasPic.includes(a.apartmentId));
+     console.log(this.allAds)
+     console.log(allAdsHasPic)
+
+   }
+
+  this.appSvc.allAds.next(this.allAds)
 
 }
 

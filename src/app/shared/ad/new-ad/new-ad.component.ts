@@ -26,12 +26,14 @@ adsArray:any[]=[]
 topColumn:any[] = [];
 myLikedMessages!:any[]
 constructor(private appSvc:AppService,private dbSvc:DbService,private router:Router){}
+
 async ngOnInit() {
 
     const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
     // console.log(this.ad.apartmentId.toUpperCase())
     if(Array.isArray(pics)){
       this.pics=pics.map((p: any) => p.value);
+      pics?.length>0&& this.appSvc.updateAdsHasPicturesSubject(this.ad.apartmentId)
     }
 
 
