@@ -1,7 +1,7 @@
 <div class="container">
-  <app-text-checkbox-button *ngFor="let item of filterOptions" [text]="item.filter" [PropertyName]="item.PropertyName"  [shouldUpdateFilterAd]="true"></app-text-checkbox-button>
+  <app-text-checkbox-button *ngFor="let item of filterOptions" [text]="item.filter" [PropertyName]="item.PropertyName"  [shouldUpdateFilterAd]="true" [isChecked]="item.isChecked"></app-text-checkbox-button>
   <div class="btn-container">
     <app-btn [textClass]="'orange'" (click)="filterAds()" [text]="'סינון'"></app-btn>
-    <app-btn [text]="'ניקוי'"></app-btn>
+    <app-btn [text]="'ניקוי'" (click)="restore()"></app-btn>
   </div>
 </div>

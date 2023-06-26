@@ -591,7 +591,12 @@ export const PopularServicesArray=[
     export const   closeStepStages=[{text:'?באיזו קטגוריה נפרסם היום',path:'step1'},{text:'כתובת הנכס',path:'step2'},{text:'על הנכס',path:'step3'},{text:'תשלומים, תאריכים ועוד',path:'step4'},
     {text:'תמונות וסרטונים',path:'step5'},{text:'פרטים ליצירת קשר',path:'step6'},{text:'בחירת מסלול',path:'step7'}];
     export const  propertyCategories=[{ class:"home",title:'מכירה'},{ class:"home-for-rent",title:'השכרה'},{ class:"partners",title:'שותפים'},{ class:"business",title:'מסחרי'}]
-    export const filterOptions=[{filter:'עם מחיר',PropertyName:'withPrice'},{filter:'עם תמונה',PropertyName:'withPictures'},{filter:'מודעות מלקוחות עסקיים',PropertyName:'business'}]
+    export const filterOptions=[
+      {filter:'עם מחיר',PropertyName:'withPrice',isChecked:false}
+      ,{filter:'עם תמונה',PropertyName:'withPictures',isChecked:false}
+      ,{filter:'מודעות מלקוחות עסקיים',PropertyName:'business',isChecked:false}
+
+    ]
     export const slidingCommercialArray=[{orangeBtnText:"למידע נוסף",classCommercial:'container-commercial-Part1' ,idCommercial:'Part1',classTopTitle:"Part1ClassTopTitle",topText:"האפליקציה",classBottomTitle:"Part1ClassBottomTitle",bottomText:"לא מפספסת כלום",classMiddleTitle:"Part1ClassMiddleTitle",middleText:"החדשה",desktopImg:'desktopImgFirst',link:'realestate'},
     {orangeBtnText:"למגוון הגדול בארץ",classCommercial:'container-commercial-Part2' ,idCommercial:'Part2',classTopTitle:"Part2ClassTopTitle",topText:"?משרד ליד הרכבת",classBottomTitle:"Part2ClassBottomTitle",bottomText:"נדלן מסחרי זה רק ביד 2",classMiddleTitle:"Part2ClassMiddleTitle",middleText:"?חנות בשכונה נחשבת",desktopImg:'desktopImgSecond',link:'realestate'}]
 
