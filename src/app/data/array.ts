@@ -361,7 +361,8 @@ import { RequiredActionsObj } from "./objects";
     text: 'מ"ר בנוי',
     shouldUpdateAdSubject:true,
     PropertyName:'builtUpArea'    ,type:'text'
-   ,min:''
+   ,min:'',
+
   },
   {
     placeholder: '',
@@ -417,8 +418,8 @@ export const step5Btns=[
 
 
 export const  step5CheckboxItems = [
-  {classContainer:'containerClassMax' ,text: 'קראתי ואישרתי את התקנון',textClass:'max-2 max bold' },
-  {classContainer:'containerClassMax', textClass:'max-2 max', text: 'אשמח לקבל עדכונים, הצעות או טיפים לשיפור המודעה שלי לפרטי החשבון או לפרטי המודעה' }
+  {classContainer:'containerClassMax' ,text: 'קראתי ואישרתי את התקנון',textClass:'max-2 max bold' ,type:"agreed"},
+  {classContainer:'containerClassMax', textClass:'max-2 max', text: 'אשמח לקבל עדכונים, הצעות או טיפים לשיפור המודעה שלי לפרטי החשבון או לפרטי המודעה' ,type:""}
 ];
 
 export const step6Inputs = [

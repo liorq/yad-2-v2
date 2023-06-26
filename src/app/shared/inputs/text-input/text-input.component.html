@@ -3,7 +3,7 @@
 
       <div class="{{containerClass}}">
         <span class="{{textClass}}">{{text}}</span>
-        <input [(ngModel)]="inputVal" [attr.min]="min" [attr.type]="type" (input)="UpdateAdSubject()" disabled="{{isInputDisabled}}" [class]="inputClass" [placeholder]="placeHolder">
+        <input [(ngModel)]="inputVal" [attr.min]="min" [attr.type]="type" (input)="UpdateAdSubject()" disabled="{{isInputDisabled?true:false}}" [class]="inputClass" [placeholder]="placeHolder">
         <div *ngIf="isTextUnderInputExpected" class="{{ClassTextUnderInput}}">{{TextUnderInput}}</div>
      <ng-content></ng-content>
       </div>

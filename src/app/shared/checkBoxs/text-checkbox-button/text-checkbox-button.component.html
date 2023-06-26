@@ -1,4 +1,4 @@
 <div class="containerClass {{containerClass}}">
 <div class="{{textClass}}">{{text}}</div>
-<input type="checkbox" class="c7" [(ngModel)]="isChecked" (click)="handleButtonClick($event)" />
+<input type="checkbox" class="c7" [(ngModel)]="isChecked" (click)="handleButtonClick($event);updateIsUserAgreedToTerm()" />
 </div>

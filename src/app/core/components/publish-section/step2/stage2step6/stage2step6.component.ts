@@ -12,13 +12,17 @@ import { iconSettings, step6FieldValidity } from 'src/app/data/objects';
 export class Stage2step6Component {
   anotherPersonInfoNeeded=false;
   isNavigationRequested=false;
+  isUserAgreedToTerms=false;
   fieldValidity=step6FieldValidity;
   checkboxItems = step5CheckboxItems;
   inputs = step6Inputs
   optionBtnArray=step6OptionBtnArray
+  isUserAgreedToTerm=false
   btns=step6Btns
     constructor(private appSvc:AppService){}
-
+ updateIsUserAgreedToTerms(){
+  this.isUserAgreedToTerm=true;
+ }
 
 
   formValidationHandler(){
@@ -33,7 +37,7 @@ export class Stage2step6Component {
    navigate(){
 
     this.formValidationHandler()
-    if(this.isFormValid()){
+    if(this.isFormValid()&&this.isUserAgreedToTerm){
     this.appSvc.navigate('publish/stage-2/step7')
       }
       this.isNavigationRequested=true

@@ -34,7 +34,7 @@
 
 
 <div class="checkboxs">
-  <app-text-checkbox-button  *ngFor="let item of checkboxItems" [containerClass]="item.classContainer" [textClass]="item.textClass" [text]="item.text"></app-text-checkbox-button>
+  <app-text-checkbox-button  *ngFor="let item of checkboxItems" [PropertyName]="item.type" [containerClass]="item.classContainer" (isUserAgreedToTerm)="updateIsUserAgreedToTerms()" [textClass]="item.textClass" [text]="item.text"></app-text-checkbox-button>
 </div>
 
 <div class="container-btn">
