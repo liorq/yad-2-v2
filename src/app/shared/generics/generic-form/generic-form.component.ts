@@ -54,7 +54,8 @@ export class GenericFormComponent {
       this.setToken(res);
      const isValidToken=res?.error?.text;
       if(this.formTypes === 'SignInForm'&&isValidToken||this.formTypes === 'SignUpForm'&&isValidToken){
-       this.router.navigate([''])
+      localStorage.setItem("userName",this.email.value)
+        this.router.navigate([''])
       }
 
     }

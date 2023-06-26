@@ -1,4 +1,4 @@
-<div *ngIf="isUserLogged" class="circle" [ngClass]="{'custom-circle': isPopUpNeeded}">{{"ZC"}}</div>
+<div *ngIf="isUserLogged" class="circle" [ngClass]="{'custom-circle': isPopUpNeeded}">{{circleText}}</div>
 
 <div *ngIf="isPopUpNeeded && isUserLogged" class="user-container">
   <div class="icon-container">

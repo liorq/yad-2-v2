@@ -30,7 +30,7 @@ formFields = [
   {
     label: 'אימות סיסמא',
     name: 'confirmPassword',
-    type: 'confirmPassword',
+    type: 'password',
     placeholder: 'הקלדת סיסמא',
     passwordVisibilityObj:{counter:0}
 
