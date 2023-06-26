@@ -14,6 +14,8 @@ export class GenericFormComponent {
   @Input()titleContainerObj={arrayOfContent:[{label:'',class:'halfRec'},{label:'היי, טוב לראות אותך',class:'title'}],containerClass:'title-container'};
   @Input()formFields = signInFormFields;
   @Input() buttons!:any[] ;
+  @Input() url:string="signUp" ;
+
   @Input()isSignInForm!:boolean;
   isNavigationRequested=false;
   isFieldsEmpty=false;

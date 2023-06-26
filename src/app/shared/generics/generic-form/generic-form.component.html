@@ -2,7 +2,7 @@
   <div *ngIf="!isSignInForm" class="formHeaderImageContainer">
   <div  class="formHeaderImage"></div>
 </div>
-  <app-generic-container [arrayOfContent]="titleContainerObj.arrayOfContent" [containerClass]="titleContainerObj.containerClass"></app-generic-container>
+  <app-generic-container  [arrayOfContent]="titleContainerObj.arrayOfContent" [containerClass]="titleContainerObj.containerClass"></app-generic-container>
 
   <form [formGroup]="form">
     <div *ngFor="let field of formFields let i=index" class="form-item">
@@ -20,5 +20,5 @@
 
     <app-generic-container *ngIf="isSignInForm" [arrayOfContent]="[{label:'כניסה לסוחרי רכבים',class:'log-as'},{label:'|',class:'upper-line'},{label:'כניסה למתווכים',class:'log-as'}]" [containerClass]="'container-log-as'"></app-generic-container>
   </form>
-  <app-generic-container [arrayOfContent]="accountOptionsObj.array" [containerClass]=" accountOptionsObj.containerClass"></app-generic-container>
+  <app-generic-container [url]="url" [isInsideGenericForm]="true" [arrayOfContent]="accountOptionsObj.array" [containerClass]=" accountOptionsObj.containerClass"></app-generic-container>
 </div>

@@ -1,5 +1,6 @@
 import { Input, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/core/services/app.service';
 
 @Component({
   selector: 'app-generic-container',
@@ -9,5 +10,12 @@ import { Component } from '@angular/core';
 export class GenericContainerComponent {
 @Input()containerClass!:string;
 @Input()arrayOfContent!:any[];
-
+@Input()url!:string;
+@Input()isInsideGenericForm!:boolean;
+constructor(private appSvc:AppService){}
+navigate(){
+  console.log("hello",this.url)
+  if(this.isInsideGenericForm)
+   this.appSvc.navigate(this.url)
+}
 }

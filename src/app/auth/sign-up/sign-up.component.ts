@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SignUpComponent {
 titleContainerObj={arrayOfContent:[{label:'',class:'halfRec'},{label:'היי,נעים להכיר',class:'title'}],containerClass:'title-container'}
-accountOptionsObj={array:[{label:'להתחברות',class:'sign-up'},{label:'?כבר יש לך חשבון',class:'account'}],containerClass:'dont-have-account-container dont-have-account-sign-up'};
+accountOptionsObj={array:[{label:'להתחברות',class:'sign-up'},{label:'?כבר יש לך חשבון',class:'account'}],containerClass:'dont-have-account-container dont-have-account-sign-up',url:"signUp"};
 
 
 formFields = [

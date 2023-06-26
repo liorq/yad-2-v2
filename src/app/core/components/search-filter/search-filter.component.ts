@@ -15,7 +15,12 @@ export class SearchFilterComponent implements OnInit{
 ngOnInit(): void {
 }
  constructor(private dbSvc:DbService,private appSvc:AppService){}
- filterAds() {
+ async filterAds() {
+  const res:any = await this.dbSvc.getAllAds();
+  if (res && res.length>0){
+    this.appSvc.allAds.next(res)
+      this.allAds = res;
+  }
   const { withPrice, withPictures } = this.appSvc.adFilterSubject.getValue();
 
   if (withPrice){
@@ -35,10 +40,6 @@ async restore(){
   this.filterOptions.forEach(option => {
     option.isChecked = false;
   });
-  const res:any = await this.dbSvc.getAllAds();
-  if (res && res.length>0){
-    this.appSvc.allAds.next(res)
-      this.allAds = res;
-  }
+  
 }
 }
