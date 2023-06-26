@@ -43,6 +43,8 @@ $theme: mat.define-light-theme((
   position: relative;
   bottom: 5px;
   background: #FFF;
+  border-radius:4px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.09);
 }
 
 .example-radio-button {
