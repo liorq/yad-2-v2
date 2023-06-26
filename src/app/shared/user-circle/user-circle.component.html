@@ -3,7 +3,7 @@
 <div *ngIf="isPopUpNeeded && isUserLogged" class="user-container">
   <div class="icon-container">
     <div *ngFor="let item of sidebarItems">
-      <app-side-bar-item (click)="disconnectUser()" [item]="item.title"></app-side-bar-item>
+      <app-side-bar-item (click)="disconnectUser(item)" [item]="item.title"></app-side-bar-item>
     </div>
   </div>
 </div>
@@ -13,7 +13,7 @@
 <div *ngIf="isPopUpNeeded && !isUserLogged" class="user-container2">
   <div class="icon-container">
     <div *ngFor="let item of sidebarItems">
-      <app-side-bar-item (click)="disconnectUser()" [item]="item.title"></app-side-bar-item>
+      <app-side-bar-item (click)="disconnectUser(item)" [item]="item.title"></app-side-bar-item>
     </div>
   </div>
 </div>

@@ -19,8 +19,12 @@ export class UserCircleComponent implements OnInit{
    this.sidebarItems= this.isUserLogged?UserInfoSidebarItems:UserInfoDisSidebarItems
 
   }
-  disconnectUser(){
+  disconnectUser(item:any){
+    console.log(item)
+    if(item.title.iconPathClass=='disconnect-icon'){
     this.appSvc.isUserLoggedSubject.next(false);
     localStorage.setItem("token","");
+    }
+
     }
 }

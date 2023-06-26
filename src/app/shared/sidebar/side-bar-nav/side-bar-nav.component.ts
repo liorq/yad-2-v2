@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { Input, OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { fastSearchSidebarItems, navigationMenuItems, settingSidebarItems, sidebarMenuItems } from 'src/app/data/array';
@@ -18,8 +18,10 @@ ngOnInit(): void {
 
 this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
   this.isSideBarOpen=newStatus;
+  console.log("click",this.clickCounter)
+  if(this.clickCounter>0)
      this.toggleSideBar()
-
+this.clickCounter++
 })
 }
 

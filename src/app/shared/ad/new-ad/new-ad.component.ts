@@ -78,6 +78,9 @@ async updateCurrentImages(){
 }
 
 async isAdLikedByUser() {
+  if(!this.appSvc.isUserLogged())
+  return
+
   const res:any = await this.dbSvc.getAllMyLikedAds();
   this.myLikedMessages = res || [];
   if(Array.isArray(res))
