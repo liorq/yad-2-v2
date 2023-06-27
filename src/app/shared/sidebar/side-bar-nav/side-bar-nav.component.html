@@ -1,7 +1,13 @@
 <nav *ngIf="isSideBarOpen" id="{{sideBarId}}" class="{{sideBarNavClass}} show">
   <app-user-details [textColor]="textColor" [RequiredActionsObj]="RequiredActionsObj" *ngIf="isUserDetailsNeeded"></app-user-details>
   <div *ngIf="isSettingIconsNeeded" class="setting-icons">
-    <app-side-bar-item *ngFor="let item of settingSidebarItems" [hasMinimumTextContent]="true" [textColor]='textColor' [isColumnDirection]="true"  [item]='item.title'></app-side-bar-item>
+    <div class="rel" *ngFor="let item of settingSidebarItems">
+      <app-mini-alert [number]="getNumOfAlerts(item.title.iconPathClass)"></app-mini-alert>
+
+    <app-side-bar-item  [hasMinimumTextContent]="true" [textColor]='textColor' [isColumnDirection]="true"  [item]='item.title'></app-side-bar-item>
+</div>
+
+
   </div>
   <div *ngIf="isFastSearchIconsNeeded" class="fast-search-icons">
    <span class="title">{{" חיפוש מהיר באתר"}}</span>

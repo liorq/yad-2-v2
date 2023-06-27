@@ -4,6 +4,7 @@
   <svg *ngIf="item?.iconPath" width="24" height="24" viewBox="0 0 24 24" [attr.fill]="textColor" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" [attr.d]="item?.iconPath" [attr.fill]="textColor"></path>
   </svg>
+
   <div  class="{{item?.iconPathClass}}" ></div>
 </a>
   <app-half-rectangle *ngIf="item.isHalfRectangleNeeded"></app-half-rectangle>

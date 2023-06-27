@@ -55,5 +55,8 @@ toggleSideBar() {
   nav?.classList.toggle('none', isOpen);
   this.isSideBarOpen = !isOpen;
 }
+getNumOfAlerts(type:string){
+  return this.appSvc.getNumOfAlerts(type)
 
+  }
 }

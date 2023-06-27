@@ -56,12 +56,8 @@ getSvgClass(obj:any){
 console.log(obj);
 }
 getNumOfAlerts(type:string){
+return this.appSvc.getNumOfAlerts(type)
 
-  if(type=="love"){
-    return this.allAds!.length||0
-  }
-
-  return 0;
 }
 
 }

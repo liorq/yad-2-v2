@@ -36,12 +36,8 @@ export class UserCircleComponent implements OnInit,AfterViewInit{
 
 
     getNumOfAlerts(type:string){
-      console.log(type)
-      if(type=="user-last-search"){
-        return JSON.parse(localStorage.getItem("searches")||"[]").length;
-      }
+      return this.appSvc.getNumOfAlerts(type)
 
-      return 0;
-    }
+      }
 
 }

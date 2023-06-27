@@ -5,11 +5,19 @@ $width: 280px;
 $width-compressed: 52px;
 
 *{
-  color: black;
+  color: #363636;
 box-sizing: border-box;
 font-family: 'Rubik', sans-serif;
 text-decoration: none;
 font-weight: 300;
+}
+app-mini-alert{
+  position: absolute;
+  top: 0;
+  right:10px;
+}
+.rel{
+position: relative;
 }
 .setting-icons{
   display: flex;

@@ -166,5 +166,15 @@ isFieldPhone(field:string){
   navigate(value:string){
     this.router.navigate([`${value}`])
   }
+  getNumOfAlerts(type:string){
+
+    if(type=="love"){
+      return this.allAds.getValue()!.length||0
+    }
+    if(type=="user-last-search"||type=='search'){
+      return JSON.parse(localStorage.getItem("searches")||"[]").length;
+    }
+    return 0;
+  }
 }
 
