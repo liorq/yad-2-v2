@@ -54,6 +54,7 @@ async ngOnInit() {
     {  content: `${street} ${houseNumber}` },
     { content: `${typeOfProperty}, ${city}  ${city}` },
   ];
+  // this.ad.isPr
 }
 async openModal() {
   await this.updateCurrentImages();
