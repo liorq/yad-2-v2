@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { UserInfoDisSidebarItems, UserInfoSidebarItems } from 'src/app/data/array';
 
@@ -7,7 +7,7 @@ import { UserInfoDisSidebarItems, UserInfoSidebarItems } from 'src/app/data/arra
   templateUrl: './user-circle.component.html',
   styleUrls: ['../user-details/user-details.component.css','./user-circle.component.css']
 })
-export class UserCircleComponent implements OnInit{
+export class UserCircleComponent implements OnInit,AfterViewInit{
   constructor(private appSvc:AppService){}
   isUserLogged!:boolean;
   circleText!:string;
@@ -19,6 +19,9 @@ export class UserCircleComponent implements OnInit{
    this.sidebarItems= this.isUserLogged?UserInfoSidebarItems:UserInfoDisSidebarItems
    this.circleText = (localStorage.getItem("userName") || "").toString().slice(0, 2);
   }
+  ngAfterViewInit(): void {
+
+  }
   disconnectUser(item:any){
     if(item.title.iconPathClass=='disconnect-icon'){
     this.appSvc.isUserLoggedSubject.next(false);
@@ -29,13 +32,16 @@ export class UserCircleComponent implements OnInit{
 
     }
 
-    getNumOfAlerts(type:string){
+    // return new Error( ^ Error: Content and Map of this Source is not available (only size() is supported)
 
+
+    getNumOfAlerts(type:string){
+      console.log(type)
       if(type=="user-last-search"){
         return JSON.parse(localStorage.getItem("searches")||"[]").length;
       }
 
-      return 2;
+      return 0;
     }
 
 }

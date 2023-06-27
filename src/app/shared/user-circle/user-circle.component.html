@@ -3,7 +3,7 @@
 <div *ngIf="isPopUpNeeded && isUserLogged" class="user-container">
   <div class="icon-container">
     <div *ngFor="let item of sidebarItems" class="user">
-      <app-mini-alert [number]="getNumOfAlerts(item.iconPathClass)"></app-mini-alert>
+      <app-mini-alert [number]="getNumOfAlerts(item.title.iconPathClass)"></app-mini-alert>
       <app-side-bar-item (click)="disconnectUser(item)" [item]="item.title"></app-side-bar-item>
     </div>
   </div>
