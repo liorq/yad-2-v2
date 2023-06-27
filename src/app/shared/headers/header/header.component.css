@@ -95,6 +95,9 @@ svg{
   width: 250px;
 
 }
+svg{
+  cursor: pointer;
+}
 .bell-sub-title{
   font-size: 0.875rem;
 
