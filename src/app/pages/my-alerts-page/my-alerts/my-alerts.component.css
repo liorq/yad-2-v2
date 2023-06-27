@@ -7,6 +7,8 @@
   border-radius:4px;
   margin-top:25px;
 flex-direction: row-reverse;
+width: 95%;
+position: relative;
 }
 .texts{
   display: flex;
@@ -102,4 +104,48 @@ li{
 .my-alerts-page-placeholder
 {
   margin: 25px 0 30px;
+}
+.y2_btn2{
+  width: 160px;
+  background: #ff7100;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.promotion-container{
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width:880px) {
+.promotion-banner{
+  max-width: 695px;
+  height: 94px;
+}
+.y2_btn{
+  background-color: #ff7100;
+  color: #fff;
+  width: 124px;
+  height: 46px;
+  padding: 9.5px 18px;
+  line-height: 1.0625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  position: absolute;
+  left: 5px;
+}
+.button_text1{
+  color: #fff;
+}
+.y2_btn2{
+  height: 41px;
+  font-size: 14px;
+}
 }
