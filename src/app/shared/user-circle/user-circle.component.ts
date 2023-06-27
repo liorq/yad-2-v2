@@ -20,7 +20,6 @@ export class UserCircleComponent implements OnInit{
    this.circleText = (localStorage.getItem("userName") || "").toString().slice(0, 2);
   }
   disconnectUser(item:any){
-    console.log(item)
     if(item.title.iconPathClass=='disconnect-icon'){
     this.appSvc.isUserLoggedSubject.next(false);
     localStorage.setItem("token","");
@@ -29,4 +28,14 @@ export class UserCircleComponent implements OnInit{
     }
 
     }
+
+    getNumOfAlerts(type:string){
+
+      if(type=="user-last-search"){
+        return JSON.parse(localStorage.getItem("searches")||"[]").length;
+      }
+
+      return 2;
+    }
+
 }

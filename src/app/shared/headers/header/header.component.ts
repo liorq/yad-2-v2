@@ -55,6 +55,13 @@ toggleSideBar(){
 getSvgClass(obj:any){
 console.log(obj);
 }
+getNumOfAlerts(type:string){
 
+  if(type=="love"){
+    return this.allAds!.length||0
+  }
+
+  return 0;
+}
 
 }

@@ -67,3 +67,11 @@ app-side-bar-item {
   display: block;
   margin-bottom: 10px;
 }
+.user{
+  position: relative;
+}
+app-mini-alert{
+  position: absolute;
+  top: 0;
+  right:-5px;
+}

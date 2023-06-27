@@ -94,6 +94,7 @@ import { CommentComponent } from './shared/comment/comment.component';
 import { ModalSavedAdComponent } from './core/components/modals/modal-saved-ad/modal-saved-ad.component';
 import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad/modal-create-ad.component';
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
+import { MiniAlertComponent } from './shared/mini-alert/mini-alert.component';
 
 
 
@@ -183,6 +184,7 @@ import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.co
     ModalSavedAdComponent,
     ModalCreateAdComponent,
     MyAlertsComponent,
+    MiniAlertComponent,
 
   ],
   imports: [
