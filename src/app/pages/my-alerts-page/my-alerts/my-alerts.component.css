@@ -1,0 +1,105 @@
+.promotion-banner{
+  display:flex;
+  align-items:center;
+  background:#fff;
+  border-top:1.5px solid #ff7100;
+  box-shadow:0 3px 9px rgba(0,0,0,.09);
+  border-radius:4px;
+  margin-top:25px;
+flex-direction: row-reverse;
+}
+.texts{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.left-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.promotion-banner .left-banner .texts .title{
+  font-size: 16px ;
+  color: #363636;
+  font-weight: 500;
+}
+.promotion-banner .left-banner .texts .description{
+  line-height: 23px;
+  font-size: 14px;
+}
+ .button_text1 {
+  color: #ff7100;
+  font-size: 14px;
+
+  font-weight: 500;
+  cursor: pointer;
+}
+.bell_icon {
+  width: 45px;
+  height: 45px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 20 20"><g transform="translate(2 1)"><ellipse cx="7.206" cy="14.44" fill="%23f4cf17" stroke="%23000000" stroke-width=".926" rx="1.9" ry="1.878" transform="rotate(18 9.206 14.44)"></ellipse><path fill="%23000000" stroke="%23000000" stroke-width=".5" d="M12.8231052,15.8320384 L1.59588336,12.1600933 C0.741326334,11.8806041 0.269836303,10.9686617 0.542985389,10.1224645 C0.815755737,9.27744069 1.72954622,8.81726719 2.58246568,9.09622075 C2.65893815,9.12123163 2.74258017,9.07909159 2.76739036,9.00223131 L3.8459642,5.66088349 C4.61481752,3.27902861 6.84212555,1.71637786 9.30527285,1.73266656 L9.38971013,1.47108564 C9.6874779,0.548621518 10.6844662,0.047077824 11.6140351,0.351100142 C12.5450902,0.655608518 13.0578164,1.64918572 12.7595436,2.57321436 L12.6750952,2.83482976 C14.6772473,4.27905538 15.566613,6.86145268 14.797923,9.24280184 L13.7193491,12.5841497 C13.6940463,12.6625362 13.7361292,12.7441081 13.8140718,12.7695998 C14.6656729,13.0481222 15.1376194,13.9612666 14.8647776,14.8065116 C14.5919484,15.6517178 13.6770509,16.1113276 12.8231052,15.8320384 Z"></path><path fill="%23f4cf17" d="M9.59960261,2.62300607 L9.94192819,2.64576241 L10.2321685,1.74661782 C10.3809686,1.2856454 10.8799668,1.03461995 11.3443694,1.18650621 C11.8102812,1.33888607 12.0663829,1.83516822 11.9170852,2.29768218 L11.626842,3.19683568 L11.9170605,3.38096657 C13.7800716,4.56296579 14.6361763,6.85847156 13.9554646,8.96726966 L12.8768908,12.3086175 C12.7026263,12.8484768 13.0012781,13.4273719 13.5444061,13.6050059 C13.9311015,13.7314774 14.1461096,14.1474854 14.0223193,14.5309794 C13.8985247,14.9144864 13.481759,15.1238537 13.092771,14.9966324 L1.86554913,11.3246872 C1.47584389,11.1972313 1.26136338,10.7823892 1.38544376,10.3979967 C1.50929716,10.0143073 1.92520534,9.80486117 2.31279991,9.93162681 C2.85466526,10.1088478 3.43614333,9.81589092 3.60984873,9.27776349 L4.68842257,5.93641567 C5.369295,3.82711954 7.40211168,2.47692622 9.59960261,2.62300607 Z"></path></g></svg>');
+}
+.bell_icon.yellow .bell_fill{
+  fill: #f4cf17;
+}
+.my-alerts-page-placeholder{
+  text-align:center;
+  width: 66%;
+   display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.empty_my_alerts_page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li{
+  list-style-type: none;
+  width: fit-content;
+}
+.options{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.my-alerts-page-placeholder .title{
+  line-height:25px;
+  font-size:18px;
+  font-weight: 500;
+  color: #363636;
+
+}
+.my-alerts-page-placeholder .recomendations
+{
+  margin: 25px 0 30px;
+  color: #363636;
+}
+.check
+{
+  height: 16px;
+  width: 16px;
+  background-size: cover;
+  background: url('../../../../assets/checkforalert.png');
+}
+.recomendation{
+  display: flex;
+  gap: 5px;
+  flex-direction: row-reverse;
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 10px;
+}
+.options2{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.my-alerts-page-placeholder
+{
+  margin: 25px 0 30px;
+}

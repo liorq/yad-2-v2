@@ -57,6 +57,7 @@ svg{
   background: #fff;
   /* display: block; */
   box-shadow:  0px 3px 10px 0px rgba(0,0,0,0.30);
+  border-radius: 5px;
 }
 .icon-container:hover .bell-container {
   display: flex;
@@ -87,7 +88,7 @@ svg{
 .love-container{
   padding: 24px 20px;
    position: absolute;
-  top:59px;
+  top:38px;
   left:16px;
   display: none;
   height: 120px;
@@ -156,7 +157,7 @@ display: none;
 }
 .loveIcon
 {
-
+cursor: pointer;
   position: absolute;
   left:65px;
   top: 15px;
@@ -188,6 +189,12 @@ display: none;
     bottom: 37px;
   }
 @media screen and (min-width: 880px)  {
+.bell-container{
+  top: 65px;
+}
+  .love-container-1{
+    top: 2px;
+  }
   .ads-container{
     display: flex;
   }
@@ -266,6 +273,7 @@ li{
   }
   .loveIcon{
     top: 35px;
+    cursor: pointer;
   }
   .messagesIcon{
     top: 35px;

@@ -1,0 +1,42 @@
+<div class="my_alerts_page">
+  <div class="promotion-banner">
+    <img src="//assets.yad2.co.il/yad2site/y2assets/images/my-alerts/Announcement.svg" alt="promotion-banner-img" class="img">
+    <div class="left-banner">
+      <div class="texts">
+        <span class="title">חדש! פחות זמן חיפוש, יותר תוצאות</span>
+        <span class="description">כל המודעות הרלוונטיות אצלכם במייל, עד 15 דק׳ מרגע שעלו לאתר</span>
+      </div>
+      <div class="y2_btn primary create-alert-btn">
+        <span class="button_content">
+          <span class="button_text1">ליצירת התראה</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="empty_my_alerts_page">
+    <div class="my-alerts-page-placeholder">
+      <div class="img">
+        <svg width="45" height="45" viewBox="0 0 20 20" class="bell_icon yellow">
+          <!-- SVG content -->
+        </svg>
+      </div>
+      <span class="title">?עדיין לא הוספת התראה על החיפוש שלך</span>
+      <div class="recomendations">
+        <span>בהוספת התראה נעדכן אותך על מודעות חדשות שעלו&nbsp;בהתאם לחיפוש שלך</span>
+        <ul class="options">
+          <div class="options2">
+          <li class="recomendation" *ngFor="let recommendation of recommendations">
+            <div class="check"></div>
+            <span>{{ recommendation }}</span>
+          </li>
+          </div>
+        </ul>
+      </div>
+      <div class="y2_btn primary placeholder-btn">
+        <span class="button_content">
+          <span class="button_text">יצירת התראה חדשה</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

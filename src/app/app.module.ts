@@ -93,6 +93,7 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { CommentComponent } from './shared/comment/comment.component';
 import { ModalSavedAdComponent } from './core/components/modals/modal-saved-ad/modal-saved-ad.component';
 import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad/modal-create-ad.component';
+import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
 
 
 
@@ -181,6 +182,7 @@ import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad
     CommentComponent,
     ModalSavedAdComponent,
     ModalCreateAdComponent,
+    MyAlertsComponent,
 
   ],
   imports: [
