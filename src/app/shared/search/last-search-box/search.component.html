@@ -14,7 +14,7 @@
         <div class="search_data" *ngFor="let item of search.details">
           <span class="field_label">:{{ item.label }}&nbsp;</span>
           <span class="line">{{'|'}}</span>
-          <span class="field_text">{{checkUndefined(item.value,0)}}</span>
+          <span class="field_text">{{checkUndefined(item.value,"לא",item.label)}}</span>
         </div>
 
 
