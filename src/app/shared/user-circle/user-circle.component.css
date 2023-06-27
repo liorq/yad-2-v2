@@ -5,6 +5,7 @@
    position: relative;
   top:79px;
   left:-50px;
+  border-radius: 5px;
   display: none;
   height: 175px;
   width: 170px;

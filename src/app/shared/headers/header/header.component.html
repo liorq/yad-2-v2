@@ -19,7 +19,7 @@
             <app-new-ad  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
           </div>
         </div>
-     <div *ngIf="allAds?.length==0" [ngClass]="{'custom-love-container':!isUserLogged}">
+     <div *ngIf="allAds?.length==0"  [ngClass]="{'custom-love-container':!isUserLogged,'love-container-1':isUserLogged}">
       <div class="love-title">מודעות שאהבתי</div>
       <div class="love-sub-title">אין לך עדיין מודעות שאהבת. כדי לשמור מודעות שאהבת, ולשמור נוספות, יש להתחבר לחשבון שלך </div>
 

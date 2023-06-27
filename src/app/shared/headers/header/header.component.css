@@ -49,7 +49,7 @@ svg{
 .bell-container{
   padding: 24px 20px;
    position: absolute;
-  top:85px;
+  top:46px;
   left:16px;
   display: none;
   height: 120px;
@@ -69,7 +69,7 @@ svg{
 }
 
 .ads-container{
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 6px;
   width: 460px;
@@ -77,6 +77,8 @@ svg{
   height: 273px;
   overflow: hidden;
   background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.30) ;
 }
 
 
@@ -171,7 +173,24 @@ display: none;
   top: 7px;
   height: 32px;
   }
+  .love-container-1{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.30);
+    height: 131px;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 17px;
+    text-align: center;
+    position: relative;
+    bottom: 37px;
+  }
 @media screen and (min-width: 880px)  {
+  .ads-container{
+    display: flex;
+  }
   #navBarIconForPersonal{
   display: none;
   }
