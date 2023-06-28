@@ -22,11 +22,18 @@ ngOnInit(): void {
       this.allAds = res;
   }
   const { withPrice, withPictures } = this.appSvc.adFilterByTypeSubject.getValue();
-  if (withPrice)
+////לפני הראשון הם שקר!
+///צריך להעביר ארגומנט שהוקלק
+
+  if (withPrice){
     this.allAds = this.allAds.filter(a => a.price > 1);
+    this.filterOptions[0].isChecked=true;
+  }
    if(withPictures){
     const allAdsHasPic=this.appSvc.adsHasPictures.getValue()||[]
      this.allAds = this.allAds.filter(a => allAdsHasPic.includes(a.apartmentId));
+     this.filterOptions[1].isChecked=true
+
     }
     if(!withPrice&&!withPictures)
     this.restore()
