@@ -1,3 +1,5 @@
+import Swal, { SweetAlertOptions } from "sweetalert2";
+
 export const  step2FieldValidity:{[key: string]: boolean}={
   typeOfProperty:false,
   city:false,
@@ -29,3 +31,17 @@ export const  step2FieldValidity:{[key: string]: boolean}={
           'mini-circle-plus': [true]
         };
         export const  RequiredActionsObj={isXSignNeeded:true,isDisconnectNeeded:false,isPersonalAreaNeeded:false}
+
+
+
+        export const successResUpdate:SweetAlertOptions<any, any>={
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast:any) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        }

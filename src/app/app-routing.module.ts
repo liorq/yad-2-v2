@@ -27,6 +27,7 @@ import { ImageGalleryComponent } from './core/components/image-gallery/image-gal
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { SignInGuard } from './core/guards/sign-in.guard';
 
 
 const routes: Routes = [
@@ -65,8 +66,8 @@ const routes: Routes = [
   { path: 'chat', component: ChatPageComponent },
   { path: 'my-alerts', component: MyAlertsComponent },
 
-  { path: 'signUp', component: SignUpComponent },
-  { path: 'signIn', component: SignInComponent },
+  { path: 'signUp', component: SignUpComponent,canActivate:[SignInGuard] },
+  { path: 'signIn', component: SignInComponent ,canActivate:[SignInGuard]},
   { path: '', component: HomePageComponent, pathMatch: 'full' },
 ];
 
