@@ -37,28 +37,28 @@ const routes: Routes = [
   { path: 'realestate', component: RealestateComponent },
   { path: 'image-gallery', component: ImageGalleryComponent },
   { path: 'advance', component: AdvanceSearchComponent },
-{ path: 'publish' ,canActivateChild:[AuthGuard],canActivate:[AuthGuard], children: [
-    { path: 'stage-1', component: PublishComponent },
+{ path: 'publish' , children: [
+    { path: 'stage-1', component: PublishComponent ,canActivate:[AuthGuard]},
     { path: 'stage-2', component: Stage2PublishComponent,children:[
-        { path: 'step1', component: Stage2step1Component },
-        { path: 'step2', component: Stage2step2Component },
-        { path: 'step3', component: Stage2step3Component },
-        { path: 'step4', component: Stage2step4Component },
-        { path: 'step5', component: Stage2step5Component },
-        { path: 'step6', component: Stage2step6Component },
-        { path: 'step7', component: Stage2step7Component },
-        { path: 'final', component: Stage2FinalComponent },
+        { path: 'step1', component: Stage2step1Component,canActivate:[AuthGuard] },
+        { path: 'step2', component: Stage2step2Component ,canActivate:[AuthGuard]},
+        { path: 'step3', component: Stage2step3Component ,canActivate:[AuthGuard]},
+        { path: 'step4', component: Stage2step4Component ,canActivate:[AuthGuard]},
+        { path: 'step5', component: Stage2step5Component,canActivate:[AuthGuard] },
+        { path: 'step6', component: Stage2step6Component ,canActivate:[AuthGuard]},
+        { path: 'step7', component: Stage2step7Component ,canActivate:[AuthGuard]},
+        { path: 'final', component: Stage2FinalComponent ,canActivate:[AuthGuard]},
     ] },
 
   ]},
 
-  { path: 'personal', component: PersonalComponent,canActivateChild:[AuthGuard] ,canActivate:[AuthGuard], children: [
-    { path: 'update', component: UpdateDetailsComponent },
+  { path: 'personal', component: PersonalComponent , children: [
+    { path: 'update', component: UpdateDetailsComponent ,canActivate:[AuthGuard]},
 
-    { path: 'saved-ads', component: SavedAdsComponent },
-    { path: 'last-searches', component: LastSearchesComponent },
-    { path: 'tips-and-info', component: TipsAndInfoComponent },
-    { path: 'my-liked-ads', component: MyLikedAdsComponent }
+    { path: 'saved-ads', component: SavedAdsComponent,canActivate:[AuthGuard] },
+    { path: 'last-searches', component: LastSearchesComponent ,canActivate:[AuthGuard]},
+    { path: 'tips-and-info', component: TipsAndInfoComponent ,canActivate:[AuthGuard]},
+    { path: 'my-liked-ads', component: MyLikedAdsComponent,canActivate:[AuthGuard] }
 
   ]},
 
