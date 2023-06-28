@@ -95,6 +95,7 @@ import { ModalSavedAdComponent } from './core/components/modals/modal-saved-ad/m
 import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad/modal-create-ad.component';
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
 import { MiniAlertComponent } from './shared/mini-alert/mini-alert.component';
+import { EmptyResultComponent } from './core/components/empty-result/empty-result.component';
 
 
 
@@ -185,6 +186,7 @@ import { MiniAlertComponent } from './shared/mini-alert/mini-alert.component';
     ModalCreateAdComponent,
     MyAlertsComponent,
     MiniAlertComponent,
+    EmptyResultComponent,
 
   ],
   imports: [

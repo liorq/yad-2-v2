@@ -13,6 +13,7 @@
 <div  *ngFor="let ad of allAds | paginate :{itemsPerPage:10,currentPage:p}">
 <app-new-ad [ad]="ad"></app-new-ad>
 </div>
+<app-empty-result *ngIf="allAds?.length==0" ></app-empty-result>
 </div>
 
 <div class="pagination-container">
