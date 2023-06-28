@@ -68,7 +68,15 @@ export class AppService {
     updateSubject(subject: BehaviorSubject<any>, value: any) {
     subject.next(value);
   }
-  
+  disconnectUser(item:any){
+    const isDisconnectRequested =item=='disconnect'||item.title.iconPathClass=='disconnect-icon'
+    if(isDisconnectRequested){
+    this.isUserLoggedSubject.next(false);
+    ['token', 'userName'].forEach(key => localStorage.setItem(key,""));
+
+
+    }
+  }
   isUserLogged(){
     const isUserHasValidToken=((localStorage.getItem('token')||"").length>0)
     this.isUserLoggedSubject.next(isUserHasValidToken)

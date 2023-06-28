@@ -59,4 +59,5 @@ getNumOfAlerts(type:string){
   return this.appSvc.getNumOfAlerts(type)
 
   }
+
 }

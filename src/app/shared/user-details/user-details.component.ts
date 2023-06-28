@@ -16,5 +16,7 @@ constructor(private appSvc:AppService){}
 toggleSideBar(){
   this.appSvc.updateSubject(this.appSvc.isSideBarOpen,!this.isSideBarOpen)
 }
-
+disconnectUser(item:string){
+  this.appSvc.disconnectUser(item)
+    }
 }

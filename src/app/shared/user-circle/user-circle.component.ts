@@ -23,17 +23,8 @@ export class UserCircleComponent implements OnInit,AfterViewInit{
 
   }
   disconnectUser(item:any){
-    if(item.title.iconPathClass=='disconnect-icon'){
-    this.appSvc.isUserLoggedSubject.next(false);
-    localStorage.setItem("token","");
-    localStorage.setItem("userName","");
-
-    }
-
-    }
-
-    // return new Error( ^ Error: Content and Map of this Source is not available (only size() is supported)
-
+    this.appSvc.disconnectUser(item)
+      }
 
     getNumOfAlerts(type:string){
       return this.appSvc.getNumOfAlerts(type)

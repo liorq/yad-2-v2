@@ -4,6 +4,6 @@
   <div [style.color]="textColor" class="userName">{{"user name"}}</div>
   <div *ngIf="RequiredActionsObj.isPersonalAreaNeeded" [routerLink]="'/personal/saved-ads'"   class="personalArea">{{"אזור אישי"}}</div>
 </div>
-<div *ngIf="RequiredActionsObj.isDisconnectNeeded" class="logout">{{"התנתקות"}}</div>
+<div *ngIf="RequiredActionsObj.isDisconnectNeeded" (click)="disconnectUser('disconnect')" class="logout">{{"התנתקות"}}</div>
 
 <app-btn class="publish" [routerLink]="'/publish/stage-1'"  [containerClass]="'green-btn'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'"></app-btn>

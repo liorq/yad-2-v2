@@ -8,7 +8,7 @@
     <div *ngFor="let field of formFields let i=index" class="form-item">
       <div class="input-title">{{ field.label }}</div>
 
-      <input required [ngClass]="{'eye':field.name=='password'&&field.passwordVisibilityObj.counter==0,'eye-close':field.name=='password'&&field.passwordVisibilityObj.counter==1}" [type]="field.type" [formControlName]="field.name" [placeholder]="field.placeholder" />
+      <input required [ngClass]="{'eye':field.type=='password'&&field.passwordVisibilityObj.counter==1,'eye-close':field.type=='password'&&field.passwordVisibilityObj.counter==0}" type="{{field.type=='password'&&field.passwordVisibilityObj.counter==0?'password':'text'}}" [formControlName]="field.name" [placeholder]="field.placeholder" />
       <div (click)="togglePasswordVisibility(field.passwordVisibilityObj)" class="hidden-svg"></div>
       <div *ngIf="isFieldsEmpty" [class]="'red errorMessage'+i">{{"לא לשכוח להזין "+field.label}}</div>
     </div>
