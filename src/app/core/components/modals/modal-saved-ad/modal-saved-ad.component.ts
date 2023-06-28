@@ -24,9 +24,11 @@ features!:{ id: string, title: string, checked: boolean }[];
     this.appSvc.currentAdOpen.subscribe((newAd) => {
       this.ad = newAd;
     });
-    this.imageItems = this.appSvc.currentAdImages.getValue();
-    console.log(this.ad)
-    ///init objects
+    const currentImages = this.appSvc.currentAdImages.getValue();
+    this.imageItems = currentImages && currentImages.length > 0 ? currentImages : ["https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png"];
+
+
+
     if(this.ad){
       const {hasFurniture,isResidentialUnit,hasCentralAirConditioning,hasStorage,isRenovated,hasAccessibilityForDisabled,hasSolarHeater,hasKosherKitchen,hasElevator,hasWindowBars,hasAirConditioning,parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= this.ad
       this.data= [
