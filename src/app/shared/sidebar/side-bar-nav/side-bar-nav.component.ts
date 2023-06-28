@@ -2,29 +2,42 @@ import { HostListener, Input, OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { fastSearchSidebarItems, navigationMenuItems, settingSidebarItems, sidebarMenuItems } from 'src/app/data/array';
+import { distinctUntilChanged } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-side-bar-nav',
   templateUrl: './side-bar-nav.component.html',
   styleUrls: ['./side-bar-nav.component.scss']
 })
-export class SideBarNavComponent implements OnInit{
+export class SideBarNavComponent implements OnInit,OnDestroy{
   isSideBarOpen!:boolean;
 constructor(private appSvc:AppService){}
 @Input()customClassObj:any={"mini-buttons":false};
  @Input()customHiddenObj:any={'customHidden':false,'hidden':true};
 clickCounter=0
-ngOnInit(): void {
+private sidebarOpenSubscription: Subscription | undefined;
 
-this.appSvc.isSideBarOpen.subscribe((newStatus)=>{
-  this.isSideBarOpen=newStatus;
-  console.log("click",this.clickCounter)
-  if(this.clickCounter>0)
-     this.toggleSideBar()
-this.clickCounter++
-})
+ngOnInit(): void {
+  this.sidebarOpenSubscription = this.appSvc.isSideBarOpen
+    .pipe(distinctUntilChanged())
+    .subscribe((newStatus:any) => {
+      this.isSideBarOpen = newStatus;
+      if (this.clickCounter > 0) {
+        this.toggleSideBar();
+      }
+      this.clickCounter++;
+      console.log("this.clickCounter", this.clickCounter);
+    });
+
+  this.onWindowResize();
 }
 
+ngOnDestroy(): void {
+  if (this.sidebarOpenSubscription) {
+    this.sidebarOpenSubscription.unsubscribe();
+  }
+}
  openItem(index:number, item:any) {
   const canItemBeOpen = index >= 5 && this.customClassObj['mini-buttons'];
   if (!canItemBeOpen)
@@ -64,14 +77,18 @@ getNumOfAlerts(type:string){
 
   ////still in test need only in personal side bar and
   ///when the screen above 880px
-  isAbove880px: boolean = false;
 
   @HostListener('window:resize', ['$event'])
-  onWindowResize(event: Event) {
-    this.isAbove880px = window.innerWidth > 880&&this.sideBarId=="sidenavForPersonalPage";
-    console.log(this.isAbove880px)
-  }
+  onWindowResize(event?: EventTarget) {
 
+    const isPersonalSideBar = ["sidenavForPersonalPage", "sidenavForPersonalPage2"].includes(this.sideBarId);
+
+    if (isPersonalSideBar) {
+      console.log(window.innerWidth > 880)
+      this.isSideBarOpen = window.innerWidth > 880;
+      this.appSvc.isSideBarOpen.next(this.isSideBarOpen);
+    }
+  }
 
 
 

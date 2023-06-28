@@ -14,7 +14,8 @@ export class UserDetailsComponent {
  @Input()isPopUpNeeded!:boolean;
 constructor(private appSvc:AppService){}
 toggleSideBar(){
-  this.appSvc.updateSubject(this.appSvc.isSideBarOpen,!this.isSideBarOpen)
+  this.appSvc.isSideBarOpen.next(false)
+
 }
 disconnectUser(item:string){
   this.appSvc.disconnectUser(item)
