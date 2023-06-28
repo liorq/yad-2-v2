@@ -13,7 +13,7 @@
     </div>
 
 
-      <div class="bell-container" *ngIf="icon.type=='bell'&&isUserLogged">
+      <div class="bell-container" (mouseenter)="showDiv()" (mouseleave)="hideDiv()" *ngIf="icon.type=='bell'&&isUserLogged">
        <div class="bell-title">התראות שלי</div>
        <div class="bell-sub-title">  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
       </div>
@@ -25,7 +25,7 @@
 
           <app-btn id="{{'makedAds'}}" [containerClass]="'green-btn-2'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'"  [routerLink]="isUserLogged ? '/publish/stage-1' : '/signIn'" ></app-btn>
         </div>
-     <div *ngIf="allAds?.length==0"  [ngClass]="{'custom-love-container':!isUserLogged,'love-container-1':isUserLogged}">
+     <div *ngIf="allAds?.length==0"  [ngClass]="{'custom-love-container':!isUserLogged,'love-container-1':isUserLogged}" (mouseenter)="showDiv()" (mouseleave)="hideDiv()">
       <div class="love-title">מודעות שאהבתי</div>
       <div class="love-sub-title">אין לך עדיין מודעות שאהבת. כדי לשמור מודעות שאהבת, ולשמור נוספות, יש להתחבר לחשבון שלך </div>
 

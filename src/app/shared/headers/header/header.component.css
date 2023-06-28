@@ -49,7 +49,7 @@ svg{
 .bell-container{
   padding: 24px 20px;
    position: absolute;
-  top:46px;
+  top:38px;
   left:16px;
   display: none;
   height: 120px;
@@ -92,7 +92,7 @@ svg{
 .love-container{
   /* padding: 24px 20px; */
    position: absolute;
-  top:62px;
+  top:58px;
   left:16px;
   display: none;
   height: 120px;
@@ -210,7 +210,7 @@ cursor: pointer;
   }
 @media screen and (min-width: 880px)  {
 .bell-container{
-  top: 65px;
+  top: 58px;
 }
   .love-container-1{
     top: 2px;
