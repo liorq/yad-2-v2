@@ -1304,3 +1304,9 @@ cursor: pointer;
 .green-btn-2:hover,.green-btn:hover{
 background: #16a86e;
 }
+.disabled-btn:hover{
+  background: #022760;
+}
+.print-button:hover,.share-btn:hover{
+  background: #bdbcbc33;
+}
