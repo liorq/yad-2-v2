@@ -10,6 +10,6 @@
   <div *ngFor="let item of ['price','days']" class="{{item}}">{{objPriceAndDays[item]}}</div>
 </div>
 
-<app-btn (click)="publishAdd()"  [text]="textBtn" [containerClass]="classBtn"></app-btn>
+<app-btn (click)="publishAdd(textBtn)"  [text]="textBtn" [containerClass]="classBtn"></app-btn>
 
 </div>

@@ -1,5 +1,5 @@
 
-<div (click)="toggleAd()" [class]="'container '+classContainer" [ngClass]="{'open-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds}">
+<div (click)="toggleAd()" [class]="'container '+classContainer" [ngClass]="{'open-container':isToggleAdNeeded&&isOpenAd&&!isMyAd&&!isTopAds,'whiteBackground':!this.ad.isPromoted}">
   <app-btn    (click)="stopProp($event)" *ngIf="isOpenAd&&!isMyAd&&!isTopAds" [iconClass]="'map-icon'" [containerClass]="'map-container'" [text]="'מפה'">  </app-btn>
   <app-btn *ngIf="!isMyAd&&!isTopAds" (click)="stopProp($event)"   [iconClass]="'share-ads-icon'" [containerClass]="'share-ads-container'" >  </app-btn>
 

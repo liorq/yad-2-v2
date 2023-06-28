@@ -651,8 +651,8 @@ export const PopularServicesArray=[
     ];
 
  export const personalSidebarConfigs = [                                                                                                                       ///sidenav
-    { id: 'sidenavForPersonalPage2', sideBarId: 'sidenavForPersonalPage', RequiredActionsObj: RequiredActionsObj, textColor: 'white',sideBarNavClass: 'sidenav', sideBarData: personalSidebarItems },
-    { id: 'sidenavForPersonalPage4', sideBarId: 'sidenavForPersonalPage2', RequiredActionsObj: RequiredActionsObj, textColor: 'white', sideBarNavClass: 'ShowSidenav', sideBarData: personalSidebarItems }
+    {type:'navBarIconForPersonal', id: 'sidenavForPersonalPage2', sideBarId: 'sidenavForPersonalPage', RequiredActionsObj: RequiredActionsObj, textColor: 'white',sideBarNavClass: 'sidenav', sideBarData: personalSidebarItems },
+    {type:'navBarIconForPersonal', id: 'sidenavForPersonalPage4', sideBarId: 'sidenavForPersonalPage2', RequiredActionsObj: RequiredActionsObj, textColor: 'white', sideBarNavClass: 'ShowSidenav', sideBarData: personalSidebarItems }
   ];
 export const   savedAdsBoxes = [
   { number: "200,000", text: "מודעות חדשות כל חודש" },
@@ -662,7 +662,7 @@ export const   savedAdsBoxes = [
 ];
 export const  personalIcons = [
 
-  {type:"",url:'',fill:'orange',size:24.5,id:"navBarIconForPersonal", class: '', path: 'M8.29 25.333c-.91 0-1.623-.713-1.623-1.624s.713-1.622 1.623-1.622h15.391c.886 0 1.611.704 1.652 1.601 0 .931-.713 1.645-1.623 1.645H8.29zm0-7.723c-.91 0-1.623-.713-1.623-1.624s.713-1.624 1.623-1.624h15.391c.886 0 1.611.704 1.652 1.604 0 .93-.713 1.643-1.623 1.643H8.29zm0-7.696c-.91 0-1.623-.713-1.623-1.624S7.38 6.666 8.29 6.666h15.391c.886 0 1.611.704 1.652 1.604 0 .93-.713 1.643-1.623 1.643H8.29z' }
+  {type:"navBarIconForPersonal",url:'',fill:'orange',size:24.5,id:"navBarIconForPersonal", class: '', path: 'M8.29 25.333c-.91 0-1.623-.713-1.623-1.624s.713-1.622 1.623-1.622h15.391c.886 0 1.611.704 1.652 1.601 0 .931-.713 1.645-1.623 1.645H8.29zm0-7.723c-.91 0-1.623-.713-1.623-1.624s.713-1.624 1.623-1.624h15.391c.886 0 1.611.704 1.652 1.604 0 .93-.713 1.643-1.623 1.643H8.29zm0-7.696c-.91 0-1.623-.713-1.623-1.624S7.38 6.666 8.29 6.666h15.391c.886 0 1.611.704 1.652 1.604 0 .93-.713 1.643-1.623 1.643H8.29z' }
 
 ]
 export const signInFormFields = [

@@ -21,25 +21,20 @@ ngOnInit(): void {
     this.appSvc.allAds.next(res)
       this.allAds = res;
   }
-  const { withPrice, withPictures } = this.appSvc.adFilterSubject.getValue();
-
-  if (withPrice){
+  const { withPrice, withPictures } = this.appSvc.adFilterByTypeSubject.getValue();
+  if (withPrice)
     this.allAds = this.allAds.filter(a => a.price > 1);
-    this.filterOptions[0].isChecked=!this.filterOptions[0].isChecked
-  }
    if(withPictures){
     const allAdsHasPic=this.appSvc.adsHasPictures.getValue()||[]
      this.allAds = this.allAds.filter(a => allAdsHasPic.includes(a.apartmentId));
-     this.filterOptions[1].isChecked=!this.filterOptions[1].isChecked
-
     }
+    if(!withPrice&&!withPictures)
+    this.restore()
 
   this.appSvc.allAds.next(this.allAds)
 }
 async restore(){
-  this.filterOptions.forEach(option => {
-    option.isChecked = false;
-  });
-  
+  location.reload()
+
 }
 }

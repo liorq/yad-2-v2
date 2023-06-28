@@ -9,6 +9,7 @@
   border-radius: 5px;
   max-width: 693px;
 }
+
 .container:hover{
   box-shadow: 0 2.64px 7.94px rgba(0,0,0,.2);
   cursor: pointer;
@@ -361,4 +362,7 @@ color: #363636;
   background: #fff;
 }
 
+}
+.whiteBackground{
+  background: #fff;
 }

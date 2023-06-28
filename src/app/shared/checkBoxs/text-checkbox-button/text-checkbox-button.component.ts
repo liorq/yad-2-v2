@@ -16,6 +16,7 @@ export class TextCheckboxButtonComponent implements OnInit{
 @Input() shouldUpdateAd!:Boolean;
 @Input() shouldUpdateFilterAd!:Boolean;
 @Input() shouldUpdateSearchAd!:Boolean;
+@Input()shouldUpdateAdFilterByType!:Boolean;
 @Output()isUserAgreedToTerm=new EventEmitter<boolean>()
 ngOnInit(): void {
   console.log(this.PropertyName)
@@ -35,6 +36,7 @@ constructor(private appSvc:AppService){}
       this.shouldUpdateSearchAd && this.appSvc.updateSearchSubject({ [this.PropertyName]: this.isChecked });
       this.shouldUpdateAd && this.appSvc.updateAdUploadSubject({ [this.PropertyName]: this.isChecked });
       this.shouldUpdateFilterAd && this.appSvc.updateAdFilterSubject({ [this.PropertyName]: this.isChecked });
+      this.shouldUpdateAdFilterByType&&this.appSvc.updateAdFilterByTypeSubject({ [this.PropertyName]: this.isChecked });
     }, 1000);
   }
 

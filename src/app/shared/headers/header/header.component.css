@@ -77,12 +77,16 @@ svg{
   min-width:160px;
   height: 273px;
   overflow: hidden;
+  position: relative;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.30) ;
 }
 
-
+#makedAds{
+  position: absolute;
+  bottom: 0;
+}
 
 
 .love-container{

@@ -17,14 +17,15 @@ export class RouteToChooseComponent {
 @Input()textBtn!:string;
 @Input()classBtn:string='vipBtnContainer';
 @Input()arrayOfData!:any[];
-
 constructor(private dbSvc:DbService,private appSvc:AppService){}
-async publishAdd(){
-  let obj:apartment|null=this.appSvc.adUploadSubject.getValue()
-
-if(obj){
-   obj!.category='sale'
-console.log(await this.dbSvc.addAd(obj))
+async publishAdd(textBtn:string){
+const isAdPromoted:boolean=textBtn=="המסלול המומלץ"
+let ad:apartment=this.appSvc.adUploadSubject.getValue()
+if(ad){
+  console.log(isAdPromoted)
+ad!.category='sale'
+ad.isPromoted=isAdPromoted;
+console.log(await this.dbSvc.addAd(ad))
 this.appSvc.navigate('publish/stage-2/final')
 }
 }

@@ -18,9 +18,10 @@ export class AppService {
 
 
 
+  adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});
 
   adUploadSubject=new BehaviorSubject<apartment>({}as apartment);
-  adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});
+  adFilterByTypeSubject=new BehaviorSubject<{[key:string]:boolean}>({});
   searchSubject=new BehaviorSubject<apartmentSearchQuery>({} as apartmentSearchQuery);
   userUpdateRequestSubject=new BehaviorSubject<userUpdateRequest>({} as userUpdateRequest);
   allAds = new BehaviorSubject<apartment[] | never[]>([]);
@@ -51,10 +52,14 @@ export class AppService {
   }
   updateUserRequest(value:any){
     this.userUpdateRequestSubject.next(Object.assign( this.userUpdateRequestSubject.getValue()||{},value))
-  console.log(this.userUpdateRequestSubject.getValue())
   }
   updateAdFilterSubject(value:any){
     this.adFilterSubject.next(Object.assign( this.adFilterSubject.getValue()||{},value))
+  }
+  updateAdFilterByTypeSubject(value:any){
+    this.adFilterByTypeSubject.next(Object.assign( this.adFilterByTypeSubject.getValue()||{},value))
+    console.log(this.adFilterByTypeSubject.getValue())
+
   }
   /////generic
   // updateSubject(subject: Subject<any>, value: any) {

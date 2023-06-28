@@ -21,6 +21,7 @@ justify-content: center;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-bottom: 95px;
 }
 @media (max-width:600px) {
   app-my-alert-widget{

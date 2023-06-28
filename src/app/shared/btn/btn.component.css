@@ -143,6 +143,7 @@ font-weight: 500;
   font-weight: 500;
   cursor: pointer;
   width: 182px;
+  border-radius: 2px;
 }
 .doron{
   background-image: url('../../../assets/dooron.svg');
@@ -208,8 +209,8 @@ cursor: pointer;
 
   background-repeat: no-repeat;
   background-size: contain;
-  height: 21px;
-  width: 21px;
+  height: 12px;
+  width: 14px;
 }
 .searchContainerBtn{
   width: 97px;
@@ -219,6 +220,7 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 2px;
 }
 .textSearchBtn{
   color: #fff;
@@ -305,16 +307,24 @@ flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 2px;
+
 }
 .advanceSearchText{
   color: #363636;
   font-weight: 40;
   font-size: 14px;
 }
+.searchContainerBtn:hover,.search-btn:hover{
+  background: #ae4f01;
+}
 
-
-
-
+.advanceSearchContainerBtn:hover{
+  background: rgba(0, 0, 0, 0.2);
+}
+.alertBtn:hover{
+  background: #0b7f51;
+}
 
 
 
@@ -838,6 +848,8 @@ cursor: pointer;
   cursor: pointer;
   color: #fff;
   font-weight: 500;
+  font-size: 14px;
+  border-radius: 2px;
 }
 
 .orange{
