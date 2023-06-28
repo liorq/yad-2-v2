@@ -20,6 +20,5 @@ this.imageItems=this.appSvc.currentAdImages.getValue()
   navigateToImageGallery(event:Event){
     this.stopProp(event)
     this.appSvc.navigate('/realestate')
-
   }
 }

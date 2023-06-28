@@ -13,7 +13,7 @@ isFilterResultOpen=false;
 @Input()allAds:apartment[]=[]
 buttons =feedButtons
   toggleBtn(btnType: string) {
-    console.log(btnType)
+
     if(btnType=='checkbox'||btnType=='radio'){
     const targetProperty = btnType === 'radio' ? 'isFilterOptionsOpen' : 'isFilterResultOpen';
     const milliseconds = !this[targetProperty] ? 0 : 1500;

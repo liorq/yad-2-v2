@@ -12,20 +12,11 @@ export class RadioBtnsComponent {
   favoriteOption!: string;
  @Input() allAds:apartment[]=[]
  @Input() options = [{hebrew:'לפי תאריך',english:'date'}, {hebrew:'מחיר-מהזול ליקר',english:'priceLowToHigh'}, {hebrew:'מחיר-מהיקר לזול',english:'priceHighToLow'}];
-constructor(private dbSvc:DbService,private appSvc:AppService){}
+constructor(private appSvc:AppService){}
 
-sortByParameter(parameter: string) {
-  console.log(this.allAds);
-  this.allAds = this.allAds.sort((a: Record<string, any>, b: Record<string, any>) => {
-    return parameter === 'date' ? Date.parse(a['dateOfEntering']) - Date.parse(b['dateOfEntering'])
-      : parameter === 'priceHighToLow' ? b['price'] - a['price']
-      : parameter === 'priceLowToHigh' ? a['price'] - b['price']
-      : 0;
-  });
-
+arrangeAdsBy(parameter: string) {
+  this.allAds =this.appSvc.arrangeAdsBy(parameter,this.allAds)
   this.appSvc.updateSubject(this.appSvc.allAds,this.allAds)
-
-  // this.appSvc.allAds.next(this.allAds);
 }
 
 }

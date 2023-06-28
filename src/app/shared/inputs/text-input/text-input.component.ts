@@ -21,9 +21,7 @@ export class TextInputComponent implements OnInit{
   @Input() PropertyName!:string;
   @Input() shouldUpdateAdSubject!:Boolean;
   @Input() shouldUpdateSearchAd!:Boolean;
-
    @Input() shouldUpdateSubUserRequest!:Boolean;
-
    inputVal!:string;
    constructor(private appSvc:AppService,
   ) { }
@@ -31,17 +29,8 @@ export class TextInputComponent implements OnInit{
     this.inputVal=this.appSvc.getValueFromObject(this.PropertyName)
   }
   UpdateAdSubject(){
-    if(this.shouldUpdateAdSubject){
-      this.appSvc.updateAdUploadSubject({[this.PropertyName]:this.inputVal})
-     console.log(this.appSvc.adUploadSubject.getValue())
-    }
-    if(this.shouldUpdateSearchAd){
-      this.appSvc.updateSearchSubject({[this.PropertyName]:this.inputVal})
-    }
-    if(this.shouldUpdateSubUserRequest){
-      this.appSvc.updateUserRequest({[this.PropertyName]:this.inputVal})
-
-    }
+      this.shouldUpdateAdSubject&&  this.appSvc.updateAdUploadSubject({[this.PropertyName]:this.inputVal})
+      this.shouldUpdateSearchAd&& this.appSvc.updateSearchSubject({[this.PropertyName]:this.inputVal})
+      this.shouldUpdateSubUserRequest&&  this.appSvc.updateUserRequest({[this.PropertyName]:this.inputVal})
   }
-
 }

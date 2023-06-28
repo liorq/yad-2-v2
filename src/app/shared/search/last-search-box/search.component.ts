@@ -23,7 +23,6 @@ this.appSvc.setLastSearches(this.searches)
   if(array.includes(label)&&value=="undefined - undefined"){
     defaultValue="0-0"
   }
-
   return  value === "undefined" ? value : defaultValue;
 }
 }

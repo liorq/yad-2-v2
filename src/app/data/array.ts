@@ -1135,3 +1135,294 @@ export const typeOfProperty=[
   'קב\' רכישה/ זכות לנכס',
   'כללי'
 ]
+export const buttonsForSignIn = [
+  {type:'connect', containerClass: 'btn-connect', text: 'התחברות', iconClass: '' },
+  {type:'google', containerClass: 'btn-google', text: 'גוגל', iconClass: 'google-icon' },
+  {type:'apple', containerClass: 'btn-apple', text: 'אפל', iconClass: 'apple-icon' },
+];
+export const formFieldsForSignIn = [
+  {
+    label: 'מייל',
+    name: 'email',
+    type: 'text',
+    placeholder: 'yourmail@example.com'
+,    passwordVisibilityObj:{counter:0}
+
+  },
+  {
+    label: 'סיסמא',
+    name: 'password',
+    type: 'password',
+    placeholder: 'הקלדת סיסמא',
+    passwordVisibilityObj:{counter:0}
+
+  },
+
+];
+
+export const formFieldsForSignUp = [
+  {
+    label: 'מייל',
+    name: 'email',
+    type: 'text',
+    placeholder: 'yourmail@example.com',
+    passwordVisibilityObj:{counter:0}
+
+  },
+  {
+    label: 'סיסמא',
+    name: 'password',
+    type: 'password',
+    placeholder: 'הקלדת סיסמא',
+    passwordVisibilityObj:{counter:0}
+
+  },
+  {
+    label: 'אימות סיסמא',
+    name: 'confirmPassword',
+    type: 'password',
+    placeholder: 'הקלדת סיסמא',
+    passwordVisibilityObj:{counter:0}
+
+  }
+];
+export const buttonsForSignUp = [
+  {type:'connect', containerClass: 'btn-connect btn-connect-for-sign-up', text: 'התחברות', iconClass: '' },
+  {type:'google', containerClass: 'btn-google btn-google-for-sign-up', text: 'גוגל', iconClass: 'google-icon' },
+  {type:'apple', containerClass: 'btn-apple btn-apple-for-sign-up', text: 'אפל', iconClass: 'apple-icon' },
+];
+export const recommendations = [
+  'אנחנו נגיע אלייך עם כל מה שחדש',
+  'לא תתפספס אף מודעה',
+  'המודעות יגיעו ישירות אלייך למייל'
+];
+export const sentencesForTips: string[] = [
+  "עסקה אונליין היא אחת ההמצאות המופלאות של המאה",
+  "יחד עם זאת היא דורשת מאיתנו לשמור על ערנות",
+  "בכל שלב בתהליך ואנחנו כאן כדי לעזור עם טיפים ודוגמאות"
+];
+
+export const titlesForTips: string[] = [
+  "איך אפשר להימנע",
+  "?מהונאות ברשת"
+];
+export const btnsForUpdateDetails=[
+  {text:'שמירה',containerClass:'btn-connect-for-update-user-info',requiresUserRequestUpdate:true},
+  {text:'ביטול',containerClass:'',requiresUserRequestUpdate:false},
+  ]
+
+  export const sectionsForUpdateDetails = [
+  {
+    title: "פרטים אישיים",
+    subTitle: "",
+    inputs: [
+      {
+        PropertyName: "FirstName",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "שם פרטי*"
+      },
+      {
+        PropertyName: "LastName",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "שם משפחה*"
+      },
+      {
+        PropertyName: "Phone",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "טלפון*"
+      },
+      {
+        PropertyName: "BirthDate",
+        type: "date",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "תאריך לידה"
+      }
+    ]
+  },
+  {
+    title: "כתובת",
+    subTitle: "כדאי למלא את הכתובת, כדי שנוכל לחבר אותה אוטומטית בפעם הבאה שתפרסמו מודעה",
+    inputs: [
+      {
+        PropertyName: "City",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "עיר"
+      },
+      {
+        PropertyName: "StreetName",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "שם רחוב"
+      },
+      {
+        PropertyName: "HouseNumber",
+        type: "text",
+        shouldUpdateSearchAd: true,
+        containerClass: "containerClass4",
+        inputClass: "inputClass6",
+        text: "מספר בית"
+      },
+
+
+    ]
+  }
+];
+export const sidebarItemsForAdFooter= [
+  {
+     title:{ isHalfRectangleNeeded:false,label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'link' },
+    subItems: [ ]
+    ,
+},
+{
+title: {isHalfRectangleNeeded:false ,label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'whatApp'},
+
+subItems: [ ]
+,
+},
+{
+title: {isHalfRectangleNeeded:false, label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'print' },
+
+subItems: [ ]
+,
+}
+,
+{
+  title:      {isHalfRectangleNeeded:false, label: ' ', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'share' },
+
+
+  subItems: [ ]
+  ,
+  }
+  ,
+  {
+    title:      {isHalfRectangleNeeded:false, label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'mail' },
+
+
+    subItems: [ ]
+    ,
+    }
+]
+export const itemsForComment: string[] = [
+  'אין תשובה',
+  'טלפון שגוי',
+  'לא רלוונטי',
+  'להתקשר החל מהשעה',
+  'להתקשר מאוחר יותר'
+];
+export const linksForFooter = [
+  {
+    text: 'רכב',
+    href: '/vehicles/cars',
+    target: '_self',
+    class: 'internalLink link prefetched'
+  },
+  {
+    text: 'נדל"ן',
+    href: '/realestate/forsale',
+    target: '_self',
+    class: 'internalLink link prefetched'
+  },
+  {
+    text: 'יד שנייה',
+    href: '/lobby/products',
+    target: '_self',
+    class: 'externalLink link'
+  },
+  {
+    text: 'דרושים IL',
+    href: 'https://www.drushim.co.il',
+    target: '_blank',
+    class: 'externalLink link'
+  }
+];
+
+export const socialLinksForFooter = [
+  {
+    src: '//assets.yad2.co.il/yad2site/y2assets/images/footer/apple.png',
+    alt: 'logo,apple',
+    class: 'apple',
+    href: 'https://itunes.apple.com/us/app/yad2-%D7%99%D7%932/id406318295?mt=8',
+    target: '_blank'
+  },
+  {
+    src: '//assets.yad2.co.il/yad2site/y2assets/images/footer/google-play.png',
+    alt: 'logo,playstore',
+    class: 'googlePlay',
+    href: 'https://play.google.com/store/apps/details?id=com.goldtouch.ct.yad2',
+    target: '_blank'
+  },
+  {
+    src: '//assets.yad2.co.il/yad2site/y2assets/images/footer/facebook.png',
+    alt: 'logo,facebook',
+    class: 'facebook',
+    href: 'https://www.facebook.com/yad2page',
+    target: '_blank'
+  },
+  {
+    src: '//assets.yad2.co.il/yad2site/y2assets/images/footer/youtube.png',
+    alt: 'logo,youTube',
+    class: 'youTube',
+    href: 'https://www.youtube.com/user/MeYad2',
+    target: '_blank'
+  }
+];
+
+export const menuItemsForFooter = [
+  {
+    text: 'תקנון',
+    href: 'https://2.yad2.co.il/eula',
+    target: '_self'
+  },
+  {
+    text: 'הצהרת נגישות',
+    href: 'https://2.yad2.co.il/accessibility',
+    target: '_self'
+  },
+  {
+    text: 'מדיניות פרטיות',
+    href: 'https://2.yad2.co.il/privacy',
+    target: '_self'
+  },
+  {
+    text: 'מפת האתר',
+    href: '/sitemap',
+    target: '_self',
+    class: 'internalLink item prefetched'
+  },
+  {
+    text: 'קריירה ביד2',
+    href: 'http://career.yad2.co.il/',
+    target: '_self',
+    class: 'externalLink item'
+  }
+];
+export const buttonsForSubHeader = [
+  { containerClass: 'doronContainer', text: 'דורון-העוזר האישי', iconClass: 'doron' },
+  { containerClass: 'yad1Container', text: 'יד1 דירות חדשות', iconClass: 'yad1' },
+  { containerClass: 'estimationContainer', text: 'הערכת שווי נכס', iconClass: 'estimation' },
+  { containerClass: 'hammerContainer', text: 'כונס נכסים', iconClass: 'hammer' }
+];
+
+export const tabsForSubHeader = [
+  { label: 'מכירה', isActive: true },
+  { label: 'השכרה', isActive: false },
+  { label: 'דירות שותפים', isActive: false },
+  { label: 'נדל"ן מסחרי', isActive: false }
+];
+// export const

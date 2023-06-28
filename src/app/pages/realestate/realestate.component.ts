@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { apartment } from 'src/app/data/interfaces';
+import { customClassObjForRealEstate, customHiddenObjForRealEstate } from 'src/app/data/objects';
 
 @Component({
   selector: 'app-realestate',
@@ -10,14 +11,13 @@ import { apartment } from 'src/app/data/interfaces';
 })
 export class RealestateComponent implements OnInit{
   p=1;
- clickCounter=0
-customClassObj:any={"mini-buttons":true};
-customHiddenObj:any={'customHidden':true,'hidden':false};
+ clickCounter=0;
+customClassObj:any=customClassObjForRealEstate
+customHiddenObj:any=customHiddenObjForRealEstate
 allAds:apartment[]=[]
 constructor(private dbSvc:DbService,private appSvc:AppService){}
 
 async ngOnInit() {
-  // location.reload()
   this.appSvc.allAds.subscribe((allAds)=>{
     this.allAds=allAds;
   })
@@ -29,23 +29,10 @@ async ngOnInit() {
 
   }
 async handlePaginationChange(pageNumber: number) {
-
 console.log(await this.dbSvc.getAllRangeAd(pageNumber))
   }
-
-
   sortByParameter(parameter: string): apartment[] {
-    return this.allAds.sort((a: Record<string, any>, b: Record<string, any>) => {
-      if (parameter === 'date') {
-        return a[parameter] - b[parameter];
-      } else if (parameter === 'priceHighToLow') {
-        return b['price'] - a['price'];
-      } else if (parameter === 'priceLowToHigh') {
-        return a['price'] - b['price'];
-      }
-
-      return 0;
-    });
+  return this.appSvc.sortByParameter(parameter,this.allAds)
   }
 
 }

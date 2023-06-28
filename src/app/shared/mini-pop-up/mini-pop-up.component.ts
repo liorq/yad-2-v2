@@ -15,8 +15,6 @@ export class MiniPopUpComponent {
 @Input()ad!:apartment;
 constructor(private dbSvc:DbService,private appSvc:AppService){}
 async removeAd(){
-  alert("remove");
-  console.log(this.ad)
  await this.dbSvc.removeAd(this.ad);
   this.appSvc.removeApartment(this.ad)
 }

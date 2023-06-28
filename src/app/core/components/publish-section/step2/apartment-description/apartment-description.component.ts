@@ -10,7 +10,7 @@ import { getUpdatedLoaderData } from 'src/app/data/functions';
   styleUrls: ['./apartment-description.component.css','../stage2step3/stage2step3.component.css']
 })
 export class ApartmentDescriptionComponent implements OnInit{
-  constructor(private router:Router,private appSvc:AppService){}
+  constructor(private appSvc:AppService){}
   textBoxValue:string='';
   calcLoaderValue=0;
 btns=apartmentButtons;

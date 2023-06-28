@@ -1,13 +1,12 @@
 <div class="ad-footer" [ngClass]="{'custom-ad-footer':isModalFooter}">
 
-  <div class="icons-container" *ngFor="let item of sidebarItems5">
+  <div class="icons-container" *ngFor="let item of sidebarItemsForAdFooter">
     <div class="gray-circle">
   <app-side-bar-item [item]="item.title"></app-side-bar-item>
   </div>
   </div>
   <div *ngIf="!isModalFooter" class="left-side-footer">
   <div *ngIf="!isModalFooter" class="num-ad">{{"מספר מודעה: 83989017"}}</div>
-
   <div *ngIf="!isModalFooter" class="found-mistake">{{"מצאתי טעות"}}</div>
   </div>
   </div>

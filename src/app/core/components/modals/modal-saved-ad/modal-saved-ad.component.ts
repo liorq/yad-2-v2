@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { apartment } from 'src/app/data/interfaces';
 import { AppService } from '../../../services/app.service';
+import { initDataForSavedAdModal } from 'src/app/data/functions';
 
 @Component({
   selector: 'app-modal-saved-ad',
@@ -10,15 +11,14 @@ import { AppService } from '../../../services/app.service';
 export class ModalSavedAdComponent implements OnInit {
   @Input() ad!: apartment;
   imageItems: string[] = [];
-  pageSize = 1; // Number of pictures to display per page
-  currentPage = 1; // Current page number
+  pageSize = 1;
+  currentPage = 1;
+  data:{ value: string, label: string }[]= [];
 
+  secondaryData!:{ value: string, item: string }[]
+  isDesOpen:boolean=false;
+  features!:{ id: string, title: string, checked: boolean }[];
   constructor(private appSvc: AppService) {}
-  data:{ value: string, label: string }[]= [  ];
-
-  data2!:{ value: string, item: string }[]
-isDesOpen:boolean=false;
-features!:{ id: string, title: string, checked: boolean }[];
 
   ngOnInit(): void {
     this.appSvc.currentAdOpen.subscribe((newAd) => {
@@ -26,51 +26,19 @@ features!:{ id: string, title: string, checked: boolean }[];
     });
     const currentImages = this.appSvc.currentAdImages.getValue();
     this.imageItems = currentImages && currentImages.length > 0 ? currentImages : ["https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png"];
-
-
-
-    if(this.ad){
-      const {hasFurniture,isResidentialUnit,hasCentralAirConditioning,hasStorage,isRenovated,hasAccessibilityForDisabled,hasSolarHeater,hasKosherKitchen,hasElevator,hasWindowBars,hasAirConditioning,parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= this.ad
-      this.data= [
-       { value: `${roomNumber}`, label: 'חדרים' },
-       { value: `${floor}`, label: 'קומה' },
-       { value: `${totalSquareFootage}`, label: 'מ"ר' }
-     ];
-     this.data2= [
-      { item: 'מצב הנכס', value: `${conditionOfProperty}` },
-      { item: 'כניסה', value: 'א' },
-      { item: 'תאריך כניסה', value: `${dateOfEntering}` },
-      { item: 'מ"ר בנוי', value: `${totalSquareFootage}` },
-      { item: 'מרפסות', value: `${porch}` },
-      { item: 'חניות', value: `${parking}` }
-    ];
-
-    this.features = [
-      { id: 'air_conditioner', title: 'מיזוג', checked: hasAirConditioning },
-      { id: 'bars', title: 'סורגים', checked: hasWindowBars },
-      { id: 'elevator', title: 'מעלית', checked: hasElevator },
-      { id: 'kosher_kitchen', title: 'מטבח כשר', checked: hasKosherKitchen },
-      { id: 'boiler', title: 'דוד שמש', checked: hasSolarHeater },
-      { id: 'accessibility', title: 'גישה לנכים', checked: hasAccessibilityForDisabled },
-      { id: 'renovated', title: 'משופצת', checked: isRenovated },
-      { id: 'shelter', title: 'ממ"ד', checked: true },
-      { id: 'warhouse', title: 'מחסן', checked: hasStorage },
-      { id: 'tadiran_c', title: 'מזגן תדיראן', checked: hasCentralAirConditioning },
-      { id: 'housing_unit', title: 'יחידת דיור', checked: isResidentialUnit },
-      { id: 'flexible_enter_date', title: 'גמיש', checked: false },
-      { id: 'furniture', title: 'ריהוט', checked: hasFurniture }
-    ];
-       }
-  }
+   const res= initDataForSavedAdModal(this.ad)
+   if(res){
+     this.data=res?.data;
+     this.secondaryData=res.secondaryData
+     this.features=res.features
+   }
+}
 
   toggleModal(event: Event): void {
    this.preventEventPropagation(event)
     this.appSvc.currentAdOpen.next({} as apartment);
   }
-
-
   preventEventPropagation(event: Event): void {
    this.appSvc.preventEventPropagation(event)
   }
-
 }

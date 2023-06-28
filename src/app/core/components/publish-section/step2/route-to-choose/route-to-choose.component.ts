@@ -19,13 +19,12 @@ export class RouteToChooseComponent {
 @Input()arrayOfData!:any[];
 constructor(private dbSvc:DbService,private appSvc:AppService){}
 async publishAdd(textBtn:string){
-const isAdPromoted:boolean=textBtn=="המסלול המומלץ"
-let ad:apartment=this.appSvc.adUploadSubject.getValue()
+const isAdPromoted=textBtn=="המסלול המומלץ"
+let ad=this.appSvc.adUploadSubject.getValue()
 if(ad){
-  console.log(isAdPromoted)
 ad!.category='sale'
 ad.isPromoted=isAdPromoted;
-console.log(await this.dbSvc.addAd(ad))
+await this.dbSvc.addAd(ad)
 this.appSvc.navigate('publish/stage-2/final')
 }
 }

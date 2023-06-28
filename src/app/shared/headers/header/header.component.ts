@@ -54,22 +54,14 @@ navigate(val:string){
 }
 toggleSideBar(){
   this.appSvc.updateSubject(this.appSvc.isSideBarOpen,!this.isSideBarOpen)
-
-}
-getSvgClass(obj:any){
-console.log(obj);
 }
 getNumOfAlerts(type:string){
 return this.appSvc.getNumOfAlerts(type)
-
 }
-
-
   showDiv() {
     clearTimeout(this.timeoutId);
     this.isHovered = true;
   }
-
   hideDiv() {
     this.timeoutId = setTimeout(() => {
       this.isHovered = false;

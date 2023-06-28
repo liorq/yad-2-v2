@@ -32,15 +32,12 @@ export class Stage2step6Component {
    isFormValid(){
     return this.appSvc.isFormValid(this.fieldValidity)
    }
-
-
    navigate(){
-
     this.formValidationHandler()
-    if(this.isFormValid()&&this.isUserAgreedToTerm){
+    if(this.isFormValid()&&this.isUserAgreedToTerm)
     this.appSvc.navigate('publish/stage-2/step7')
-      }
-      this.isNavigationRequested=true
+
+   this.isNavigationRequested=true
 
   }
 
@@ -48,10 +45,8 @@ addAnotherPersonHandler(iconClass: string) {
   this.anotherPersonInfoNeeded=!this.anotherPersonInfoNeeded
   this.optionBtnArray.forEach(btn => btn.ngIf = !btn.ngIf);
 
-  if (iconSettings.hasOwnProperty(iconClass)) {
+  if (iconSettings.hasOwnProperty(iconClass))
     this.inputs[1].isInputContainerNeeded = iconSettings[iconClass][0];
-  }
 
 }
-
 }

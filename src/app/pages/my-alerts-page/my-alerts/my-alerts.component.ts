@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { personalIcons } from 'src/app/data/array';
+import { personalIcons, recommendations } from 'src/app/data/array';
+import { customClassObjForMyAlert, customHiddenObjForMyAlert } from 'src/app/data/objects';
 
 @Component({
   selector: 'app-my-alerts',
@@ -7,12 +8,8 @@ import { personalIcons } from 'src/app/data/array';
   styleUrls: ['./my-alerts.component.css']
 })
 export class MyAlertsComponent {
-  personalIcons =personalIcons
-  customClassObj:any={"mini-buttons":true};
-  customHiddenObj:any={'customHidden':true,'hidden':false};
-   recommendations = [
-    'אנחנו נגיע אלייך עם כל מה שחדש',
-    'לא תתפספס אף מודעה',
-    'המודעות יגיעו ישירות אלייך למייל'
-  ];
+  personalIcons =personalIcons;
+  customClassObj=customClassObjForMyAlert
+  customHiddenObj=customHiddenObjForMyAlert
+   recommendations = recommendations
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { sentencesForTips, titlesForTips } from 'src/app/data/array';
 import { getCarNgClass, getHomeNgClass, getPropertySaleTipsArray, getTabsNgClass, getTipsAndInfoNgClass, getYad2NgClass } from 'src/app/data/functions';
 
 @Component({
@@ -15,19 +16,8 @@ homeNgClass:any;
 yad2NgClass:any;
 tabs !:any[];
 arrayOfData:any=[]
-sentences: string[] = [
-  "עסקה אונליין היא אחת ההמצאות המופלאות של המאה",
-  "יחד עם זאת היא דורשת מאיתנו לשמור על ערנות",
-  "בכל שלב בתהליך ואנחנו כאן כדי לעזור עם טיפים ודוגמאות"
-];
-
-titles: string[] = [
-  "איך אפשר להימנע",
-  "?מהונאות ברשת"
-];
-
-
-
+sentences=sentencesForTips
+titles=titlesForTips
 
 ngOnInit(){
   this.handleTabClick('home');

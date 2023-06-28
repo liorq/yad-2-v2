@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { adDescriptionSidebarItems } from 'src/app/data/array';
-import { getAdsArray } from 'src/app/data/functions';
+import { getAdsArray, getItemColor } from 'src/app/data/functions';
 
 @Component({
   selector: 'app-ad-description',
@@ -22,38 +22,7 @@ export class AdDescriptionComponent implements OnInit{
   }
 
   getItemColor(item:any){
-     const {hasAirConditioning,
-      hasWindowBars,
-      hasElevator,
-      hasKosherKitchen,
-      hasSolarHeater,
-      hasAccessibilityForDisabled,
-      isRenovated,
-      isSmartHome,
-      hasStorage,
-      hasCentralAirConditioning,
-      hasFurniture,
-      isResidentialUnit,}=this.ad;
-    const ngObj:any = {
-      snow: hasAirConditioning,
-      table: hasWindowBars,
-      elevator: hasElevator,
-      sink: hasKosherKitchen,
-      solar: hasSolarHeater,
-      wheelchair: hasAccessibilityForDisabled,
-      brush: isRenovated,
-      home: isSmartHome,
-      graze: hasStorage,
-      'air-con': hasCentralAirConditioning,
-      furniture: hasFurniture,
-      'home-icon': isResidentialUnit,
-      flexible: ''
-    };
-
- return ngObj[item?.title?.iconPathClass]
+     return getItemColor(item,this.ad)
   }
-
-
-
 
 }

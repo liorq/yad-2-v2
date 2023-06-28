@@ -22,7 +22,6 @@ export class LikedAdsComponent implements OnInit{
     })
     this.isCommentRemoved = Array(this.allComments.length).fill(false);
     this.isUserMissedUnlike = Array(this.allComments.length).fill(false);
-
   }
   removedLike(index:number){
     this.isCommentRemoved[index]=!this.isCommentRemoved[index]

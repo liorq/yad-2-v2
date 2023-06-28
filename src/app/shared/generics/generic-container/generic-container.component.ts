@@ -14,7 +14,6 @@ export class GenericContainerComponent {
 @Input()isInsideGenericForm!:boolean;
 constructor(private appSvc:AppService){}
 navigate(){
-  console.log("hello",this.url)
   if(this.isInsideGenericForm)
    this.appSvc.navigate(this.url)
 }

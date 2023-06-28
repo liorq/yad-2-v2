@@ -36,7 +36,7 @@
       <div (click)="isDesOpen=!isDesOpen" *ngIf="!isDesOpen" class="show-more">הצג עוד</div>
       <div (click)="isDesOpen=!isDesOpen" *ngIf="isDesOpen" class="show-less">פחות</div>
       <div class="details_wrapper">
-        <dl *ngFor="let item of data2" class="cell2">
+        <dl *ngFor="let item of secondaryData" class="cell2">
           <dd class="item">{{ item.item }}</dd>
           <dt class="value">{{ item.value }}</dt>
         </dl>

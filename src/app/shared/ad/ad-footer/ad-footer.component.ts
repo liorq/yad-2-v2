@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { sidebarItemsForAdFooter } from 'src/app/data/array';
 
 @Component({
   selector: 'app-ad-footer',
@@ -7,39 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class AdFooterComponent {
   @Input()isModalFooter=false
-  @Input() sidebarItems5 = [
-    {
-       title:{ isHalfRectangleNeeded:false,label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'link' },
-      subItems: [ ]
-      ,
-  },
-  {
-  title: {isHalfRectangleNeeded:false ,label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'whatApp'},
-
-  subItems: [ ]
-  ,
-  },
-  {
-  title: {isHalfRectangleNeeded:false, label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'print' },
-
-  subItems: [ ]
-  ,
-  }
-  ,
-  {
-    title:      {isHalfRectangleNeeded:false, label: ' ', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'share' },
-
-
-    subItems: [ ]
-    ,
-    }
-    ,
-    {
-      title:      {isHalfRectangleNeeded:false, label: '', url: '/chat/v2/inbox?serviceInitiator=Header',iconPathClass:'mail' },
-
-
-      subItems: [ ]
-      ,
-      }
-  ]
+  @Input() sidebarItemsForAdFooter = sidebarItemsForAdFooter
 }

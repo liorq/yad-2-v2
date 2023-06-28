@@ -1,3 +1,4 @@
+import { apartment } from "./interfaces";
 
 export function getCurrentDay(){
   const currentDate = new Date();
@@ -331,3 +332,88 @@ export function getAdsArray(flexible:string,dateOfEntering:string,porch:string,p
 
 ]
 }
+export function  initDataForSavedAdModal(ad:apartment){
+  if(ad){
+       const {hasFurniture,isResidentialUnit,hasCentralAirConditioning,hasStorage,isRenovated,hasAccessibilityForDisabled,hasSolarHeater,hasKosherKitchen,hasElevator,hasWindowBars,hasAirConditioning,parking,porch,dateOfEntering,conditionOfProperty,roomNumber,floor,totalSquareFootage}= ad
+        const data= [
+        { value: `${roomNumber}`, label: 'חדרים' },
+        { value: `${floor}`, label: 'קומה' },
+        { value: `${totalSquareFootage}`, label: 'מ"ר' }
+      ];
+      const secondaryData= [
+       { item: 'מצב הנכס', value: `${conditionOfProperty}` },
+       { item: 'כניסה', value: 'א' },
+       { item: 'תאריך כניסה', value: `${dateOfEntering}` },
+       { item: 'מ"ר בנוי', value: `${totalSquareFootage}` },
+       { item: 'מרפסות', value: `${porch}` },
+       { item: 'חניות', value: `${parking}` }
+     ];
+
+     const features = [
+       { id: 'air_conditioner', title: 'מיזוג', checked: hasAirConditioning },
+       { id: 'bars', title: 'סורגים', checked: hasWindowBars },
+       { id: 'elevator', title: 'מעלית', checked: hasElevator },
+       { id: 'kosher_kitchen', title: 'מטבח כשר', checked: hasKosherKitchen },
+       { id: 'boiler', title: 'דוד שמש', checked: hasSolarHeater },
+       { id: 'accessibility', title: 'גישה לנכים', checked: hasAccessibilityForDisabled },
+       { id: 'renovated', title: 'משופצת', checked: isRenovated },
+       { id: 'shelter', title: 'ממ"ד', checked: true },
+       { id: 'warhouse', title: 'מחסן', checked: hasStorage },
+       { id: 'tadiran_c', title: 'מזגן תדיראן', checked: hasCentralAirConditioning },
+       { id: 'housing_unit', title: 'יחידת דיור', checked: isResidentialUnit },
+       { id: 'flexible_enter_date', title: 'גמיש', checked: false },
+       { id: 'furniture', title: 'ריהוט', checked: hasFurniture }
+     ];
+     return {features:features,secondaryData:secondaryData,data:data}
+   }
+   return
+ }
+
+ export function getItemColor(item:any,ad:apartment){
+  const {hasAirConditioning,
+   hasWindowBars,
+   hasElevator,
+   hasKosherKitchen,
+   hasSolarHeater,
+   hasAccessibilityForDisabled,
+   isRenovated,
+   isSmartHome,
+   hasStorage,
+   hasCentralAirConditioning,
+   hasFurniture,
+   isResidentialUnit,}=ad;
+ const ngObj:any = {
+   snow: hasAirConditioning,
+   table: hasWindowBars,
+   elevator: hasElevator,
+   sink: hasKosherKitchen,
+   solar: hasSolarHeater,
+   wheelchair: hasAccessibilityForDisabled,
+   brush: isRenovated,
+   home: isSmartHome,
+   graze: hasStorage,
+   'air-con': hasCentralAirConditioning,
+   furniture: hasFurniture,
+   'home-icon': isResidentialUnit,
+   flexible: ''
+ };
+
+return ngObj[item?.title?.iconPathClass]
+}
+export function initDataForAd(ad:apartment){
+  const { totalFloorInBuilding, floor,roomNumber,price, street,houseNumber,typeOfProperty,city } = ad;
+
+  const adsArray=[
+
+    {num:totalFloorInBuilding,text:'מ"ר'},
+    {num:floor,text:'קומה'},
+    {num:roomNumber,text:'חדרים'},
+  ]
+
+  const topColumn = [
+    {  content: `${price} ₪` },
+    {  content: `${street} ${houseNumber}` },
+    { content: `${typeOfProperty}, ${city}  ${city}` },
+  ];
+ return {adsArray:adsArray,topColumn:topColumn}
+ }

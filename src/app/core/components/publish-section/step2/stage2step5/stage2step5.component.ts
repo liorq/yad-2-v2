@@ -17,6 +17,4 @@ export class Stage2step5Component {
 navigate(){
   this.appSvc.navigate('publish/stage-2/step6')
 }
-
-
 }

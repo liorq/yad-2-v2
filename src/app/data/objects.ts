@@ -49,3 +49,14 @@ export const  step2FieldValidity:{[key: string]: boolean}={
           icon: 'success',
           title: 'הפרופיל עודכן בהצלחה'
         }
+        export const    accountOptionsObjForSignIn={array:[{label:'להרשמה',class:'sign-up'},{label:'?אין לך חשבון',class:'account'}],containerClass:'dont-have-account-container'};
+        export const  titleContainerObjForSignUp={arrayOfContent:[{label:'',class:'halfRec'},{label:'היי,נעים להכיר',class:'title'}],containerClass:'title-container'}
+        export const   accountOptionsObjForSignUp={array:[{label:'להתחברות',class:'sign-up'},{label:'?כבר יש לך חשבון',class:'account'}],containerClass:'dont-have-account-container dont-have-account-sign-up',url:"signUp"};
+        export const customClassObjForMyAlert={"mini-buttons":true};
+        export const customHiddenObjForMyAlert={'customHidden':true,'hidden':false};
+        export const    customClassObjForRealEstate:any={"mini-buttons":true};
+        export const   customHiddenObjForRealEstate:any={'customHidden':true,'hidden':false};
+        export const contactLinkForFooter = {
+          text: 'צור קשר',
+          href: '#'
+        };

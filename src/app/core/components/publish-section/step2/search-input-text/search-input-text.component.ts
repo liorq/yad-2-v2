@@ -11,7 +11,6 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SearchInputTextComponent implements OnInit{
 @Input()inputClass!:string;
   constructor(private appSvc:AppService,public dbSvc:GovService,private router:Router,private AppSvc:AppService){}
-/////search inputs with word cities and streets
 address:any;
 ngOnInit(): void {
   this.address={

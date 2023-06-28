@@ -2,6 +2,7 @@ import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { signInFormFields } from 'src/app/data/array';
 
@@ -23,12 +24,9 @@ export class GenericFormComponent {
   email!: AbstractControl<any, any>;
   confirmPassword!: AbstractControl<any, any>;
   @Input()formTypes!:string;
-  constructor(
-    private router: Router,
-    private formBuilder: FormBuilder
+  constructor(private appSvc: AppService, private formBuilder: FormBuilder
 ,private dbSvc:DbService,
   ) {}
-
 
   togglePasswordVisibility(obj:any){
     obj.counter++;
@@ -50,19 +48,16 @@ export class GenericFormComponent {
       this.form.controls);
   }
   async authHandler(button:any){
-    console.log(this.formTypes)
     if (button.type == "connect") {
-      let res: any = await (this.formTypes === 'SignUpForm' ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
-      this.setToken(res);
-     const isValidToken=res?.error?.text;
-      if(this.formTypes === 'SignInForm'&&isValidToken||this.formTypes === 'SignUpForm'&&isValidToken){
+    const res: any = await (this.formTypes === 'SignUpForm' ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
+    this.setToken(res);
+    const isValidToken=res?.error?.text;
+    const isValidEnter=this.formTypes === 'SignInForm'&&isValidToken||this.formTypes === 'SignUpForm'&&isValidToken
+    if(isValidEnter){
       localStorage.setItem("userName",this.email.value)
-        this.router.navigate([''])
+      this.appSvc.navigate('')
       }
-
     }
-
-    ////logic of fields
     const areFieldsInvalid=this.password.value.length==0||this.email.value.length==0
     this.isFieldsEmpty = areFieldsInvalid;
     this.isNavigationRequested = !areFieldsInvalid;

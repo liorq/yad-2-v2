@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {  Router } from '@angular/router';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
+import { initDataForAd } from 'src/app/data/functions';
 import { apartment } from 'src/app/data/interfaces';
 
 @Component({
@@ -25,37 +26,21 @@ export class NewAdComponent implements OnInit{
 adsArray:any[]=[]
 topColumn:any[] = [];
 myLikedMessages!:any[]
-constructor(private appSvc:AppService,private dbSvc:DbService,private router:Router){}
+constructor(public appSvc:AppService,public dbSvc:DbService){}
 
 async ngOnInit() {
 
     const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
-    // console.log(this.ad.apartmentId.toUpperCase())
     if(Array.isArray(pics)){
       this.pics=pics.map((p: any) => p.value);
       pics?.length>0&& this.appSvc.updateAdsHasPicturesSubject(this.ad.apartmentId)
     }
-
-
-
- await this.isAdLikedByUser();
- ///initAdData(){}
-  const { totalFloorInBuilding, floor,roomNumber,price, street,houseNumber,typeOfProperty,city } = this.ad;
-
-  this.adsArray=[
-
-    {num:totalFloorInBuilding,text:'מ"ר'},
-    {num:floor,text:'קומה'},
-    {num:roomNumber,text:'חדרים'},
-  ]
-
-  this.topColumn = [
-    {  content: `${price} ₪` },
-    {  content: `${street} ${houseNumber}` },
-    { content: `${typeOfProperty}, ${city}  ${city}` },
-  ];
-  // this.ad.isPr
+  await this.isAdLikedByUser();
+  const {adsArray,topColumn}=initDataForAd(this.ad)
+  this.adsArray=adsArray
+  this.topColumn = topColumn
 }
+
 async openModal() {
   await this.updateCurrentImages();
   this.fatherComponent === "likedAds" && this.appSvc.currentAdOpen.next(this.ad);
@@ -69,14 +54,14 @@ async navigateToImageGallery(event:Event){
   return;
 
   this.stopProp(event)
- await this.updateCurrentImages();
-  this.router.navigate(['/image-gallery'])
+  await this.updateCurrentImages();
+  this.appSvc.navigate('/image-gallery')
 }
 async updateCurrentImages(){
   const pics=await this.dbSvc.getAllApartmentImages(this.ad.apartmentId.toUpperCase())
-  if(Array.isArray(pics)){
+  if(Array.isArray(pics))
     this.pics=pics.map((p: any) => p.value);
-  }
+
    this.appSvc.currentAdImages.next(this.pics)
 }
 
@@ -98,7 +83,7 @@ stopProp(event:Event){
 }
 
 ////change the name of the function
-async removeLikeFromAd(event:Event){
+async unlikeAd (event:Event){
   event.stopPropagation()
   const milliSeconds = (this.fatherComponent === 'likedAds') ? 10000 : 0;
 
@@ -108,7 +93,6 @@ const {apartmentId}=this.ad
 const res=await this.dbSvc.toggleLikedAdd(apartmentId,this.isUserLikedAd);
 console.log(res)
 },milliSeconds)
-
 
 }
 toggleAd(){

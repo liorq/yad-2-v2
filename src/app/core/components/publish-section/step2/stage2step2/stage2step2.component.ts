@@ -24,17 +24,14 @@ inputs = step2Inputs;
 
 
 async ngOnInit() {
-
-  const Cities=await this.dbSvc.getCities()
-   }
+  await this.dbSvc.getCities()
+  }
   navigate(){
-
     this.formValidationHandler()
-   if(this.appSvc.isFormValid(this.fieldValidity)){
+   if(this.appSvc.isFormValid(this.fieldValidity))
     this.appSvc.navigate('publish/stage-2/step3')
-   }
-   this.isNavigationRequested=true;
-    console.log("form not valid")
+
+    this.isNavigationRequested=true;
   }
 
   formValidationHandler(){

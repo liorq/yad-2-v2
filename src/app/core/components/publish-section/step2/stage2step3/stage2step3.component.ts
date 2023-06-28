@@ -17,17 +17,13 @@ selectBoxes = step3SelectBoxes;
 btns=step3Btns;
 buttonsWithIcons = step3ButtonsWithIcons;
 isNavigationRequested=false;
-
 constructor(private appSvc:AppService){}
-
 navigate(){
   this.formValidationHandler()
-  if(this.isFormValid()){
-
+  if(this.isFormValid())
     this.appSvc.navigate('publish/stage-2/step4')
-  }
+
   this.isNavigationRequested=true;
- console.log(this.fieldValidity)
 }
 formValidationHandler(){
  this.fieldValidity= this.appSvc.getFormValues('roomNumber','parking','porch')
@@ -42,9 +38,7 @@ item.choice=val;
 if(val=="ללא"){
   val=0;
   item.choice=0
- console.log(val)
 }
 this.appSvc.updateAdUploadSubject({[PropertyName]:val})
-console.log(this.appSvc.adUploadSubject.getValue())
 }
 }

@@ -10,7 +10,7 @@ import { routeToChooseArray } from 'src/app/data/array';
   styleUrls: ['./stage2step7.component.css']
 })
 export class Stage2step7Component {
-  constructor(private appSvc:AppService,private dbSvc:DbService){}
+  constructor(private appSvc:AppService){}
 
 navigate(){
   this.appSvc.navigate('publish/stage-2/final')

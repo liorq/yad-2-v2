@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Search, apartment, apartmentSearchQuery, userUpdateRequest } from 'src/app/data/interfaces';
+import { InputTextFileComponent } from 'src/app/shared/inputs/input-text-file/input-text-file.component';
 
 @Injectable({
   providedIn: 'root'
@@ -189,6 +190,55 @@ isFieldPhone(field:string){
       return JSON.parse(localStorage.getItem("searches")||"[]").length;
     }
     return 0;
+  }
+
+  sortByParameter(parameter: string,allAds:apartment[]): apartment[] {
+    return allAds.sort((a: Record<string, any>, b: Record<string, any>) => {
+      if (parameter === 'date') {
+        return a[parameter] - b[parameter];
+      } else if (parameter === 'priceHighToLow') {
+        return b['price'] - a['price'];
+      } else if (parameter === 'priceLowToHigh') {
+        return a['price'] - b['price'];
+      }
+
+      return 0;
+    });
+  }
+
+  uploadFileHandler(component:InputTextFileComponent) {
+    component.isPicNeeded = true;
+    component.isInputFileNeeded = false;
+    const inputFile = document.getElementById(component.InputId) as HTMLInputElement;
+
+    if (inputFile.files == null || inputFile.files.length === 0)
+      return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const file = reader.result;
+      if (typeof file === 'string') {
+        let {pics}=this.adUploadSubject.getValue()
+        if(pics==undefined)
+          pics=[]
+
+        pics?.push(file)
+        this.updateAdUploadSubject({pics:pics})
+        const img = document.getElementById(component.ImgId) as HTMLImageElement;
+        img.src = file;
+      }
+    };
+
+    reader.readAsDataURL(inputFile.files[0]);
+  }
+  arrangeAdsBy(parameter: string,allAds:apartment[]) {
+    return allAds.sort((a: Record<string, any>, b: Record<string, any>) => {
+      return parameter === 'date' ? Date.parse(a['dateOfEntering']) - Date.parse(b['dateOfEntering'])
+        : parameter === 'priceHighToLow' ? b['price'] - a['price']
+        : parameter === 'priceLowToHigh' ? a['price'] - b['price']
+        : 0;
+    });
+
   }
 }
 

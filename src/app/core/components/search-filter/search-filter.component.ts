@@ -25,23 +25,18 @@ ngOnInit(): void {
 
   const { withPrice, withPictures } = this.appSvc.adFilterByTypeSubject.getValue();
 
-  if (withPrice) {
+  if (withPrice)
     this.filterByPrice();
-  }
-
-  if (withPictures) {
+  if (withPictures)
     this.filterByPictures();
-  }
 
-  if (!withPrice && !withPictures) {
+  if (!withPrice && !withPictures)
     this.restore();
-  }
 
   this.appSvc.allAds.next(this.allAds);
 }
 async restore(){
   location.reload()
-
 }
 private filterByPrice() {
   this.allAds = this.allAds.filter(ad => ad.price > 1);

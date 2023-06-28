@@ -14,8 +14,6 @@ const res=await this.dbSvc.findApartments(this.appSvc.searchSubject.getValue())
 this.addLastSearch()
 const adsArray = Array.isArray(res) ? res : [];
 this.appSvc.allAds.next(adsArray)
-
-
   }
 
   addLastSearch(){
