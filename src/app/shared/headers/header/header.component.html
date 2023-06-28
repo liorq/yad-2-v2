@@ -21,15 +21,16 @@
         <div *ngIf="isUserLogged&&allAds!.length>0" (mouseenter)="showDiv()" (mouseleave)="hideDiv()" class="ads-container" >
           <div *ngFor="let ad of allAds">
             <app-new-ad [fatherComponent]="'likedAds'"  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
+
           </div>
 
-          <app-btn id="{{'makedAds'}}" [containerClass]="'green-btn-2'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'"  [routerLink]="isUserLogged ? '/publish/stage-1' : '/signIn'" ></app-btn>
         </div>
      <div *ngIf="allAds?.length==0"  [ngClass]="{'custom-love-container':!isUserLogged,'love-container-1':isUserLogged}" (mouseenter)="showDiv()" (mouseleave)="hideDiv()">
       <div class="love-title">מודעות שאהבתי</div>
       <div class="love-sub-title">אין לך עדיין מודעות שאהבת. כדי לשמור מודעות שאהבת, ולשמור נוספות, יש להתחבר לחשבון שלך </div>
 
      </div>
+
       </div>
 
   </div>
