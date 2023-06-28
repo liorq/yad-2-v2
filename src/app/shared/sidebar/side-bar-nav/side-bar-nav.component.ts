@@ -1,4 +1,4 @@
-import { Input, OnDestroy } from '@angular/core';
+import { HostListener, Input, OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { fastSearchSidebarItems, navigationMenuItems, settingSidebarItems, sidebarMenuItems } from 'src/app/data/array';
@@ -59,5 +59,20 @@ getNumOfAlerts(type:string){
   return this.appSvc.getNumOfAlerts(type)
 
   }
+
+
+
+  ////still in test need only in personal side bar and
+  ///when the screen above 880px
+  isAbove880px: boolean = false;
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.isAbove880px = window.innerWidth > 880&&this.sideBarId=="sidenavForPersonalPage";
+    console.log(this.isAbove880px)
+  }
+
+
+
 
 }
