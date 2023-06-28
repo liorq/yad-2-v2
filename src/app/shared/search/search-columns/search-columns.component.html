@@ -27,7 +27,10 @@
     </div>
   </div>
 
-  <app-btn (click)="isAdvanceSearchOpen=!isAdvanceSearchOpen" [textClass]="'advanceSearchText'" [iconClass]="'advanceSearchIcon'" [containerClass]="'advanceSearchContainerBtn'" [text]="'חיפוש מתקדם'"></app-btn>
+  <div class="btn-container">
+<div *ngIf="getNumOfAdvanceFilters()||0>0" class="orange-circle"></div>
+    <app-btn (click)="isAdvanceSearchOpen=!isAdvanceSearchOpen" [textClass]="'advanceSearchText'" [iconClass]="'advanceSearchIcon'" [containerClass]="'advanceSearchContainerBtn'" [text]="getNumOfAdvanceFilters()+' חיפוש מתקדם'"></app-btn>
+  </div>
   <app-btn (click)="findApartments()" [textClass]="'textSearchBtn'" [iconClass]="'searchIcon'" [containerClass]="'searchContainerBtn'" [text]="'חיפוש'"></app-btn>
 <app-advance-search *ngIf="isAdvanceSearchOpen"></app-advance-search>
 </div>

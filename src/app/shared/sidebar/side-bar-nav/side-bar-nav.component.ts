@@ -73,11 +73,6 @@ getNumOfAlerts(type:string){
 
   }
 
-
-
-  ////still in test need only in personal side bar and
-  ///when the screen above 880px
-
   @HostListener('window:resize', ['$event'])
   onWindowResize(event?: EventTarget) {
 

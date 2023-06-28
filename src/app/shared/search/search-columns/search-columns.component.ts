@@ -23,7 +23,13 @@ this.appSvc.allAds.next(adsArray)
 
 
   }
+ getNumOfAdvanceFilters(){
+  const count = Object.values(this.appSvc.searchSubject.getValue()).filter(value => value === true).length;
+  if(count==0)
+  return "";
+  return "("+count+")";
 
+ }
   addLastSearch(){
   this.appSvc.addLastSearch()
   }

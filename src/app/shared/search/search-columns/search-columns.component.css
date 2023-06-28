@@ -53,3 +53,16 @@ app-btn{
   right: -131px;
   gap: 5px;
 }
+.btn-container{
+  position: relative;
+}
+.orange-circle{
+  width: 10px;
+  height: 10px;
+  background: #ff7100;
+  border-radius: 50%;
+  position: absolute;
+  right: -3px;
+  top: -4px;
+  z-index: 1;
+}
