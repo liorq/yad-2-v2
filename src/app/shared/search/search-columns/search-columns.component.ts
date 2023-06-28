@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/core/services/app.service';
+import { DbService } from 'src/app/core/services/db.service';
 import { searchColumnsRooms, searchItems } from 'src/app/data/array';
 
 @Component({
@@ -12,5 +14,17 @@ searchColumnsRooms =searchColumnsRooms
 searchItems = searchItems
 isAdvanceSearchOpen:boolean=false;
 isDropDownOpen=[false,false]
+constructor(private appSvc :AppService,private dbSvc:DbService){}
+ async findApartments(){
+const res=await this.dbSvc.findApartments(this.appSvc.searchSubject.getValue())
+this.addLastSearch()
+const adsArray = Array.isArray(res) ? res : [];
+this.appSvc.allAds.next(adsArray)
 
+
+  }
+
+  addLastSearch(){
+  this.appSvc.addLastSearch()
+  }
 }

@@ -28,6 +28,6 @@
   </div>
 
   <app-btn (click)="isAdvanceSearchOpen=!isAdvanceSearchOpen" [textClass]="'advanceSearchText'" [iconClass]="'advanceSearchIcon'" [containerClass]="'advanceSearchContainerBtn'" [text]="'חיפוש מתקדם'"></app-btn>
-  <app-btn [textClass]="'textSearchBtn'" [iconClass]="'searchIcon'" [containerClass]="'searchContainerBtn'" [text]="'חיפוש'"></app-btn>
+  <app-btn (click)="findApartments()" [textClass]="'textSearchBtn'" [iconClass]="'searchIcon'" [containerClass]="'searchContainerBtn'" [text]="'חיפוש'"></app-btn>
 <app-advance-search *ngIf="isAdvanceSearchOpen"></app-advance-search>
 </div>

@@ -72,7 +72,7 @@ svg{
 .ads-container{
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
   width: 460px;
   min-width:160px;
   height: 273px;
@@ -90,9 +90,9 @@ svg{
 
 
 .love-container{
-  padding: 24px 20px;
+  /* padding: 24px 20px; */
    position: absolute;
-  top:44px;
+  top:62px;
   left:16px;
   display: none;
   height: 120px;
@@ -116,8 +116,10 @@ color: #363636;
 }
 .icon-container:hover .love-container {
   display: block;
-  height: 130px;
-  width: 250px;
+  height: 322px;
+  background-color: #fff;
+  width: fit-content;
+  z-index: 5;
 }
 
 

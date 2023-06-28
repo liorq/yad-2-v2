@@ -26,6 +26,7 @@ import { MyLikedAdsComponent } from './pages/myLikedAds/my-liked-ads/my-liked-ad
 import { ImageGalleryComponent } from './core/components/image-gallery/image-gallery.component';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -36,7 +37,7 @@ const routes: Routes = [
   { path: 'realestate', component: RealestateComponent },
   { path: 'image-gallery', component: ImageGalleryComponent },
   { path: 'advance', component: AdvanceSearchComponent },
-{ path: 'publish' , children: [
+{ path: 'publish' ,canActivateChild:[AuthGuard],canActivate:[AuthGuard], children: [
     { path: 'stage-1', component: PublishComponent },
     { path: 'stage-2', component: Stage2PublishComponent,children:[
         { path: 'step1', component: Stage2step1Component },
@@ -51,7 +52,7 @@ const routes: Routes = [
 
   ]},
 
-  { path: 'personal', component: PersonalComponent , children: [
+  { path: 'personal', component: PersonalComponent,canActivateChild:[AuthGuard] ,canActivate:[AuthGuard], children: [
     { path: 'update', component: UpdateDetailsComponent },
 
     { path: 'saved-ads', component: SavedAdsComponent },

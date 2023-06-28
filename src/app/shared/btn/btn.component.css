@@ -265,6 +265,7 @@ max-width: 100px;
 
 
 .inputClass4{
+  cursor: pointer;
   font-size: 0.875rem;
   padding: 10px;
   width: 170px;

@@ -16,32 +16,41 @@ ngOnInit(): void {
 }
  constructor(private dbSvc:DbService,private appSvc:AppService){}
  async filterAds() {
-  const res:any = await this.dbSvc.getAllAds();
-  if (res && res.length>0){
-    this.appSvc.allAds.next(res)
-      this.allAds = res;
+  const ads:any = await this.dbSvc.getAllAds();
+
+  if (ads && ads.length > 0) {
+    this.appSvc.allAds.next(ads);
+    this.allAds = ads;
   }
+
   const { withPrice, withPictures } = this.appSvc.adFilterByTypeSubject.getValue();
-////לפני הראשון הם שקר!
-///צריך להעביר ארגומנט שהוקלק
 
-  if (withPrice){
-    this.allAds = this.allAds.filter(a => a.price > 1);
-    this.filterOptions[0].isChecked=true;
+  if (withPrice) {
+    this.filterByPrice();
   }
-   if(withPictures){
-    const allAdsHasPic=this.appSvc.adsHasPictures.getValue()||[]
-     this.allAds = this.allAds.filter(a => allAdsHasPic.includes(a.apartmentId));
-     this.filterOptions[1].isChecked=true
 
-    }
-    if(!withPrice&&!withPictures)
-    this.restore()
+  if (withPictures) {
+    this.filterByPictures();
+  }
 
-  this.appSvc.allAds.next(this.allAds)
+  if (!withPrice && !withPictures) {
+    this.restore();
+  }
+
+  this.appSvc.allAds.next(this.allAds);
 }
 async restore(){
   location.reload()
 
+}
+private filterByPrice() {
+  this.allAds = this.allAds.filter(ad => ad.price > 1);
+  this.filterOptions[0].isChecked = true;
+}
+
+private filterByPictures() {
+  const allAdsHasPic = this.appSvc.adsHasPictures.getValue() || [];
+  this.allAds = this.allAds.filter(ad => allAdsHasPic.includes(ad.apartmentId));
+  this.filterOptions[1].isChecked = true;
 }
 }

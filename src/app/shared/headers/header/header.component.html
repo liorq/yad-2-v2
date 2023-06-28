@@ -20,13 +20,10 @@
       <div  class="love-container" *ngIf="icon.type=='love'">
         <div *ngIf="isUserLogged&&allAds!.length>0" class="ads-container" >
           <div *ngFor="let ad of allAds">
-            <app-new-ad  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
+            <app-new-ad [fatherComponent]="'likedAds'"  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
           </div>
+
           <app-btn id="{{'makedAds'}}" [containerClass]="'green-btn-2'" [iconClass]="'publish-ad-plus'" [text]="'פרסום מודעה'"  [routerLink]="isUserLogged ? '/publish/stage-1' : '/signIn'" ></app-btn>
-
-
-
-
         </div>
      <div *ngIf="allAds?.length==0"  [ngClass]="{'custom-love-container':!isUserLogged,'love-container-1':isUserLogged}">
       <div class="love-title">מודעות שאהבתי</div>
@@ -42,6 +39,7 @@
 
 <app-top-bar-nav *ngIf="isTopBarNeeded" class="none"></app-top-bar-nav>
 </div>
+<app-modal-saved-ad *ngIf="isModalOpen"></app-modal-saved-ad>
 
 
 

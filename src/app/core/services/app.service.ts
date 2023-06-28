@@ -68,6 +68,7 @@ export class AppService {
     updateSubject(subject: BehaviorSubject<any>, value: any) {
     subject.next(value);
   }
+  
   isUserLogged(){
     const isUserHasValidToken=((localStorage.getItem('token')||"").length>0)
     this.isUserLoggedSubject.next(isUserHasValidToken)

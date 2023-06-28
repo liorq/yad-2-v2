@@ -25,11 +25,13 @@ export class HeaderComponent implements OnInit{
   @Input()isTopBarNeeded!:boolean;
 constructor(private router:Router,private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
-
+isModalOpen:boolean=true
   async ngOnInit() {
     this.isUserLogged=this.appSvc.isUserLogged();
     console.log(this.isUserLogged)
-
+    this.appSvc.currentAdOpen.subscribe(()=>{
+      this.isModalOpen=!this.isModalOpen;
+    })
     this.appSvc.allMyFavAds.subscribe((newData)=>{
       this.allAds=newData
     })

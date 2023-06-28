@@ -17,6 +17,7 @@ allAds:apartment[]=[]
 constructor(private dbSvc:DbService,private appSvc:AppService){}
 
 async ngOnInit() {
+  // location.reload()
   this.appSvc.allAds.subscribe((allAds)=>{
     this.allAds=allAds;
   })
@@ -25,7 +26,7 @@ async ngOnInit() {
     this.appSvc.allAds.next(res)
       this.allAds = res;
   }
- 
+
   }
 async handlePaginationChange(pageNumber: number) {
 
