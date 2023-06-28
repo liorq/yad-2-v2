@@ -18,7 +18,7 @@
        <div class="bell-sub-title">  הרשימה שלך ריקה כרגע, כאן תוכל לראות את ההתראות שהגדרת</div>
       </div>
       <div  class="love-container" *ngIf="icon.type=='love'">
-        <div *ngIf="isUserLogged&&allAds!.length>0" class="ads-container" >
+        <div *ngIf="isUserLogged&&allAds!.length>0" (mouseenter)="showDiv()" (mouseleave)="hideDiv()" class="ads-container" >
           <div *ngFor="let ad of allAds">
             <app-new-ad [fatherComponent]="'likedAds'"  [classContainer]="'custom-container-header'" [isToggleAdNeeded]='false' [fatherComponent]="'likedAds'" [isTopAds]="true" [ad]="ad"></app-new-ad>
           </div>

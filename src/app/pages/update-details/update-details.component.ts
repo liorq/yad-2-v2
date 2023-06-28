@@ -3,7 +3,7 @@ import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import { step5Btns } from 'src/app/data/array';
 import { userUpdateRequest } from 'src/app/data/interfaces';
-import { successResUpdate } from 'src/app/data/objects';
+import { resSuccessObjMessage, successResUpdate } from 'src/app/data/objects';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -97,18 +97,12 @@ export class UpdateDetailsComponent implements OnInit{
     }
   ];
   async userUpdateRequest(btn:any){
-    ///userUpdateRequest
    if(btn.requiresUserRequestUpdate){
     const obj:userUpdateRequest=this.appSvc.userUpdateRequestSubject.getValue()
    const res=await this.dbSvc.updateUserInfo(obj);
-   console.log(res)
    if(res === true){
     const res:any = Swal.mixin(successResUpdate)
-
-    res.fire({
-      icon: 'success',
-      title: 'הפרופיל עודכן בהצלחה'
-    })
+    res.fire(resSuccessObjMessage)
    }
    }
   }

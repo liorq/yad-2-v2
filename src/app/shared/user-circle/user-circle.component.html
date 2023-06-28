@@ -1,7 +1,7 @@
 <div *ngIf="isUserLogged" class="circle" [ngClass]="{'custom-circle': isPopUpNeeded}">{{circleText}}</div>
 
 <div *ngIf="isPopUpNeeded && isUserLogged" class="user-container">
-  <div class="icon-container">
+  <div class="icon-container" (mouseenter)="showDiv()" (mouseleave)="hideDiv()">
     <div *ngFor="let item of sidebarItems" class="user">
       <app-mini-alert [number]="getNumOfAlerts(item.title.iconPathClass)"></app-mini-alert>
       <app-side-bar-item (click)="disconnectUser(item)" [item]="item.title"></app-side-bar-item>
@@ -11,7 +11,7 @@
 
 <div *ngIf="isPopUpNeeded && !isUserLogged" class="dis-circle"></div>
 <div *ngIf="isPopUpNeeded && !isUserLogged" class="user-container2">
-  <div class="icon-container">
+  <div class="icon-container" (mouseenter)="showDiv()" (mouseleave)="hideDiv()">
     <div  *ngFor="let item of sidebarItems" class="{{item.iconPathClass}}">
       <app-side-bar-item (click)="disconnectUser(item)" [item]="item.title"></app-side-bar-item>
     </div>

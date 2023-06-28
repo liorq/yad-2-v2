@@ -123,7 +123,13 @@ color: #363636;
 }
 
 
+.hover-div {
+  display: none;
+}
 
+.hover-div.active {
+  display: block;
+}
 
 
 

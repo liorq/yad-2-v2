@@ -45,3 +45,7 @@ export const  step2FieldValidity:{[key: string]: boolean}={
             toast.addEventListener('mouseleave', Swal.resumeTimer)
           }
         }
+        export const resSuccessObjMessage={
+          icon: 'success',
+          title: 'הפרופיל עודכן בהצלחה'
+        }

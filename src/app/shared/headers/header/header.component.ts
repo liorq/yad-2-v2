@@ -23,9 +23,11 @@ export class HeaderComponent implements OnInit{
   @Input() heartClass = 'leftSideHeart';
   @Input() messageClass = 'leftSideMessage';
   @Input()isTopBarNeeded!:boolean;
+  isHovered = false;
+  timeoutId: any;
 constructor(private router:Router,private dbSvc:DbService,private appSvc:AppService){}
 @Input()  allAds:apartment[]=[];
-isModalOpen:boolean=true
+isModalOpen:boolean=true;
   async ngOnInit() {
     this.isUserLogged=this.appSvc.isUserLogged();
     console.log(this.isUserLogged)
@@ -62,4 +64,15 @@ return this.appSvc.getNumOfAlerts(type)
 
 }
 
+
+  showDiv() {
+    clearTimeout(this.timeoutId);
+    this.isHovered = true;
+  }
+
+  hideDiv() {
+    this.timeoutId = setTimeout(() => {
+      this.isHovered = false;
+    }, 2000);
+  }
 }

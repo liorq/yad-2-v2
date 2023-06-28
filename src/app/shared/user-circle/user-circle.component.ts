@@ -11,7 +11,8 @@ export class UserCircleComponent implements OnInit,AfterViewInit{
   constructor(private appSvc:AppService){}
   isUserLogged!:boolean;
   circleText!:string;
-
+  isHovered = false;
+  timeoutId: any;
   sidebarItems!:any[];
  @Input() isPopUpNeeded:boolean=false;
   ngOnInit(): void {
@@ -30,5 +31,15 @@ export class UserCircleComponent implements OnInit,AfterViewInit{
       return this.appSvc.getNumOfAlerts(type)
 
       }
+////can be shorter
+      showDiv() {
+        clearTimeout(this.timeoutId);
+        this.isHovered = true;
+      }
 
+      hideDiv() {
+        this.timeoutId = setTimeout(() => {
+          this.isHovered = false;
+        }, 2000);
+      }
 }
