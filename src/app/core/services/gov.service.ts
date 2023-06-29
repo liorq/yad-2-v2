@@ -45,15 +45,21 @@ filterCitiesHandler(event:any){
 }
 
 
-populateDataList(id: string | undefined, resource_id: string, field_name: string, query: any, limit: number | string | undefined = "100") {
+ populateDataList(id: string | undefined, resource_id: string, field_name: string, query: any, limit: number | string | undefined = "100") {
   const datalist_element = document.getElementById(id ?? "");
   if (!datalist_element) return;
 
-  this.getData(resource_id, query, limit)
+
+
+ this.getData(resource_id, query, limit)
     .then(({ data: { result: { records } } }) => this.ResponseHandler(records, field_name))
     .then(html => datalist_element.innerHTML = html)
     .catch(error => console.log(`Couldn't get list for ${id} query: ${query}`, error));
-}
+
+////some code
+
+
+  }
 
 
 filterStreetHandler(event:any){

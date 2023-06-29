@@ -77,6 +77,10 @@ export class DbService {
       return err;
     }
   }
+
+
+
+  
   async getAllApartmentImages(apartmentId: string) {
     try {
       const res = await this.http

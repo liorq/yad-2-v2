@@ -60,3 +60,8 @@ export const  step2FieldValidity:{[key: string]: boolean}={
           text: 'צור קשר',
           href: '#'
         };
+        export   const NavigationObj:any={
+          'SignUpForm':'sign-up-last-stage',
+          'SignUpLastStageForm':'/sign-up-last-stage',
+          'SignInForm':''
+        }

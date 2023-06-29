@@ -421,7 +421,10 @@ export const  step5CheckboxItems = [
   {classContainer:'containerClassMax' ,text: 'קראתי ואישרתי את התקנון',textClass:'max-2 max bold' ,type:"agreed"},
   {classContainer:'containerClassMax', textClass:'max-2 max', text: 'אשמח לקבל עדכונים, הצעות או טיפים לשיפור המודעה שלי לפרטי החשבון או לפרטי המודעה' ,type:""}
 ];
-
+export const  CheckboxItemsForSignUpLastStage = [
+  {classContainer:'containerClassMax' ,text: 'קראתי ואישרתי את התקנון',textClass:'max-2 max bold' ,type:"agreed"},
+  {classContainer:'containerClassMax', textClass:'max-2 max', text: 'אני רוצה לקבל דיוור פרסומי כללי מהאתר יד2' ,type:""}
+];
 export const step6Inputs = [
   {
     placeholder: '',

@@ -35,6 +35,12 @@ totalFloorInBuilding: number,
 typeOfProperty: string,
 dateOfEntering:string
 }
+
+export interface HttpResponse {
+  error?: {
+    text: string;
+  };
+}
 export interface apartmentSearchQuery extends  apartment
     {
 
