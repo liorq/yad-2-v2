@@ -19,7 +19,4 @@ export class PersonalComponent implements OnInit{
       console.log(segments.map(s => s.path));
     });
   }
-
-
-
 }

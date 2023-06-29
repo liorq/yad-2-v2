@@ -51,7 +51,6 @@ navigationMenuItems = navigationMenuItems
 @Input()isUserDetailsNeeded:boolean=true;
 @Input()sideBarId='sidenav';
 @Input()isSettingIconsNeeded=false;
-
 @Input()textColor:string='black';
 @Input()sideBarData=[...this.sidebarMenuItems,...this.navigationMenuItems]
 @Input()RequiredActionsObj={isXSignNeeded:true,isDisconnectNeeded:true,isPersonalAreaNeeded:true}
@@ -75,11 +74,9 @@ getNumOfAlerts(type:string){
 
   @HostListener('window:resize', ['$event'])
   onWindowResize(event?: EventTarget) {
-
     const isPersonalSideBar = ["sidenavForPersonalPage", "sidenavForPersonalPage2"].includes(this.sideBarId);
 
     if (isPersonalSideBar) {
-      console.log(window.innerWidth > 880)
       this.isSideBarOpen = window.innerWidth > 880;
       this.appSvc.isSideBarOpen.next(this.isSideBarOpen);
     }

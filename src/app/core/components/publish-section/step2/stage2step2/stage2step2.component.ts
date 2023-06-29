@@ -19,13 +19,11 @@ btns=step2Btns;
 selectBoxes = step2SelectBoxes;
 textBoxes = step2TextBoxes;
 inputs = step2Inputs;
-
-  constructor(public dbSvc:GovService,private appSvc:AppService){}
-
-
+constructor(public dbSvc:GovService,private appSvc:AppService){}
 async ngOnInit() {
   await this.dbSvc.getCities()
   }
+  
   navigate(){
     this.formValidationHandler()
    if(this.appSvc.isFormValid(this.fieldValidity))

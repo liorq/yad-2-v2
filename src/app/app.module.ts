@@ -10,7 +10,7 @@ import { HeaderComponent } from './shared/headers/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RealestateComponent } from './pages/realestate/realestate.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignUpComponent } from './auth/sign-up-page/sign-up/sign-up.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SlidingCommercialComponent } from './core/components/sliding-commercial/sliding-commercial.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -96,6 +96,7 @@ import { ModalCreateAdComponent } from './core/components/modals/modal-create-ad
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
 import { MiniAlertComponent } from './shared/mini-alert/mini-alert.component';
 import { EmptyResultComponent } from './core/components/empty-result/empty-result.component';
+import { LastStageSignUpComponent } from './auth/sign-up-page/last-stage-sign-up/last-stage-sign-up.component';
 
 
 
@@ -187,6 +188,7 @@ import { EmptyResultComponent } from './core/components/empty-result/empty-resul
     MyAlertsComponent,
     MiniAlertComponent,
     EmptyResultComponent,
+    LastStageSignUpComponent,
 
   ],
   imports: [

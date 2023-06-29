@@ -42,19 +42,28 @@ export class GenericFormComponent {
       email: ["", Validators.required],
       password: ["", Validators.required],
       confirmPassword: ["", Validators.required],
+      phoneNumber: ["", Validators.required],
+      lastName: ["", Validators.required],
+      firstName: ["", Validators.required],
 
     });
     ({ email: this.email, password: this.password,confirmPassword:this.confirmPassword } =
       this.form.controls);
   }
+  ////לשנות את זה הוא לא צריך לבקש טוקן מהקבלה
   async authHandler(button:any){
+    const isSignUpForm=this.formTypes === 'SignUpForm';
+    const isSignInForm=this.formTypes === 'SignInForm';
+    const isSignInLastStageForm=this.formTypes === 'SignUpLastStageForm';
+
     if (button.type == "connect") {
-    const res: any = await (this.formTypes === 'SignUpForm' ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
+    const res: any = await (isSignUpForm ? this.dbSvc.signUp(this.form.value) : this.dbSvc.signIn(this.form.value));
     this.setToken(res);
     const isValidToken=res?.error?.text;
-    const isValidEnter=this.formTypes === 'SignInForm'&&isValidToken||this.formTypes === 'SignUpForm'&&isValidToken
+    const isValidEnter=isSignInForm&&isValidToken||isSignUpForm&&isValidToken
     if(isValidEnter){
       localStorage.setItem("userName",this.email.value)
+      ////sign-up-last-stage
       this.appSvc.navigate('')
       }
     }

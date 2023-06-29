@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
-import { apartment } from 'src/app/data/interfaces';
 
 @Component({
   selector: 'app-route-to-choose',

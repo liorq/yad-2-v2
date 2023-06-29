@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { step4Btns, step4Checkboxes, step4Inputs } from 'src/app/data/array';
 import { getCurrentDay } from 'src/app/data/functions';
@@ -24,7 +23,6 @@ export class Stage2step4Component   {
    isFormValid(){
     return this.appSvc.isFormValid(this.fieldValidity)
    }
-
    navigate(){
     this.formValidationHandler()
     if(this.isFormValid())

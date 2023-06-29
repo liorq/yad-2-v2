@@ -1191,6 +1191,11 @@ export const buttonsForSignUp = [
   {type:'google', containerClass: 'btn-google btn-google-for-sign-up', text: 'גוגל', iconClass: 'google-icon' },
   {type:'apple', containerClass: 'btn-apple btn-apple-for-sign-up', text: 'אפל', iconClass: 'apple-icon' },
 ];
+
+export const buttonsForSignUpLastStage = [
+  {type:'connect', containerClass: 'btn-connect btn-connect-for-sign-up', text: 'סיום והרשמה', iconClass: '' },
+
+];
 export const recommendations = [
   'אנחנו נגיע אלייך עם כל מה שחדש',
   'לא תתפספס אף מודעה',
@@ -1426,3 +1431,29 @@ export const tabsForSubHeader = [
   { label: 'נדל"ן מסחרי', isActive: false }
 ];
 // export const
+export const formFieldsForSignUpLastStage = [
+  {
+    label: 'שם פרטי',
+    name: 'firstName',
+    type: 'text',
+    placeholder: 'הקלדת שם פרטי',
+    passwordVisibilityObj:{counter:0}
+
+  },
+  {
+    label: 'שם משפחה',
+    name: 'lastName',
+    type: 'text',
+    placeholder: 'הקלדת שם משפחה',
+    passwordVisibilityObj:{counter:0}
+
+  },
+  {
+    label: 'מספר טלפון',
+    name: 'phoneNumber',
+    type: 'text',
+    placeholder: 'מספר נייד',
+    passwordVisibilityObj:{counter:0}
+
+  }
+];

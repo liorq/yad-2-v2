@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AppService } from 'src/app/core/services/app.service';
 import { step5CheckboxItems, step6Btns, step6Inputs, step6OptionBtnArray } from 'src/app/data/array';
 import { iconSettings, step6FieldValidity } from 'src/app/data/objects';
@@ -23,8 +22,6 @@ export class Stage2step6Component {
  updateIsUserAgreedToTerms(){
   this.isUserAgreedToTerm=true;
  }
-
-
   formValidationHandler(){
     const fields=this.anotherPersonInfoNeeded?['name','phone','personName','personPhone','email']:['name','phone','email']
     this.fieldValidity= this.appSvc.getFormValues(...fields)
@@ -38,7 +35,6 @@ export class Stage2step6Component {
     this.appSvc.navigate('publish/stage-2/step7')
 
    this.isNavigationRequested=true
-
   }
 
 addAnotherPersonHandler(iconClass: string) {

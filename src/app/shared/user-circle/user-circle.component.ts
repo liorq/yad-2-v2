@@ -7,7 +7,7 @@ import { UserInfoDisSidebarItems, UserInfoSidebarItems } from 'src/app/data/arra
   templateUrl: './user-circle.component.html',
   styleUrls: ['../user-details/user-details.component.css','./user-circle.component.css']
 })
-export class UserCircleComponent implements OnInit,AfterViewInit{
+export class UserCircleComponent implements OnInit{
   constructor(private appSvc:AppService){}
   isUserLogged!:boolean;
   circleText!:string;
@@ -20,9 +20,7 @@ export class UserCircleComponent implements OnInit,AfterViewInit{
    this.sidebarItems= this.isUserLogged?UserInfoSidebarItems:UserInfoDisSidebarItems
    this.circleText = (localStorage.getItem("userName") || "").toString().slice(0, 2);
   }
-  ngAfterViewInit(): void {
 
-  }
   disconnectUser(item:any){
     this.appSvc.disconnectUser(item)
       }

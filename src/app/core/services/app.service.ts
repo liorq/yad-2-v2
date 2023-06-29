@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Search, apartment, apartmentSearchQuery, userUpdateRequest } from 'src/app/data/interfaces';
 import { InputTextFileComponent } from 'src/app/shared/inputs/input-text-file/input-text-file.component';
+import { SlidingCommercialComponent } from '../components/sliding-commercial/sliding-commercial.component';
+import { NewAdComponent } from 'src/app/shared/ad/new-ad/new-ad.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class AppService {
   currentAdImages=new BehaviorSubject<string[]>([]);
   currentAdOpen=new BehaviorSubject<apartment>({} as apartment);
   adsHasPictures=new BehaviorSubject<string[]>([]);
-
+  signUpObj=new BehaviorSubject<{[key:string]:any}>([]);
 
 
   adFilterSubject=new BehaviorSubject<{[key:string]:any}>({});
@@ -35,8 +37,14 @@ export class AppService {
   removeApartment(ad:apartment){
     const newData=this.allMyAds.getValue().filter(a=>a.apartmentId!=ad.apartmentId);
     this.allMyAds.next(newData)
-    console.log(newData)
   }
+
+  ///added
+  updateSignUpSubject(value:any){
+    this.signUpObj.next(Object.assign( this.signUpObj.getValue()||{},value))
+  }
+
+
   updateSearchSubject(value:any){
     this.searchSubject.next(Object.assign( this.searchSubject.getValue()||{},value))
   }
@@ -74,7 +82,7 @@ export class AppService {
     if(isDisconnectRequested){
     this.isUserLoggedSubject.next(false);
     ['token', 'userName'].forEach(key => localStorage.setItem(key,""));
-
+   location.reload()
 
     }
   }
@@ -239,6 +247,67 @@ isFieldPhone(field:string){
         : 0;
     });
 
+  }
+
+
+  slideToNextCommercial(target: string,component:SlidingCommercialComponent): void {
+    const id = document.getElementById(target);
+    const container = document.getElementById('container');
+    if (id && container) {
+      const rect = id.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const x = rect.left - containerRect.left + container.scrollLeft;
+      const y = rect.top - containerRect.top + container.scrollTop;
+      container.scrollTo({ left: x, top: y, behavior: 'smooth' });
+    }
+    const showFirstAd=target === 'Part1'&&!component.isScrollButtonClicked1
+    const showSecondAd=target === 'Part2'&&!component.isScrollButtonClicked2
+    if (showFirstAd) {
+      component.isScrollButtonClicked1 = showFirstAd;
+      component.isScrollButtonClicked2=!showFirstAd
+    } else if (showSecondAd) {
+      component.isScrollButtonClicked1=!showSecondAd
+      component.isScrollButtonClicked2 = showSecondAd;
+    }
+
+  }
+  async unlikeAd (event:Event,component:NewAdComponent){
+    event.stopPropagation()
+    const milliSeconds = (component.fatherComponent === 'likedAds') ? 10000 : 0;
+
+  setTimeout(async ()=>{
+    component.isUserLikedAd=!component.isUserLikedAd;
+  const {apartmentId}=component.ad
+  const res=await component.dbSvc.toggleLikedAdd(apartmentId,component.isUserLikedAd);
+  console.log(res)
+  },milliSeconds)
+
+  }
+  async isAdLikedByUser(component:NewAdComponent) {
+    if(!this.isUserLogged()) return
+
+    const res:any = await component.dbSvc.getAllMyLikedAds();
+    component.myLikedMessages = res || [];
+    if(Array.isArray(res))
+    component.isUserLikedAd = !!res?.find((a: any) => a.apartment.apartmentId === component.ad.apartmentId);
+  }
+
+
+  async updateCurrentImages(component:NewAdComponent){
+    const pics=await component.dbSvc.getAllApartmentImages(component.ad.apartmentId.toUpperCase())
+    if(Array.isArray(pics))
+    component.pics=pics.map((p: any) => p.value);
+
+     this.currentAdImages.next(component.pics)
+  }
+
+
+  async navigateToImageGallery(event:Event,component:NewAdComponent){
+    if(component.fatherComponent=='likedAds') return;
+
+    this.preventEventPropagation(event)
+    await component.updateCurrentImages();
+    this.navigate('/image-gallery')
   }
 }
 

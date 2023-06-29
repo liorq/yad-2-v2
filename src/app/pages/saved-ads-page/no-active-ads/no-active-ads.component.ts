@@ -8,5 +8,4 @@ import { savedAdsBoxes } from 'src/app/data/array';
 })
 export class NoActiveAdsComponent {
   savedAdsBoxes = savedAdsBoxes
-
 }

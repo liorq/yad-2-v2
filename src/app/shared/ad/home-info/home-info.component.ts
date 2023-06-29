@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { apartment } from 'src/app/data/interfaces';
 
 @Component({
   selector: 'app-home-info',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['../ad-description/ad-description.component.css','./home-info.component.css']
 })
 export class HomeInfoComponent {
-@Input()ad:any;
+@Input()ad!:apartment;
 isReadMoreBtnActive=false;
 
 openDis(){

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignUpComponent } from './auth/sign-up-page/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PersonalComponent } from './pages/personal/personal.component';
@@ -28,9 +28,10 @@ import { ChatPageComponent } from './pages/chat-page/chat-page.component';
 import { MyAlertsComponent } from './pages/my-alerts-page/my-alerts/my-alerts.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { SignInGuard } from './core/guards/sign-in.guard';
-
+import { LastStageSignUpComponent } from './auth/sign-up-page/last-stage-sign-up/last-stage-sign-up.component';
 
 const routes: Routes = [
+  { path: 'sign-up-last-stage', component: LastStageSignUpComponent },
 
   { path: 'home', component: HomePageComponent },
   { path: 'new-ad', component: NewAdComponent },

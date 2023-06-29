@@ -11,5 +11,5 @@ export class MyAlertsComponent {
   personalIcons =personalIcons;
   customClassObj=customClassObjForMyAlert
   customHiddenObj=customHiddenObjForMyAlert
-   recommendations = recommendations
+  recommendations = recommendations
 }

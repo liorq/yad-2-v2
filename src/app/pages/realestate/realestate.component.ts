@@ -26,7 +26,6 @@ async ngOnInit() {
     this.appSvc.allAds.next(res)
       this.allAds = res;
   }
-
   }
 async handlePaginationChange(pageNumber: number) {
 console.log(await this.dbSvc.getAllRangeAd(pageNumber))

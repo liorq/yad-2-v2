@@ -14,15 +14,12 @@ export class SignInComponent {
   password!: AbstractControl<any, any>;
   userName!: AbstractControl<any, any>;
   constructor(
-    private router: Router,
     private formBuilder: FormBuilder,
     private dbSvc:GovService
-
   ) {}
  buttons = buttonsForSignIn
 accountOptionsObj=accountOptionsObjForSignIn
-
-  formFields = formFieldsForSignIn
+formFields = formFieldsForSignIn
 
   signInForm!: FormGroup;
 

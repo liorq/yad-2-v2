@@ -2,8 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppService } from 'src/app/core/services/app.service';
 import { DbService } from 'src/app/core/services/db.service';
 import {  filterItems } from 'src/app/data/array';
-
-
 @Component({
   selector: 'app-saved-ads',
   templateUrl: './saved-ads.component.html',

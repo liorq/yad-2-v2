@@ -30,7 +30,7 @@ app-login-info{
 .main-logo{
   width:72px ;
   height: 36px;
-  background: url('../../../assets/logo-orange.svg');
+  background: url('../../../../assets/logo-orange.svg');
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
